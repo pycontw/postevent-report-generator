@@ -1,4 +1,6 @@
 import re
+
+
 # Add new column in dataframe with title categories
 def cat_title(title):
     title = str(title)
