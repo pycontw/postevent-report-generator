@@ -10,53 +10,20 @@ def go():
     get_ipython().run_line_magic('matplotlib', 'inline')
     sns.set_style("darkgrid",{"font.sans-serif":['simhei', 'Arial']})
 
-
-    # In[2]:
-
-
     df = pd.read_csv("./data/2017Attendees.csv")
 
 
-    # In[ ]:
-
-
     # paid date could be relating to "information acquired " earlier vs later
-
-
-    # In[ ]:
-
-
     df.keys()
-
-
-    # In[3]:
-
 
     df.rename(index=str, columns={"Id": "ID", "Gender / 性別": "Gender","Nationality / 國籍": "Nationality","服務公司(學生或老師請填學校名稱+系所) / Company(Students or teachers please fill in the school name + Department)":"Organization","職稱(如果身分是學生請填”學生”) / Job Titles(If you are a student please fill in \"student\")":"Title","Diet / 飲食":"Special food requirments","Size of T-shirt / T恤尺寸":"Size","發票抬頭(購買 \"個人/企業一般票\" 才需要填寫) / Invoiced Company Name":"Invoice Company name"}, inplace = True)
 
 
-    # In[ ]:
-
-
-    #df[df['Title'] == "Gogolooker"]
-
-
-    # In[4]:
-
-
     df.drop("# invoice policy #",axis = 1, inplace = True)
-
-
-    # In[5]:
-
 
     # Plotting categorical
     plt.subplots(figsize=(18,5))
     sns.countplot(x='Gender',data=df)
-
-
-    # In[6]:
-
 
     fig, ax = plt.subplots()
     fig.set_size_inches(11.7, 8.27)
@@ -64,9 +31,6 @@ def go():
 
 
     # ## Create title category list and plot
-
-    # In[7]:
-
 
     organ_list = df['Organization'].unique().tolist()
     title_list = df['Title'].unique().tolist()
@@ -77,35 +41,17 @@ def go():
     print(organ_count, title_count)
 
 
-    # In[8]:
-
-
     nojob = df.loc[df['Title'] == np.nan]
-    nojob
-
-
-    # In[9]:
-
 
     title_count = df['Title'].value_counts()
     title_count = title_count.to_frame(name = "Count").reset_index()
     title_count.columns.values[0] = 'Title'
     title_count
 
-
-    # In[10]:
-
-
     title_count[title_count['Count'] > 4]
 
 
-    # In[11]:
-
-
     title_list
-
-
-    # In[28]:
 
 
     # Create main categories in a new column.
@@ -166,9 +112,6 @@ def go():
             pass
 
 
-    # In[20]:
-
-
     key = []
     counts = []
     j = -1
@@ -187,8 +130,6 @@ def go():
 
 
     # ## Add new column in dataframe with title categories
-
-    # In[29]:
 
 
     def cat_title(title):
@@ -224,7 +165,6 @@ def go():
         return title_cat
 
 
-    # In[31]:
 
 
     new_col = np.nan
@@ -260,13 +200,11 @@ def go():
 
     # ## Plot title categories
 
-    # In[33]:
 
 
     df['Title_Categories'].value_counts('Job Seeker')
 
 
-    # In[36]:
 
 
     fig, ax = plt.subplots()
@@ -280,9 +218,6 @@ def go():
                   order = ['Engineer', 'Student', 'Developer', 'Manager', 'Researcher',
            'Data Scientist', 'Head', 'Professor', 'Job Seeker', 'Consultant',
            'Graphics', 'Others'])
-
-
-    # In[35]:
 
 
     fig, ax = plt.subplots()
