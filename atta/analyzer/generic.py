@@ -3,6 +3,7 @@ import seaborn as sns
 import numpy as np
 import matplotlib.pyplot as plt
 import re
+import logging
 
 
 def go():
@@ -11,7 +12,7 @@ def go():
 
 
     # paid date could be relating to "information acquired " earlier vs later
-    df.keys()
+    logging.debug(df.keys())
 
     df.rename(index=str, columns={"Id": "ID", "Gender / 性別": "Gender","Nationality / 國籍": "Nationality","服務公司(學生或老師請填學校名稱+系所) / Company(Students or teachers please fill in the school name + Department)":"Organization","職稱(如果身分是學生請填”學生”) / Job Titles(If you are a student please fill in \"student\")":"Title","Diet / 飲食":"Special food requirments","Size of T-shirt / T恤尺寸":"Size","發票抬頭(購買 \"個人/企業一般票\" 才需要填寫) / Invoiced Company Name":"Invoice Company name"}, inplace = True)
 
