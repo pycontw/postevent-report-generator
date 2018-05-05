@@ -7,10 +7,7 @@ import re
 
 def go():
 
-    get_ipython().run_line_magic('matplotlib', 'inline')
-    sns.set_style("darkgrid",{"font.sans-serif":['simhei', 'Arial']})
-
-    df = pd.read_csv("./data/2017Attendees.csv")
+    df = pd.read_csv("../attendees-analyzer-working/2017Attendees.csv")
 
 
     # paid date could be relating to "information acquired " earlier vs later
@@ -228,6 +225,8 @@ def go():
     sns.set(font_scale = 2)
 
     sns.barplot(x = '1_Title', y = "2_Counts", data = title_cat_counts, ax = ax)
+
+    plt.show()
 
 def fake_go():
     print('fake_go is executed.')
