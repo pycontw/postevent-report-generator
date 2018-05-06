@@ -1,21 +1,22 @@
+QUESTION,ANSWER
 0,
 abc,
 AE,
 AI engineer,Engineer
 Analysts,Engineer
 Android 小小工程師,Engineer
-ap,Engineer
-AP,Engineer
-Application engineer,Engineer
-Application Engineer,Engineer
+ap,Developer
+AP,Developer
+Application engineer,Developer
+Application Engineer,Developer
 Assistant Research Associate,Researcher
 Associate Director,Head
 Associate Researcher,Researcher
 Automation Engineer,Engineer
 Backend Engineer,Engineer
 Bug,
-Business Develop Manager,Manager
-Business Development,Manager
+Business Develop Manager,Developer
+Business Development,Developer
 CEO,Head
 CGI Artist,Graphics
 Chairman,Head
@@ -24,22 +25,22 @@ Chief Technology Officer,Head
 Co-Founder,Head
 Community Manager,Engineer
 Consultant,Consultant
-Credit Risk Modeling Consultant,Engineer
+Credit Risk Modeling Consultant,Consultant
 CTO,Head
 Data Analyst,Data Scientist
-data engineer,Engineer
-data Engineer,Engineer
-Data engineer,Engineer
-Data Engineer,Engineer
-DataEngineer,Engineer
+data engineer,Data Scientist
+data Engineer,Data Scientist
+Data engineer,Data Scientist
+Data Engineer,Data Scientist
+DataEngineer,Data Scientist
 data scientist,Data Scientist
 Data Scientist,Data Scientist
 Deputy manager,Manager
-developer,Engineer
-Developer,Engineer
-Developer Advocate,Engineer
+developer,Developer
+Developer,Developer
+Developer Advocate,Developer
 Director,Head
-Director of Engineering,Engineer
+Director of Engineering,Head
 Egineer,Engineer
 engineer,Engineer
 Engineer,Engineer
@@ -47,12 +48,12 @@ Engineer,Engineer
 Enginner,Engineer
 Engr.,Engineer
 Engr,Engineer
-Enterprise Architect,Engineer
+Enterprise Architect,Developer
 F2E,Engineer
 Firmware engineer,Engineer
 Freelance,Job Seeker
 Frontend Engineer,Engineer
-Full Stack Developer,Engineer
+Full Stack Developer,Developer
 GIS工程師,Engineer
 GM,
 Gogolooker,
@@ -63,7 +64,7 @@ iOS工程師,Engineer
 IT,Engineer
 IT Supervisor,Engineer
 junior engineer,Engineer
-Lead Software Engineer,Engineer
+Lead Software Engineer,Head
 Machine Learning Scientist,Data Scientist
 Manager,Manager
 Mechanical Engineer,Engineer
@@ -79,9 +80,9 @@ pm,Manager
 PM,Manager
 Postdoc,Researcher
 principal engineer,Engineer
-product developer,Engineer
-Product developer,Engineer
-Product Developer,Engineer
+product developer,Developer
+Product developer,Developer
+Product Developer,Developer
 Professor,Professor
 programer,Engineer
 Programer,Engineer
@@ -102,12 +103,12 @@ RD Manager,Manager
 RDSS,
 Research Assistant,Researcher
 Researcher,Researcher
-Research Software Engineer,Engineer
+Research Software Engineer,Researcher
 RF Engineer,Engineer
 SA,
 self-employed,Job Seeker
-Senior Cloud Engineer,Engineer
-Senior Data Engineer,Engineer
+Senior Cloud Engineer,Head
+Senior Data Engineer,Data Scientist
 senior engineer,Engineer
 Senior engineer,Engineer
 Senior Engineer,Engineer
@@ -116,9 +117,9 @@ Senior software engineer,Engineer
 Senior Software Engineer,Engineer
 Server Engineer,Engineer
 softengineer,Engineer
-Software Architect,Engineer
-Software developer,Engineer
-Software Developer,Engineer
+Software Architect,Developer
+Software developer,Developer
+Software Developer,Developer
 software engineer,Engineer
 Software engineer,Engineer
 Software Engineer,Engineer
@@ -129,11 +130,11 @@ Software QA,
 software rd,
 Software R&D,
 Software R&D Engineer,Engineer
-Solution Architect,Engineer
+Solution Architect,Developer
 Sr. Data Scientist,Data Scientist
 Sr. Engineer,Engineer
 Sr. Engineer in Test,Engineer
-Sr. Security Architect,Engineer
+Sr. Security Architect,Developer
 Sr. SW Engineer,Engineer
 Sr. Technical Director,Head
 Staff engineer,Engineer
@@ -144,8 +145,8 @@ STUDENT,Student
 SW,Engineer
 SWE,Engineer
 Translator,
-Web developer,Engineer
-Web Developer,Engineer
+Web developer,Developer
+Web Developer,Developer
 worker,
 一級專員,Engineer
 主治醫師,
@@ -192,7 +193,7 @@ worker,
 系統分析師,Data Scientist
 系統專員,Engineer
 系統部經理,Manager
-系統開發工程師,Engineer
+系統開發工程師,Developer
 經理,Manager
 網管,
 網頁設計,Engineer
