@@ -3,6 +3,13 @@ import re
 
 # Add new column in dataframe with title categories
 def cat_title(title):
+    """
+    Return the category of a given title.
+
+    >>> cat_title("工程師")
+    'Engineer'
+
+    """
     title = str(title)
     pattern_engineer = "(?i)[engineer]{6,}|engr|developer|code|software    |工程師|碼|程式|資訊|program|軟體|設計|專員|IT|Analysts|SW|AP|PG|F2E|DevOps"  # 專員?
     pattern_developer = "(?i)develop|architect|^R.*D$|開發|AP"
@@ -33,3 +40,7 @@ def cat_title(title):
         else:
             pass
     return title_cat
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
