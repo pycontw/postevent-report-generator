@@ -1,0 +1,219 @@
+0,
+abc,
+AE,
+AI engineer,Engineer
+Analysts,Engineer
+Android 小小工程師,Engineer
+ap,Engineer
+AP,Engineer
+Application engineer,Engineer
+Application Engineer,Engineer
+Assistant Research Associate,Researcher
+Associate Director,Head
+Associate Researcher,Researcher
+Automation Engineer,Engineer
+Backend Engineer,Engineer
+Bug,
+Business Develop Manager,Manager
+Business Development,Manager
+CEO,Head
+CGI Artist,Graphics
+Chairman,Head
+Chairperson,Head
+Chief Technology Officer,Head
+Co-Founder,Head
+Community Manager,Engineer
+Consultant,Consultant
+Credit Risk Modeling Consultant,Engineer
+CTO,Head
+Data Analyst,Data Scientist
+data engineer,Engineer
+data Engineer,Engineer
+Data engineer,Engineer
+Data Engineer,Engineer
+DataEngineer,Engineer
+data scientist,Data Scientist
+Data Scientist,Data Scientist
+Deputy manager,Manager
+developer,Engineer
+Developer,Engineer
+Developer Advocate,Engineer
+Director,Head
+Director of Engineering,Engineer
+Egineer,Engineer
+engineer,Engineer
+Engineer,Engineer
+Enginner,Engineer
+Enginner,Engineer
+Engr.,Engineer
+Engr,Engineer
+Enterprise Architect,Engineer
+F2E,Engineer
+Firmware engineer,Engineer
+Freelance,Job Seeker
+Frontend Engineer,Engineer
+Full Stack Developer,Engineer
+GIS工程師,Engineer
+GM,
+Gogolooker,
+Graduated Student,Student
+Hacker,
+Hardware Engineer,Engineer
+iOS工程師,Engineer
+IT,Engineer
+IT Supervisor,Engineer
+junior engineer,Engineer
+Lead Software Engineer,Engineer
+Machine Learning Scientist,Data Scientist
+Manager,Manager
+Mechanical Engineer,Engineer
+N/A,
+NA,
+none,
+NONE,
+Officer (IT),Engineer
+PA,
+PG,Engineer
+PI,Professor
+pm,Manager
+PM,Manager
+Postdoc,Researcher
+principal engineer,Engineer
+product developer,Engineer
+Product developer,Engineer
+Product Developer,Engineer
+Professor,Professor
+programer,Engineer
+Programer,Engineer
+Programmer,Engineer
+Programmer/Analyst,Engineer
+project engineer,Engineer
+Project Engineer,Engineer
+Project Manager,Manager
+Python Charmer,
+Python Engineer,Engineer
+QA,
+Rd,Developer
+R & D,Developer
+R&D,Developer
+RD,Developer
+R&D Engineer,Engineer
+RD Manager,Manager
+RDSS,
+Research Assistant,Researcher
+Researcher,Researcher
+Research Software Engineer,Engineer
+RF Engineer,Engineer
+SA,
+self-employed,Job Seeker
+Senior Cloud Engineer,Engineer
+Senior Data Engineer,Engineer
+senior engineer,Engineer
+Senior engineer,Engineer
+Senior Engineer,Engineer
+Senior manager,Manager
+Senior software engineer,Engineer
+Senior Software Engineer,Engineer
+Server Engineer,Engineer
+softengineer,Engineer
+Software Architect,Engineer
+Software developer,Engineer
+Software Developer,Engineer
+software engineer,Engineer
+Software engineer,Engineer
+Software Engineer,Engineer
+Software Engineering,Engineer
+Software Engineering Intern,Engineer
+Software Manager,Manager
+Software QA,
+software rd,
+Software R&D,
+Software R&D Engineer,Engineer
+Solution Architect,Engineer
+Sr. Data Scientist,Data Scientist
+Sr. Engineer,Engineer
+Sr. Engineer in Test,Engineer
+Sr. Security Architect,Engineer
+Sr. SW Engineer,Engineer
+Sr. Technical Director,Head
+Staff engineer,Engineer
+Staff Engineer,Engineer
+student,Student
+Student,Student
+STUDENT,Student
+SW,Engineer
+SWE,Engineer
+Translator,
+Web developer,Engineer
+Web Developer,Engineer
+worker,
+一級專員,Engineer
+主治醫師,
+使用經驗研究,Researcher
+全端工程師,Engineer
+公共行政替代役,
+副工程師,Engineer
+副教授,Professor
+副研究員,Researcher
+助理,
+助理教授,Professor
+博士後研究員,Researcher
+博士生,Researcher
+學生,Student
+實習資料科學家,Data Scientist
+寫 code 的,Engineer
+專員,Engineer
+專案經理,Manager
+工程師,Engineer
+待業,Job Seeker
+後端工程師,Engineer
+應用工程師,Engineer
+技佐,
+技術副理,Manager
+技術經理,Manager
+技術總監,Head
+技術長,Head
+教師,
+教授,Professor
+替代役,
+業務部經理,Manager
+沒有人,
+演算法工程師,Engineer
+無,
+爬蟲工程師,Engineer
+研發副總,Head
+研究助理,Researcher
+研究員,Researcher
+研究生,Researcher
+硬體工程師,Engineer
+碼農,Engineer
+秘書,
+程式設計師,Engineer
+系統分析師,Data Scientist
+系統專員,Engineer
+系統部經理,Manager
+系統開發工程師,Engineer
+經理,Manager
+網管,
+網頁設計,Engineer
+編輯,
+自動化工程師,Engineer
+自由業,Job Seeker
+資安產品工程師,Engineer
+資料分析師,Data Scientist
+資深專員,Engineer
+資深工程師,Engineer
+資深研發工程師,Engineer
+資深程式設計師,Engineer
+資訊工程師,Engineer
+資訊技術員,Engineer
+軟體工程師,Engineer
+軟體程式設計師,Engineer
+軟體設計師,Engineer
+開發者,Developer
+院長/Superintendent,Head
+顧問,Consultant
+首席技術長,Head
+高級專員,Engineer
+高級工程師,Engineer
+高級系統設計師,Engineer
