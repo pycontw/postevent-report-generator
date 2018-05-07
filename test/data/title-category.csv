@@ -1,220 +1,600 @@
 QUESTION,ANSWER
-0,
-abc,
-AE,
+資深工程師,Engineer
+Software Engineer,Engineer
+Software Manager,Manager
+學生,Student
+SA,
+Developer,Engineer
+Postdoc,Academia
+Data Engineer,Data Scientist
+主治醫師,
+工程師,Engineer
+工程師,Engineer
+工程師,Engineer
+Engineer,Engineer
+待業,Potential Job Seeker
+工程師,Engineer
+學生,Student
+Senior Engineer,Engineer
+Project Manager,Manager
+工程師,Engineer
+Application engineer,Engineer
+Engineer,Engineer
+Graduated Student,Student
+Engineer,Engineer
 AI engineer,Engineer
-Analysts,Engineer
-Android 小小工程師,Engineer
-ap,Developer
-AP,Developer
-Application engineer,Developer
-Application Engineer,Developer
-Assistant Research Associate,Researcher
-Associate Director,Head
-Associate Researcher,Researcher
-Automation Engineer,Engineer
-Backend Engineer,Engineer
-Bug,
-Business Develop Manager,Developer
-Business Development,Developer
-CEO,Head
-CGI Artist,Graphics
-Chairman,Head
-Chairperson,Head
-Chief Technology Officer,Head
+資深研發工程師,Engineer
+工程師,Engineer
+QA,
+Project Manager,Manager
+Student,Student
+助理教授,Academia
+研究助理,Academia
+abc,
+N/A,
+學生,Student
+技術經理,Manager
+學生,Student
+工程師,Engineer
+工程師,Engineer
+Senior Engineer,Engineer
+Developer,Engineer
+Engineer,Engineer
+Programer,Engineer
+學生,Student
+工程師,Engineer
+Engineer,Engineer
+學生,Student
+學生,Student
+Senior Engineer,Engineer
+博士生,Academia
+網頁設計,Engineer
+學生,Student
+Data Scientist,Data Scientist
+Student,Student
+資深程式設計師,Engineer
+學生,Student
+高級專員,Engineer
+工程師,Engineer
+首席技術長,Head
+學生,Student
+學生,Student
+software engineer,Engineer
+Bug,Engineer
+學生,Student
+Lead Software Engineer,Head
+工程師,Engineer
+engineer,Engineer
+工程師,Engineer
+學生,Student
+寫 code 的,Engineer
+Sr. Security Architect,Engineer
+學生,Student
+N/A,
 Co-Founder,Head
-Community Manager,Engineer
+院長/Superintendent,Head
+Data Scientist,Data Scientist
+學生,Student
 Consultant,Consultant
-Credit Risk Modeling Consultant,Consultant
+學生,Student
+Assistant Research Associate,Academia
+工程師,Engineer
+高級工程師,Engineer
+學生,Student
+RD,Engineer
+工程師,Engineer
+SW,Engineer
+副教授,Academia
+student,Student
+student,Student
+Hacker,Engineer
+軟體工程師,Engineer
+RDSS,
+沒有人,Potential Job Seeker
+SWE,Engineer
+developer,Engineer
+學生,Student
+PI,Academia
+學生,Student
+系統分析師,Data Scientist
+程式設計師,Engineer
+Associate Director,Head
+Egineer,Engineer
+N/A,
+學生,Student
+學生,Student
+Software Developer,Engineer
+工程師,Engineer
+軟體工程師,Engineer
+Software Engineer,Engineer
+student,Student
+Programmer,Engineer
+Engineer,Engineer
+程式設計師,Engineer
+worker,
+學生,Student
+工程師,Engineer
+Senior engineer,Engineer
+Research Assistant,Academia
+學生,Student
+博士後研究員,Academia
+Engineer,Engineer
+Staff Engineer,Engineer
+經理,Manager
+研究助理,Academia
+軟體工程師,Engineer
+工程師,Engineer
+學生,Student
+學生,Student
+公共行政替代役,
+工程師,Engineer
+助理,
+Engineer,Engineer
+系統專員,Engineer
+Engineer,Engineer
+student,Student
+Senior Data Engineer,Data Scientist
+學生,Student
+Software Engineer,Engineer
+Frontend Engineer,Engineer
+Backend Engineer,Engineer
+工程師,Engineer
+高級系統設計師,Engineer
+Software engineer,Engineer
+PA,
+CEO,Head
+Software Engineer,Engineer
+教授,Academia
+研究助理,Academia
+NONE,Potential Job Seeker
+RD,Engineer
+待業,Potential Job Seeker
+ap,Engineer
+Officer (IT),Engineer
+工程師,Engineer
+Software R&D Engineer,Engineer
+軟體程式設計師,Engineer
+學生,Student
 CTO,Head
-Data Analyst,Data Scientist
-data engineer,Data Scientist
-data Engineer,Data Scientist
+Software engineer,Engineer
+Full Stack Developer,Engineer
+工程師,Engineer
+Engineer,Engineer
+Director of Engineering,Head
+F2E,Engineer
+Machine Learning Scientist,Data Scientist
+學生,Student
+STUDENT,Student
+software rd,Engineer
+Data Scientist,Data Scientist
+Backend Engineer,Engineer
+R&D,Engineer
+Developer,Engineer
+工程師,Engineer
+Engineer,Engineer
+PM,Manager
+學生,Student
+學生,Student
+Engineer,Engineer
+碼農,Engineer
+Manager,Manager
+Software developer,Engineer
+Data Scientist,Data Scientist
 Data engineer,Data Scientist
 Data Engineer,Data Scientist
-DataEngineer,Data Scientist
 data scientist,Data Scientist
 Data Scientist,Data Scientist
-Deputy manager,Manager
-developer,Developer
-Developer,Developer
-Developer Advocate,Developer
-Director,Head
-Director of Engineering,Head
-Egineer,Engineer
-engineer,Engineer
-Engineer,Engineer
-Enginner,Engineer
-Enginner,Engineer
-Engr.,Engineer
-Engr,Engineer
-Enterprise Architect,Developer
-F2E,Engineer
-Firmware engineer,Engineer
-Freelance,Job Seeker
-Frontend Engineer,Engineer
-Full Stack Developer,Developer
-GIS工程師,Engineer
-GM,
-Gogolooker,
-Graduated Student,Student
-Hacker,
-Hardware Engineer,Engineer
-iOS工程師,Engineer
-IT,Engineer
-IT Supervisor,Engineer
-junior engineer,Engineer
-Lead Software Engineer,Head
-Machine Learning Scientist,Data Scientist
-Manager,Manager
-Mechanical Engineer,Engineer
-N/A,
-NA,
-none,
-NONE,
-Officer (IT),Engineer
-PA,
-PG,Engineer
-PI,Professor
-pm,Manager
-PM,Manager
-Postdoc,Researcher
-principal engineer,Engineer
-product developer,Developer
-Product developer,Developer
-Product Developer,Developer
-Professor,Professor
-programer,Engineer
-Programer,Engineer
-Programmer,Engineer
-Programmer/Analyst,Engineer
-project engineer,Engineer
-Project Engineer,Engineer
 Project Manager,Manager
-Python Charmer,
-Python Engineer,Engineer
-QA,
-Rd,Developer
-R & D,Developer
-R&D,Developer
-RD,Developer
-R&D Engineer,Engineer
+junior engineer,Engineer
+Data Engineer,Data Scientist
+RD,Engineer
+Engineer,Engineer
+Engineer,Engineer
+工程師,Engineer
+學生,Student
+Engineer,Engineer
+Freelance,Potential Job Seeker
+軟體工程師,Engineer
+Engineer,Engineer
+Programmer,Engineer
+資深工程師,Engineer
+系統分析師,Data Scientist
+Chairperson,Head
+學生,Student
+Software Engineer,Engineer
+RD,Engineer
 RD Manager,Manager
-RDSS,
-Research Assistant,Researcher
-Researcher,Researcher
-Research Software Engineer,Researcher
-RF Engineer,Engineer
-SA,
-self-employed,Job Seeker
-Senior Cloud Engineer,Head
-Senior Data Engineer,Data Scientist
-senior engineer,Engineer
-Senior engineer,Engineer
-Senior Engineer,Engineer
-Senior manager,Manager
-Senior software engineer,Engineer
-Senior Software Engineer,Engineer
-Server Engineer,Engineer
-softengineer,Engineer
-Software Architect,Developer
-Software developer,Developer
-Software Developer,Developer
-software engineer,Engineer
+Chief Technology Officer,Head
+硬體工程師,Engineer
+Software Engineer,Engineer
 Software engineer,Engineer
 Software Engineer,Engineer
-Software Engineering,Engineer
-Software Engineering Intern,Engineer
-Software Manager,Manager
-Software QA,
-software rd,
-Software R&D,
-Software R&D Engineer,Engineer
-Solution Architect,Developer
-Sr. Data Scientist,Data Scientist
-Sr. Engineer,Engineer
-Sr. Engineer in Test,Engineer
-Sr. Security Architect,Developer
-Sr. SW Engineer,Engineer
-Sr. Technical Director,Head
-Staff engineer,Engineer
-Staff Engineer,Engineer
-student,Student
-Student,Student
-STUDENT,Student
-SW,Engineer
-SWE,Engineer
-Translator,
-Web developer,Developer
-Web Developer,Developer
-worker,
-一級專員,Engineer
-主治醫師,
-使用經驗研究,Researcher
-全端工程師,Engineer
-公共行政替代役,
-副工程師,Engineer
-副教授,Professor
-副研究員,Researcher
-助理,
-助理教授,Professor
-博士後研究員,Researcher
-博士生,Researcher
 學生,Student
-實習資料科學家,Data Scientist
-寫 code 的,Engineer
-專員,Engineer
-專案經理,Manager
+學生,Student
+學生,Student
+學生,Student
+Engineer,Engineer
+Director,Head
+Software engineer,Engineer
+學生,Student
 工程師,Engineer
-待業,Job Seeker
-後端工程師,Engineer
-應用工程師,Engineer
+Enginner,Engineer
+工程師,Engineer
+學生,Student
+軟體工程師,Engineer
+工程師,Engineer
+Project Engineer,Engineer
+學生,Student
+學生,Student
+Software Engineer,Engineer
 技佐,
-技術副理,Manager
-技術經理,Manager
-技術總監,Head
-技術長,Head
-教師,
-教授,Professor
-替代役,
-業務部經理,Manager
-沒有人,
-演算法工程師,Engineer
-無,
-爬蟲工程師,Engineer
-研發副總,Head
-研究助理,Researcher
-研究員,Researcher
-研究生,Researcher
-硬體工程師,Engineer
-碼農,Engineer
-秘書,
-程式設計師,Engineer
-系統分析師,Data Scientist
-系統專員,Engineer
-系統部經理,Manager
-系統開發工程師,Developer
-經理,Manager
-網管,
-網頁設計,Engineer
-編輯,
-自動化工程師,Engineer
-自由業,Job Seeker
-資安產品工程師,Engineer
-資料分析師,Data Scientist
-資深專員,Engineer
-資深工程師,Engineer
-資深研發工程師,Engineer
-資深程式設計師,Engineer
-資訊工程師,Engineer
+學生,Student
+工程師,Engineer
+Manager,Manager
+學生,Student
 資訊技術員,Engineer
 軟體工程師,Engineer
-軟體程式設計師,Engineer
-軟體設計師,Engineer
-開發者,Developer
-院長/Superintendent,Head
-顧問,Consultant
-首席技術長,Head
-高級專員,Engineer
+工程師,Engineer
+資安產品工程師,Engineer
+學生,Student
+學生,Student
+研究助理,Academia
+研究助理,Academia
+軟體工程師,Engineer
+Web developer,Engineer
+Software Engineer,Engineer
+RD,Engineer
+Server Engineer,Engineer
+engineer,Engineer
+Android 小小工程師,Engineer
+工程師,Engineer
+Engineer,Engineer
+工程師,Engineer
+Engineer,Engineer
+Researcher,Academia
+學生,Student
+演算法工程師,Engineer
+Senior Software Engineer,Engineer
+學生,Student
+系統部經理,Manager
+Senior Engineer,Engineer
+pm,Manager
+學生,Student
+研究員,Academia
+Staff Engineer,Engineer
+Backend Engineer,Engineer
+學生,Student
+工程師,Engineer
+Engineer,Engineer
+Software Engineer,Engineer
+Researcher,Academia
+工程師,Engineer
+學生,Student
+學生,Student
+學生,Student
+Programmer,Engineer
+無,Potential Job Seeker
+資深工程師,Engineer
+0,Potential Job Seeker
+研究助理,Academia
+學生,Student
+系統開發工程師,Engineer
+學生,Student
+學生,Student
+軟體工程師,Engineer
+軟體工程師,Engineer
+工程師,Engineer
+Engineer,Engineer
+programer,Engineer
+Developer,Engineer
+Engineer,Engineer
+GIS工程師,Engineer
+Enginner,Engineer
+Engineer,Engineer
+DataEngineer,Data Scientist
+Student,Student
+學生,Student
+研究助理,Academia
+工程師,Engineer
+Manager,Manager
+學生,Student
+Engr,Engineer
+R&D,Engineer
+無,Potential Job Seeker
 高級工程師,Engineer
-高級系統設計師,Engineer
+Analysts,Engineer
+Business Develop Manager,Manager
+學生,Student
+學生,Student
+Senior Engineer,Engineer
+Software Architect,Engineer
+學生,Student
+工程師,Engineer
+副工程師,Engineer
+Senior Software Engineer,Engineer
+Engineer,Engineer
+Engineer,Engineer
+資深工程師,Engineer
+軟體工程師,Engineer
+軟體工程師,Engineer
+軟體工程師,Engineer
+網管,
+學生,Student
+專案經理,Manager
+RD,Engineer
+senior engineer,Engineer
+Business Development,Manager
+NA,
+研究員,Academia
+Software QA,Engineer
+自動化工程師,Engineer
+product developer,Engineer
+software engineer,Engineer
+softengineer,Engineer
+學生,Student
+學生,Student
+Associate Researcher,Academia
+Data Scientist,Data Scientist
+工程師,Engineer
+student,Student
+student,Student
+學生,Student
+學生,Student
+Engineer,Engineer
+資深工程師,Engineer
+資深專員,Engineer
+工程師,Engineer
+專員,Engineer
+Mechanical Engineer,Engineer
+顧問,Consultant
+engineer,Engineer
+software engineer,Engineer
+Gogolooker,
+學生,Student
+研究助理,Academia
+Sr. Engineer in Test,Engineer
+Firmware engineer,Engineer
+software engineer,Engineer
+Web Developer,Engineer
+資深專員,Engineer
+工程師,Engineer
+Frontend Engineer,Engineer
+學生,Student
+Software engineer,Engineer
+應用工程師,Engineer
+Application Engineer,Engineer
+技術總監,Head
+Developer,Engineer
+Data Scientist,Data Scientist
+Senior software engineer,Engineer
+Student,Student
+學生,Student
+資料分析師,Data Scientist
+Professor,Academia
+研究員,Academia
+Sr. Engineer,Engineer
+Enterprise Architect,Engineer
+無,Potential Job Seeker
+後端工程師,Engineer
+Staff Engineer,Engineer
+AE,
+Deputy manager,Manager
+學生,Student
+PG,Engineer
+工程師,Engineer
+SW,Engineer
+Data Engineer,Data Scientist
+助理教授,Academia
+全端工程師,Engineer
+none,Potential Job Seeker
+Data Engineer,Data Scientist
+軟體工程師,Engineer
+Product Developer,Engineer
+Developer,Engineer
+Python Charmer,
+data Engineer,Data Scientist
+R & D,Engineer
+Software Engineer,Engineer
+GM,
+學生,Student
+Engineer,Engineer
+學生,Student
+經理,Manager
+經理,Manager
+RD,Engineer
+PG,Engineer
+Student,Student
+Programmer,Engineer
+副研究員,Academia
+Software engineer,Engineer
+Student,Student
+RF Engineer,Engineer
+工程師,Engineer
+Engineer,Engineer
+學生,Student
+IT,Engineer
+學生,Student
+CGI Artist,Graphics
+經理,Manager
+Rd,Engineer
+副教授,Academia
+學生,Student
+學生,Student
+學生,Student
+RD,Engineer
+副工程師,Engineer
+學生,Student
+Engineer,Engineer
+none,Potential Job Seeker
+Engineer,Engineer
+學生,Student
+Programmer,Engineer
+學生,Student
+iOS工程師,Engineer
+學生,Student
+Software Engineering,Engineer
+Student,Student
+軟體工程師,Engineer
+軟體工程師,Engineer
+研究生,Academia
+學生,Student
+Software Engineer,Engineer
+學生,Student
+學生,Student
+工程師,Engineer
+Application Engineer,Engineer
+Sr. SW Engineer,Engineer
+project engineer,Engineer
+Programmer/Analyst,Engineer
+Credit Risk Modeling Consultant,Engineer
+RD,Engineer
+研究員,Academia
+Engr.,Engineer
+業務部經理,Manager
+Backend Engineer,Engineer
+軟體工程師,Engineer
+Engineer,Engineer
+學生,Student
+學生,Student
+學生,Student
+Manager,Manager
+PM,Manager
+助理教授,Academia
+Project Manager,Manager
+資訊工程師,Engineer
+R&D,Engineer
+軟體工程師,Engineer
+自由業,Potential Job Seeker
+一級專員,Engineer
+工程師,Engineer
+Data Analyst,Data Scientist
+高級工程師,Engineer
+副研究員,Academia
+後端工程師,Engineer
+研發副總,Head
+Research Software Engineer,Academia
+研究助理,Academia
+Software R&D,Engineer
+軟體設計師,Engineer
+Senior Cloud Engineer,Head
+Software Engineer,Engineer
+IT Supervisor,Engineer
+Software Engineer,Engineer
+Programmer,Engineer
+SWE,Engineer
+工程師,Engineer
+技術總監,Head
+Senior manager,Manager
+學生,Student
+Engineer,Engineer
+Chairman,Head
+學生,Student
+Hardware Engineer,Engineer
+學生,Student
+秘書,
+工程師,Engineer
+Automation Engineer,Engineer
+自動化工程師,Engineer
+developer,Engineer
+Community Manager,Manager
+Software engineer,Engineer
+工程師,Engineer
+工程師,Engineer
+Engineer,Engineer
+編輯,
+學生,Student
+工程師,Engineer
+工程師,Engineer
+學生,Student
+Translator,
+工程師,Engineer
+工程師,Engineer
+Software Engineer,Engineer
+學生,Student
+後端工程師,Engineer
+後端工程師,Engineer
+Senior Software Engineer,Engineer
+替代役,
+學生,Student
+工程師,Engineer
+Software Engineer,Engineer
+Python Engineer,Engineer
+爬蟲工程師,Engineer
+開發者,Engineer
+Student,Student
+學生,Student
+學生,Student
+學生,Student
+Engineer,Engineer
+Developer Advocate,Engineer
+Software Engineering Intern,Engineer
+博士後研究員,Academia
+Staff Engineer,Engineer
+Staff engineer,Engineer
+Engineer,Engineer
+軟體工程師,Engineer
+Software Engineer,Engineer
+principal engineer,Engineer
+學生,Student
+工程師,Engineer
+技術副理,Manager
+Manager,Manager
+Engineer,Engineer
+副工程師,Engineer
+學生,Student
+Product developer,Engineer
+學生,Student
+學生,Student
+Senior Engineer,Engineer
+CEO,Head
+學生,Student
+學生,Student
+學生,Student
+使用經驗研究,Academia
+實習資料科學家,Data Scientist
+AP,Engineer
+Engineer,Engineer
+R&D Engineer,Engineer
+Sr. Technical Director,Head
+工程師,Engineer
+Sr. Data Scientist,Data Scientist
+Software Engineer,Engineer
+軟體工程師,Engineer
+工程師,Engineer
+技術長,Head
+student,Student
+學生,Student
+software engineer,Engineer
+程式設計師,Engineer
+教師,
+engineer,Engineer
+self-employed,Potential Job Seeker
+student,Student
+Manager,Manager
+資深工程師,Engineer
+Solution Architect,Engineer
+學生,Student
+Data Engineer,Data Scientist
+R&D,Engineer
+Student,Student
+Senior Engineer,Engineer
+Senior Engineer,Engineer
+工程師,Engineer
+學生,Student
+Software Engineer,Engineer
+工程師,Engineer
+學生,Student
+Data Scientist,Data Scientist
+助理教授,Academia
+學生,Student
+Student,Student
+學生,Student
+student,Student
+data engineer,Data Scientist
+Student,Student
+Consultant,Consultant
+Programmer,Engineer
+Developer Advocate,Engineer
+工程師,Engineer
+工程師,Engineer
+軟體工程師,Engineer
