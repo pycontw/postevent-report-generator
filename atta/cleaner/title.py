@@ -12,10 +12,10 @@ def cat_title(title):
     """
     title = str(title)
     pattern_engineer = "(?i)[engineer]{6,}|engr|develop|code|software|工程師|碼|程式|資訊|program|軟體|設計|專員|IT|" \
-                       "Analysts|SW|AP|PG|F2E|DevOps|architect|^R.*D$|開發"
+                       "Analysts|SW|AP|PG|F2E|DevOps|architect|^R.*D$|開發"  # 專員?
     pattern_student = "學生|(?i)student"
     pattern_research = "(?i)phd|博|postdoc|research|研究"
-    pattern_job_seek = "(?i)待業|Home|job|自由業|助理[^教授]|Freelance|self-employed|無|0|沒有人|nobody|nan|自由業|none"
+    pattern_job_seek = "(?i)待業|Home|job|自由業|助理[^教授]|Freelance|self-employed無|0|沒有人|nobody|nan|自由業|none"
     # 助理 could be a temporary job therefore potential job seeker, but not 助理教授
     pattern_head = "(?i)C.O|chief|lead|chair|director|長|總|founder"
     pattern_professor = "(?i)PI|professor|教授"
