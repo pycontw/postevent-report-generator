@@ -1,7 +1,7 @@
 QUESTION,ANSWER
 資深工程師,Engineer
 Software Engineer,Engineer
-Software Manager,Manager
+Software Manager,Engineer
 學生,Student
 SA,
 Developer,Engineer
@@ -303,7 +303,7 @@ R&D,Engineer
 無,Potential Job Seeker
 高級工程師,Engineer
 Analysts,Engineer
-Business Develop Manager,Manager
+Business Develop Manager,Engineer
 學生,Student
 學生,Student
 Senior Engineer,Engineer
@@ -323,7 +323,7 @@ Engineer,Engineer
 專案經理,Manager
 RD,Engineer
 senior engineer,Engineer
-Business Development,Manager
+Business Development,Engineer
 NA,
 研究員,Academia
 Software QA,Engineer
@@ -496,7 +496,7 @@ Hardware Engineer,Engineer
 Automation Engineer,Engineer
 自動化工程師,Engineer
 developer,Engineer
-Community Manager,Manager
+Community Manager,Engineer
 Software engineer,Engineer
 工程師,Engineer
 工程師,Engineer
