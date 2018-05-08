@@ -1,5 +1,5 @@
 import re
-
+import collections
 
 # Add new column in dataframe with title categories
 def cat_title(title):
@@ -22,14 +22,13 @@ def cat_title(title):
     pattern_consultant = "(?i)consultant|顧問"
     pattern_manager = "(?i)manager|[^助]理|pm"
     pattern_graphics = "(?i)graph|art|cgi"
-    pattern_dic = {'Engineer': pattern_engineer, 'Consultant': pattern_consultant,
-                   'Data Scientist': pattern_data_scientist,
-                   'Potential Job Seeker': pattern_job_seek, 'Head': pattern_head,
-                   'Manager': pattern_manager, 'Graphics': pattern_graphics, 'Academia': pattern_academia,
-                   'Student': pattern_student}
+    pattern_dic = collections.OrderedDict()
+    pattern_dic.update({'Head': pattern_head, 'Consultant': pattern_consultant, 'Manager': pattern_manager,
+                   'Data Scientist': pattern_data_scientist, 'Engineer': pattern_engineer,'Graphics': pattern_graphics,
+                    'Academia': pattern_academia, 'Potential Job Seeker': pattern_job_seek,'Student': pattern_student})
     title_cat = ''
     for pattern in pattern_dic:
-        if re.search(pattern_dic[pattern], title) != None:
+        if re.search(pattern_dic[pattern], title) is not None:
             title_cat = pattern
         else:
             pass
