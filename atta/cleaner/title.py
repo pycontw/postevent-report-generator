@@ -19,7 +19,7 @@ def cat_title(title):
     pattern_dic['Manager'] = "(?i)manager|[^助]理|pm"
     pattern_dic['Engineer'] = "(?i)[engineer]{6,}|engr|develop|code|software|工程師|碼|程式|資訊|program|" \
                               "軟體|設計|IT|Analysts|SW|AP|PG|F2E|DevOps|architect|^R.*D$|開發|bug|hacker"
-    #設計有點不精確...
+    #'設計'有點不精確...
     pattern_dic['Student'] = "學生|(?i)student"
     pattern_dic['Academia'] = "(?i)phd|博|postdoc|research|研究|PI|professor|教授"
     pattern_dic['Data Scientist'] = "(?i)data|資料|使用|經驗|分析|scientist"
