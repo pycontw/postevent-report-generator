@@ -54,7 +54,7 @@ Data Scientist,Data Scientist
 Student,Student
 資深程式設計師,Engineer
 學生,Student
-高級專員,Engineer
+高級專員,
 工程師,Engineer
 首席技術長,Head
 學生,Student
@@ -62,7 +62,7 @@ Student,Student
 software engineer,Engineer
 Bug,Engineer
 學生,Student
-Lead Software Engineer,Head
+Lead Software Engineer,Engineer
 工程師,Engineer
 engineer,Engineer
 工程師,Engineer
@@ -130,7 +130,7 @@ Staff Engineer,Engineer
 工程師,Engineer
 助理,
 Engineer,Engineer
-系統專員,Engineer
+系統專員,
 Engineer,Engineer
 student,Student
 Senior Data Engineer,Data Scientist
@@ -160,7 +160,7 @@ Software engineer,Engineer
 Full Stack Developer,Engineer
 工程師,Engineer
 Engineer,Engineer
-Director of Engineering,Head
+Director of Engineering,Engineer
 F2E,Engineer
 Machine Learning Scientist,Data Scientist
 學生,Student
@@ -218,7 +218,8 @@ Director,Head
 Software engineer,Engineer
 學生,Student
 工程師,Engineer
-Enginner,Engineer
+
+Enginner,Engineer
 工程師,Engineer
 學生,Student
 軟體工程師,Engineer
@@ -342,9 +343,9 @@ student,Student
 學生,Student
 Engineer,Engineer
 資深工程師,Engineer
-資深專員,Engineer
+資深專員,
 工程師,Engineer
-專員,Engineer
+專員,
 Mechanical Engineer,Engineer
 顧問,Consultant
 engineer,Engineer
@@ -356,7 +357,7 @@ Sr. Engineer in Test,Engineer
 Firmware engineer,Engineer
 software engineer,Engineer
 Web Developer,Engineer
-資深專員,Engineer
+資深專員,
 工程師,Engineer
 Frontend Engineer,Engineer
 學生,Student
@@ -414,7 +415,7 @@ Engineer,Engineer
 學生,Student
 IT,Engineer
 學生,Student
-CGI Artist,Graphics
+CGI Artist,
 經理,Manager
 Rd,Engineer
 副教授,Academia
@@ -446,7 +447,7 @@ Application Engineer,Engineer
 Sr. SW Engineer,Engineer
 project engineer,Engineer
 Programmer/Analyst,Engineer
-Credit Risk Modeling Consultant,Engineer
+Credit Risk Modeling Consultant,Consultant
 RD,Engineer
 研究員,Academia
 Engr.,Engineer
@@ -465,7 +466,7 @@ Project Manager,Manager
 R&D,Engineer
 軟體工程師,Engineer
 自由業,Potential Job Seeker
-一級專員,Engineer
+一級專員,
 工程師,Engineer
 Data Analyst,Data Scientist
 高級工程師,Engineer
@@ -476,7 +477,7 @@ Research Software Engineer,Academia
 研究助理,Academia
 Software R&D,Engineer
 軟體設計師,Engineer
-Senior Cloud Engineer,Head
+Senior Cloud Engineer,Engineer
 Software Engineer,Engineer
 IT Supervisor,Engineer
 Software Engineer,Engineer
@@ -550,7 +551,7 @@ CEO,Head
 學生,Student
 學生,Student
 學生,Student
-使用經驗研究,Academia
+使用經驗研究,Data Scientist
 實習資料科學家,Data Scientist
 AP,Engineer
 Engineer,Engineer
