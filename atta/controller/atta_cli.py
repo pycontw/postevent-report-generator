@@ -1,6 +1,11 @@
 import atta.analyzer.generic as ag
+import click
 
-def main():
+@click.command()
+@click.option('--readcsv', default="readcsv.csv", help='read csv format data')
+def main(readcsv):
     print("Lets analyze something.")
-    ag.go()
+    ag.go(readcsv)
 
+if __name__ == '__main__':
+    main()

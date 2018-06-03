@@ -4,12 +4,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re
 import logging
+import os
 from atta.cleaner.title import cat_title
 
 
-def go():
+def go(readcsv):
 
-    df = pd.read_csv("../attendees-analyzer-working/2017Attendees.csv")
+    '''replace hardcoded line with CLI input'''
+    #df = pd.read_csv("../attendees-analyzer-working/2017Attendees.csv")
+    df = pd.read_csv(os.getcwd() + "/" + readcsv)
 
 
     # paid date could be relating to "information acquired " earlier vs later
