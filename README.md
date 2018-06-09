@@ -53,6 +53,16 @@ Go to the test folder and execute the unit tests.
 cd test
 ./title.py
 ```
+If you get something like this, it means everything should work as expected.
+
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.014s
+
+OK
+```
+
 
 # Example
 
