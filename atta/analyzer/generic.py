@@ -27,10 +27,10 @@ def select_column(df):
     df_selected.columns = ['Gender','Nationality','Registration_date','Title']
     return df_selected
 
+
 def add_cat_title(df):
     df['Title_Categories'] = df['Title'].apply(cat_title)
     return df
-
 
 
 def plot_counts(df,year):
@@ -48,7 +48,6 @@ def plot_counts(df,year):
         plt.savefig(str(col) + str(year) + '.jpg')
 
 # def plot_accumulated_count(df,year):
-
 # def save_df():
 #     df.to_pickle(str(year)+"_analyzed_data")  ## need to refine directory
 
@@ -67,6 +66,7 @@ def go(csvfile):
     df = add_cat_title(df)
     plot_counts(df,year)
     print('Go process finished completely. Find results in the same directory as the csv file.')
+
 
 def fake_go():
     print('fake_go is executed.')
