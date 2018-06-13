@@ -3,7 +3,7 @@ import click
 
 
 @click.command()
-@click.option('--readcsv', default="data.csv", help='read csv format data')
+@click.option('--csv', default="data.csv", help='read csv format data')
 def main(readcsv):
     print("Lets analyze something.")
     ag.go(readcsv)
