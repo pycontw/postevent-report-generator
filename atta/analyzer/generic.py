@@ -1,10 +1,7 @@
 import pandas as pd
 import seaborn as sns
-import numpy as np
 import matplotlib.pyplot as plt
-import re
 import logging
-import os
 from atta.cleaner.title import cat_title
 
 
@@ -21,7 +18,6 @@ def select_column(df):
     registration_date = int(input('Please select the number for "報名日期/Paid date": '))
     nationality = int(input('Please select the number for "國籍/Nationality": '))
     gender = int(input('Please select the number for "性別/Gender": '))
-    organization = int(input('Please select the number for "服務單位/Company": '))
     job_title = int(input('Please select the number for "職稱/Job Titles": '))
     df_selected = df.iloc[:,[gender, nationality, registration_date, job_title]]
     df_selected.columns = ['Gender','Nationality','Registration_date','Title']
@@ -46,10 +42,6 @@ def plot_counts(df,year):
         sns.countplot(x = str(col), data = df)
         # directory = Tk.tk() # Something about
         plt.savefig(str(col) + str(year) + '.jpg')
-
-# def plot_accumulated_count(df,year):
-# def save_df():
-#     df.to_pickle(str(year)+"_analyzed_data")  ## need to refine directory
 
 
 def go(csvfile):
