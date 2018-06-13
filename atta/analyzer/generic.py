@@ -7,13 +7,14 @@ import logging
 import os
 from atta.cleaner.title import cat_title
 
-
+# VIEW
 def welcome_ask_year():
     print("Welcome to the PyCon attendies analyzer.")
     year = int(input('Please enter the year to be analyzed: '))
     return year
+# collect data to controller
 
-
+#View
 def select_column(df):
     cols = df.keys().tolist()
     for i, col in enumerate(cols):
@@ -26,13 +27,15 @@ def select_column(df):
     df_selected = df.iloc[:,[gender, nationality, registration_date, job_title]]
     df_selected.columns = ['Gender','Nationality','Registration_date','Title']
     return df_selected
+# Collect data to controller
 
-
+# Model
 def add_cat_title(df):
     df['Title_Categories'] = df['Title'].apply(cat_title)
     return df
 
 
+# Controller
 def plot_counts(df,year):
     cols = df.keys().tolist()
     bar_cols = [cols[0],cols[1],cols[4]]  # change here to include more columns for count plots
@@ -46,6 +49,8 @@ def plot_counts(df,year):
         sns.countplot(x = str(col), data = df)
         # directory = Tk.tk() # Something about
         plt.savefig(str(col) + str(year) + '.jpg')
+
+# Show graph in viewer
 
 # def plot_accumulated_count(df,year):
 # def save_df():
