@@ -4,9 +4,9 @@ import click
 
 @click.command()
 @click.option('--csv', default="data.csv", help='read csv format data')
-def main(readcsv):
+def main(csv):
     print("Lets analyze something.")
-    ag.go(readcsv)
+    ag.go(csv)
 
 
 if __name__ == '__main__':
