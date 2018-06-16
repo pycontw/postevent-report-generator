@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def plot_counts(df, year):
     cols = df.keys().tolist()
     # change here to include more columns for count plots
-    bar_cols = [cols[0],cols[1],cols[4]]
+    bar_cols = [cols[0], cols[1], cols[4]]
     for col in bar_cols:
         fig, ax = plt.subplots(figsize=(12, 8))
         plt.title(str(col)+' of the Attendees at PyCon Taiwan in ' + str(year))
