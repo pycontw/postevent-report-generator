@@ -1,5 +1,5 @@
 def welcome_ask_year():
-    print("Welcome to the PyCon attendies analyzer.")
+    print("Welcome to the PyCon attendees analyzer.")
     year = int(input('Please enter the year to be analyzed: '))
     return year
 
@@ -17,8 +17,11 @@ def select_column(df):
                        '"性別/Gender": '))
     job_title = int(input('Please select the number for '
                           '"職稱/Job Titles": '))
-    df_selected = df.iloc[:,[gender, nationality,
-                             registration_date, job_title]]
-    df_selected.columns = ['Gender','Nationality','Registration_date','Title']
+
+    df_selected = df.iloc[:, [gender, nationality,
+                              registration_date, job_title]]
+
+    df_selected.columns = ['Gender', 'Nationality',
+                           'Registration_date', 'Title']
 
     return df_selected
