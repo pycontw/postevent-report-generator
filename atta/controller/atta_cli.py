@@ -6,6 +6,7 @@ import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
 import atta.io.plotter as plotter
+import atta.io.csv as attacsv
 
 
 logger = logging.getLogger('atta')
@@ -29,17 +30,12 @@ def main(csv, interactive, conf):
         logger.debug('User customized conf is specified: %s' % conf_singlet)
         conf_singlet.read_configuration(conf)
 
-    # read csv as pandas dataframe
-    df = pd.read_csv(csv)
-    # Print the keys as bug messages
-    logging.debug(df.keys())
+    df = attacsv.csv_to_dataframe(csv)
 
     # welcome user, ask year of data
     year = vtext.welcome_ask_year(interactive)
     # select necessary columns from df
     df = vtext.select_column(df, interactive)
-
-    df = ag.add_cat_title(df)
 
     # everything is ready. let's call analyzer to do something
     df = ag.add_cat_title(df)
