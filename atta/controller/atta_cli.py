@@ -1,12 +1,14 @@
 import click
+import pkg_resources
 import logging
 import pandas as pd
-import pkg_resources
 import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
 import atta.io.plotter as plotter
 
+
+logger = logging.getLogger('atta')
 
 resource_package = __name__
 resource_path = '/'.join(('../data', 'default.ini'))
@@ -23,6 +25,10 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 def main(csv, interactive, conf):
     conf_singlet = attaconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
+    if conf:
+        logger.debug('User customized conf is specified: %s' % conf_singlet)
+        conf_singlet.read_configuration(conf)
+
     # read csv as pandas dataframe
     df = pd.read_csv(csv)
     # Print the keys as bug messages
