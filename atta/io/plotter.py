@@ -17,6 +17,13 @@ def plot_count(df, col, year):
     ax.set_xlabel(xlabel=str(col))
     ax.set_ylabel(ylabel="Counts")
     sns.set(font_scale=2)
-    sns.countplot(x = str(col), data = df)
-    # directory = Tk.tk() # Something about
+    order = get_order(df, col)
+
+    sns.countplot(x=str(col), data=df, order=order)
     plt.savefig(str(col) + str(year) + '.jpg')
+
+
+def get_order(df, col):
+    col_counts = df[col].value_counts()
+
+    return col_counts.index
