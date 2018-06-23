@@ -20,11 +20,11 @@ source folder so you won't commit your raw data accidentally.
 
 Create the working virtual environment
 
-```virtualenv -p python3 ./attendees-analyzer-working/venv```
+```virtualenv -p python3 ./attendees-analyzer/venv```
 
 Activate your virtual environment by
 
-```source ./attendees-analyzer-working/venv/bin/activate```
+```source ./attendees-analyzer/venv/bin/activate```
 
 ## Install The Prerequisite Modules
 
@@ -68,7 +68,7 @@ OK
 
 After launching your virtual environment, issue the following command:
 
-```atta --readcsv ../attendees-analyzer-working/2017Attendees.csv```
+```atta --csv ../attendees-analyzer-working/2017Attendees.csv```
 
 Follow the prompt instruction and you will get jpg images. So far it is well
  tested with the data of year 2017.
