@@ -18,7 +18,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 
 
 @click.command()
-@click.option('--csv', default="data.csv",
+@click.option('--readcsv', default="data.csv",
               help='Read csv format data')
 @click.option('--interactive/--no-interactive', default=False,
               help='Quiet mode. Useful for automation. True for no prompt.')
