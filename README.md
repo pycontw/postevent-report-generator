@@ -9,7 +9,7 @@ Attendees-analyzer (atta) is a command line tool for you to generate a basic
 
 Fetch the source
 
-```https://github.com/tai271828/attendees-analyzer.git```
+```git clone https://github.com/tai271828/attendees-analyzer.git```
 
 Create a working folder to place your attendee raw data outside of the 
 source folder so you won't commit your raw data accidentally.

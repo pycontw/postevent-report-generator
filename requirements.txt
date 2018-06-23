@@ -3,3 +3,5 @@ seaborn
 numpy
 matplotlib
 click
+pillow
+pytest
