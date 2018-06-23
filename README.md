@@ -18,20 +18,27 @@ source folder so you won't commit your raw data accidentally.
 
 ## Create Your Own Python Virtual Environment
 
-Create the working virtual environment
+- Create the working virtual environment with virtualenv
 
-```virtualenv -p python3 ./attendees-analyzer/venv```
+    ```virtualenv -p python3 ./attendees-analyzer/venv```
 
-Activate your virtual environment by
+    Activate your virtual environment by
 
-```source ./attendees-analyzer/venv/bin/activate```
+    ```source ./attendees-analyzer/venv/bin/activate```
+
+- Or create and activate with conda  
+    ```conda create -n {your_env_name} python=3.6 anaconda```  
+    ```source activate {your_env_name}```
 
 ## Install The Prerequisite Modules
 
-Go the source folder
+- Go the source folder
 
-```pip install -r requirements.txt```
+    ```pip install -r requirements.txt```
 
+- Or install with conda
+
+    ```conda install --yes --file requirements.txt```
 
 ## Install Attendees Analyzer
 
