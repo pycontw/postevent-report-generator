@@ -23,7 +23,31 @@ def plot_count(df, col, year):
     plt.savefig(str(col) + str(year) + '.jpg')
 
 
+def reorder(order, tag, col, chart_type='Title_Categories'):
+    """
+    Relocate the tag column to be the last bin of the order.
+
+    :param order: iterable order.
+    :param tag: string
+    :param col: input column title
+    :param chart_type: which chart you want to reorder
+    :return: ordered order
+    """
+    if col == chart_type:
+        order = list(order)
+        others_index = order.index(tag)
+        order.pop(others_index)
+        order.append(tag)
+
+    return order
+
+
 def get_order(df, col):
     col_counts = df[col].value_counts()
 
-    return col_counts.index
+    if col_counts.get('Others'):
+        order = reorder(col_counts.index, 'Others', col)
+    else:
+        order = col_counts.index
+
+    return order
