@@ -48,6 +48,7 @@ def main(csv, interactive, conf):
 
     # everything is ready. let's call analyzer to do something
     df_all = ag.add_cat_title(df_all)
+    df_all = df_all.fillna(value="No Record")
 
     # analyzed data frame is ready. let's plot
     plotter.plot_counts(df_all, year)
