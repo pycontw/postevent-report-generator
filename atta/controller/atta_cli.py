@@ -1,7 +1,6 @@
 import click
 import pkg_resources
 import logging
-import pandas as pd
 import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
@@ -18,7 +17,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 
 
 @click.command()
-@click.option('--csv', default="data.csv",
+@click.option('--csv', default="data.csv", multiple=True,
               help='Read csv format data')
 @click.option('--interactive/--no-interactive', default=False,
               help='Quiet mode. Useful for automation. True for no prompt.')
