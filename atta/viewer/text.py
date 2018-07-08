@@ -15,8 +15,15 @@ def welcome_ask_year(interactive=False):
     return year
 
 
-def select_column(df, interactive):
+def pickup_column(column_title, csv_index, field_seperator=','):
     attendee_session = conf_singlet.config['ATTENDEE']
+    column_titles = attendee_session[column_title]
+    column_number = column_titles.split(field_seperator)[csv_index]
+
+    return column_number
+
+
+def select_column(df, interactive, csv_index):
 
     cols = df.keys().tolist()
     for i, col in enumerate(cols):
@@ -32,10 +39,10 @@ def select_column(df, interactive):
         job_title = int(input('Please select the number for '
                               '"職稱/Job Titles": '))
     else:
-        registration_date = int(attendee_session['paid_date'])
-        nationality = int(attendee_session['nationality'])
-        gender = int(attendee_session['gender'])
-        job_title = int(attendee_session['job_title'])
+        registration_date = int(pickup_column('paid_date', csv_index))
+        nationality = int(pickup_column('nationality', csv_index))
+        gender = int(pickup_column('gender', csv_index))
+        job_title = int(pickup_column('job_title', csv_index))
 
     df_selected = df.iloc[:, [gender,
                               nationality,

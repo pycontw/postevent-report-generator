@@ -1,6 +1,7 @@
 import click
 import pkg_resources
 import logging
+import pandas as pd
 import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
@@ -29,18 +30,27 @@ def main(csv, interactive, conf):
         logger.debug('User customized conf is specified: %s' % conf_singlet)
         conf_singlet.read_configuration(conf)
 
-    df = attacsv.csv_to_dataframe(csv)
-
     # welcome user, ask year of data
     year = vtext.welcome_ask_year(interactive)
-    # select necessary columns from df
-    df = vtext.select_column(df, interactive)
+
+    frames = []
+    for csv_single in csv:
+        csv_index = csv.index(csv_single)
+
+        df = attacsv.csv_to_dataframe(csv_single)
+
+        # select necessary columns from df
+        df = vtext.select_column(df, interactive, csv_index)
+
+        frames.append(df)
+
+    df_all = pd.concat(frames, join='outer', axis=0)
 
     # everything is ready. let's call analyzer to do something
-    df = ag.add_cat_title(df)
+    df_all = ag.add_cat_title(df_all)
 
     # analyzed data frame is ready. let's plot
-    plotter.plot_counts(df, year)
+    plotter.plot_counts(df_all, year)
 
     print('Analysis process finished completely.')
 
