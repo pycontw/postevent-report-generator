@@ -4,10 +4,11 @@ import matplotlib.pyplot as plt
 
 def plot_counts(df, year):
     cols = df.keys().tolist()
-    # change here to include more columns for count plots
-    bar_cols = [cols[0], cols[1], cols[4]]
-    for col in bar_cols:
-        plot_count(df, col, year)
+    figs = {}
+    for col in cols:
+        figs.update(plot_count(df, col, year))
+
+    return figs
 
 
 def plot_count(df, col, year):
@@ -20,7 +21,15 @@ def plot_count(df, col, year):
     order = get_order(df, col)
 
     sns.countplot(x=str(col), data=df, order=order)
-    plt.savefig(str(col) + str(year) + '.jpg')
+    return save_fig(str(col))
+
+
+def save_fig(identifier):
+    fig_name = identifier + '.jpg'
+    fig_path = '/tmp/' + fig_name
+    plt.savefig(fig_path)
+
+    return {identifier: fig_path}
 
 
 def reorder(order, tag, col, chart_type='Title_Categories'):
