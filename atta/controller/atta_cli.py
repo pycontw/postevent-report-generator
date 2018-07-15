@@ -7,6 +7,7 @@ import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
 import atta.io.plotter as plotter
 import atta.io.csv as attacsv
+import atta.exporter.html as exporter_html
 
 
 logger = logging.getLogger('atta')
@@ -51,7 +52,11 @@ def main(csv, interactive, conf):
     df_all = df_all.fillna(value="No Record")
 
     # analyzed data frame is ready. let's plot
-    plotter.plot_counts(df_all, year)
+    figs = plotter.plot_counts(df_all, year)
+
+    # generate the report
+    exporter_html.generate(figs)
+
 
     print('Analysis process finished completely.')
 
