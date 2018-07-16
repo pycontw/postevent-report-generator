@@ -1,0 +1,19 @@
+- platinum:
+  - description: True
+  - web_click: True
+  - web_click_rank: True
+  - promotion:
+    - facebook_url: True
+    - facebook_engagement: True
+- gold:
+  - description: True
+  - web_click: True
+  - web_click_rank: True
+- silver:
+  - description: True
+  - web_click: True
+  - web_click_rank: False
+- bronze:
+  - description: True
+  - web_click: False
+  - web_click_rank: False

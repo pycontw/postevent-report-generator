@@ -1,0 +1,50 @@
+- Title_Categories:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for job titles.
+- Nationality:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for nationality.
+- Seniority:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for seniority.
+- Gender:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for gender.
+- Registration_date:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for registration date.
