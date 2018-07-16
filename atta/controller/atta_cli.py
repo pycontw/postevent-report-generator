@@ -7,6 +7,7 @@ import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
 import atta.io.plotter as plotter
 import atta.io.csv as attacsv
+import atta.io.yaml as attayaml
 import atta.exporter.html as exporter_html
 
 
@@ -24,7 +25,9 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option('--interactive/--no-interactive', default=False,
               help='Quiet mode. Useful for automation. True for no prompt.')
 @click.option('--conf', help='Configuration file of how to analyze')
-def main(csv, interactive, conf):
+@click.option('--yaml', help='Report yaml file to describe how a report '
+                             'would be')
+def main(csv, interactive, conf, yaml):
     conf_singlet = attaconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
@@ -54,8 +57,11 @@ def main(csv, interactive, conf):
     # analyzed data frame is ready. let's plot
     figs = plotter.plot_counts(df_all, year)
 
+    # read the other report data
+    report_yaml = attayaml.read_yaml(yaml)
+
     # generate the report
-    exporter_html.generate(figs)
+    exporter_html.generate(figs, report_yaml)
 
 
     print('Analysis process finished completely.')

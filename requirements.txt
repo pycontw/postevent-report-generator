@@ -6,3 +6,4 @@ click
 pillow
 pytest
 jinja2
+pyyaml

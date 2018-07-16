@@ -7,7 +7,7 @@ loader=PackageLoader('atta.exporter', 'data')
 env = Environment(loader=loader)
 
 
-def generate(data=None):
+def generate(data=None, yaml=None):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -25,9 +25,21 @@ def generate(data=None):
         data_uri = base64.b64encode(img_data).decode('utf-8').replace('\n','')
         tag_template = '<img src="data:image/jpg;base64,{0}">'
         img_tag = tag_template.format(data_uri)
-
         all_tags.update({tag: img_tag})
 
-    with open('/tmp/zzz.html', 'w') as fhandler:
+        for entry in yaml:
+            tag_yaml = entry.get(tag)
+            if tag_yaml:
+                p_tag_template = '<p>{0}</p>'
+                p_tag = ''
+                for meta in tag_yaml:
+                    tag_description = meta.get('description')
+                    if tag_description:
+                        p_tag = p_tag_template.format(tag_description)
+
+                all_tags.update({tag + '_Description': p_tag})
+
+
+    with open('/tmp/atta.html', 'w') as fhandler:
         r = template.render(**all_tags)
         fhandler.write(r)
