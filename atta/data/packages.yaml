@@ -11,7 +11,7 @@
   - booth:
     - participant: True
     - participant_ratio: True
-  - workshop: True
+  - workshop:
     - pictures: True
     - description: True
 - gold:
@@ -27,7 +27,7 @@
   - booth:
     - participant: True
     - participant_ratio: True
-  - workshop: False
+  - workshop:
     - pictures: False
     - description: False
 - silver:
@@ -43,7 +43,7 @@
   - booth:
     - participant: True
     - participant_ratio: False
-  - workshop: False
+  - workshop:
     - pictures: False
     - description: False
 - bronze:
@@ -59,6 +59,6 @@
   - booth:
     - participant: False
     - participant_ratio: False
-  - workshop: False
+  - workshop:
     - pictures: False
     - description: False
