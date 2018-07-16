@@ -14,3 +14,20 @@
       https://www.facebook.com/pycontw/posts/1657384737713695
       https://www.facebook.com/pycontw/posts/1664637866988382
       https://www.facebook.com/pycontw/posts/1674253916026777
+    - facebook_reach: 10000
+    - facebook_engagement: 10000
+  - booth:
+    - participant: 1000
+  - workshop:
+    - pictures:
+      /tmp/01.jpg
+      /tmp/02.jpg
+    - description: >-
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+        Nullam enim leo, egestas id, condimentum at,
+        laoreet mattis, massa. Sed eleifend nonummy diam.
+        Praesent mauris ante, elementum et, bibendum at,
+        posuere sit amet, nibh. Duis tincidunt lectus quis dui
+        from the customized yaml for gandi.
+    - event_url: https://pycontw.kktix.cc/events/20180527-domain

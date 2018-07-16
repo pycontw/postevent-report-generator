@@ -5,7 +5,7 @@
   - promotion:
     - facebook_url: True
     - facebook_reach: True
-    - facebokk_reach_rank: True
+    - facebook_reach_rank: True
     - facebook_engagement: True
     - facebook_engagement_rank: True
   - booth:
@@ -14,6 +14,7 @@
   - workshop:
     - pictures: True
     - description: True
+    - event_url: True
 - gold:
   - description: True
   - web_click: True
@@ -21,7 +22,7 @@
   - promotion:
     - facebook_url: True
     - facebook_reach: True
-    - facebokk_reach_rank: True
+    - facebook_reach_rank: True
     - facebook_engagement: True
     - facebook_engagement_rank: True
   - booth:
@@ -37,7 +38,7 @@
   - promotion:
     - facebook_url: True
     - facebook_reach: True
-    - facebokk_reach_rank: False
+    - facebook_reach_rank: False
     - facebook_engagement: True
     - facebook_engagement_rank: False
   - booth:
@@ -53,7 +54,7 @@
   - promotion:
     - facebook_url: True
     - facebook_reach: True
-    - facebokk_reach_rank: False
+    - facebook_reach_rank: False
     - facebook_engagement: True
     - facebook_engagement_rank: False
   - booth:
