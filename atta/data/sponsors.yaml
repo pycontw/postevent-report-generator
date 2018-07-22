@@ -10,10 +10,10 @@
       from the customized yaml for gandi.
   - web_click: 600
   - promotion:
-    - facebook_url: >-
-        https://www.facebook.com/pycontw/posts/1657384737713695
-        https://www.facebook.com/pycontw/posts/1664637866988382
-        https://www.facebook.com/pycontw/posts/1674253916026777
+    - facebook_url:
+      - https://www.facebook.com/pycontw/posts/1657384737713695
+      - https://www.facebook.com/pycontw/posts/1664637866988382
+      - https://www.facebook.com/pycontw/posts/1674253916026777
     - facebook_reach: 10000
     - facebook_engagement: 10000
   - booth:
@@ -43,10 +43,10 @@
       from the customized yaml for gandi.
   - web_click: 400
   - promotion:
-    - facebook_url: >-
-        https://www.facebook.com/pycontw/posts/1657384737713695
-        https://www.facebook.com/pycontw/posts/1664637866988382
-        https://www.facebook.com/pycontw/posts/1674253916026777
+    - facebook_url:
+      - https://www.facebook.com/pycontw/posts/1657384737713695
+      - https://www.facebook.com/pycontw/posts/1664637866988382
+      - https://www.facebook.com/pycontw/posts/1674253916026777
     - facebook_reach: 10000
     - facebook_engagement: 10000
   - booth:
