@@ -1,4 +1,5 @@
 import base64
+import atta.partner.sponsor as asponsor
 from jinja2 import Environment, PackageLoader
 from jinja2 import Markup
 
@@ -38,6 +39,10 @@ def generate(data=None, yaml=None):
                         p_tag = p_tag_template.format(tag_description)
 
                 all_tags.update({tag + '_Description': p_tag})
+
+
+    sponsor = asponsor.Sponsor()
+    sponsor.get_sponsors()
 
 
     with open('/tmp/atta.html', 'w') as fhandler:
