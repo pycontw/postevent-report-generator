@@ -19,7 +19,7 @@ Gandi:
       reach: 10000
       engagement: 10000
   booth:
-    - participant: 1000
+    participant: 1000
   workshop:
     pictures:
       - /tmp/01.jpg
@@ -51,10 +51,10 @@ Jade:
         - https://www.facebook.com/pycontw/posts/1657384737713695
         - https://www.facebook.com/pycontw/posts/1664637866988382
         - https://www.facebook.com/pycontw/posts/1674253916026777
-      reach: 10000
-      engagement: 10000
+      reach: 9000
+      engagement: 9000
   booth:
-    participant: 1000
+    participant: 900
   workshop:
     pictures:
       - /tmp/01.jpg
