@@ -8,14 +8,16 @@ Gandi:
       Praesent mauris ante, elementum et, bibendum at,
       posuere sit amet, nibh. Duis tincidunt lectus quis dui
       from the customized yaml for gandi.
-  web_click: 600
   promotion:
-    facebook_url:
-      - https://www.facebook.com/pycontw/posts/1657384737713695
-      - https://www.facebook.com/pycontw/posts/1664637866988382
-      - https://www.facebook.com/pycontw/posts/1674253916026777
-    facebook_reach: 10000
-    facebook_engagement: 10000
+    web:
+      web_click: 600
+    facebook:
+      url:
+        - https://www.facebook.com/pycontw/posts/1657384737713695
+        - https://www.facebook.com/pycontw/posts/1664637866988382
+        - https://www.facebook.com/pycontw/posts/1674253916026777
+      reach: 10000
+      engagement: 10000
   booth:
     - participant: 1000
   workshop:
@@ -41,14 +43,16 @@ Jade:
       Praesent mauris ante, elementum et, bibendum at,
       posuere sit amet, nibh. Duis tincidunt lectus quis dui
       from the customized yaml for gandi.
-  web_click: 400
   promotion:
-    facebook_url:
-      - https://www.facebook.com/pycontw/posts/1657384737713695
-      - https://www.facebook.com/pycontw/posts/1664637866988382
-      - https://www.facebook.com/pycontw/posts/1674253916026777
-    facebook_reach: 10000
-    facebook_engagement: 10000
+    web:
+      web_click: 400
+    facebook:
+      url:
+        - https://www.facebook.com/pycontw/posts/1657384737713695
+        - https://www.facebook.com/pycontw/posts/1664637866988382
+        - https://www.facebook.com/pycontw/posts/1674253916026777
+      reach: 10000
+      engagement: 10000
   booth:
     participant: 1000
   workshop:
