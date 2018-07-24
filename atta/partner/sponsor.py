@@ -28,21 +28,34 @@ class Sponsor:
         self.package_content_flag = yaml_packages[self.package_name]
         self.package_content_generic_flag = yaml_packages['generic']
 
+    @property
+    def flag_description(self):
+        return self.package_content_flag['description']
 
     @property
     def description(self):
-        label = 'description'
-        if self.package_content_flag[label]:
-            return self.content[label]
+        if self.flag_description:
+            return self.content['description']
         else:
-            self.package_content_flag[label]
+            self.flag_description
 
+    @property
+    def flag_web_click(self):
+        return self.package_content_flag['promotion']['web']['click']
+
+    @property
+    def web_click(self):
+        if self.flag_web_click:
+            return self.content['promotion']['web']['click']
+        else:
+            return self.flag_web_click
 
 def get_all_sponsors():
     sponsors = []
     for entry in yaml_sponsors:
         sponsor = Sponsor(entry)
         description = sponsor.description
+        web_click = sponsor.web_click
         pass
 
     sponsors.append(sponsor)

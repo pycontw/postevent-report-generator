@@ -10,7 +10,7 @@ Gandi:
       from the customized yaml for gandi.
   promotion:
     web:
-      web_click: 600
+      click: 600
     facebook:
       url:
         - https://www.facebook.com/pycontw/posts/1657384737713695
@@ -45,7 +45,7 @@ Jade:
       from the customized yaml for gandi.
   promotion:
     web:
-      web_click: 400
+      click: 400
     facebook:
       url:
         - https://www.facebook.com/pycontw/posts/1657384737713695
