@@ -1,5 +1,5 @@
 Gandi:
-  level: platinum
+  package: platinum
   description: >-
       Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
@@ -32,7 +32,7 @@ Gandi:
         from the customized yaml for gandi.
     event_url: https://pycontw.kktix.cc/events/20180527-domain
 Jade:
-  level: gold
+  package: gold
   description: >-
       Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
