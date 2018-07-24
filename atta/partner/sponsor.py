@@ -23,24 +23,27 @@ class Sponsor:
     def __init__(self, sponsor_name):
         self.name = sponsor_name
         self.package_name = yaml_sponsors[sponsor_name]['package']
+
+        self.content = yaml_sponsors[self.name]
         self.package_content_flag = yaml_packages[self.package_name]
         self.package_content_generic_flag = yaml_packages['generic']
 
 
-    def get_package_name(self):
-        for entry in yaml_sponsors:
-            if self.name in yaml_sponsors:
-                pass
-
     @property
     def description(self):
-        pass
+        label = 'description'
+        if self.package_content_flag[label]:
+            return self.content[label]
+        else:
+            self.package_content_flag[label]
 
 
 def get_all_sponsors():
     sponsors = []
     for entry in yaml_sponsors:
         sponsor = Sponsor(entry)
+        description = sponsor.description
+        pass
 
     sponsors.append(sponsor)
 
