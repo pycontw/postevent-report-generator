@@ -41,9 +41,7 @@ def generate(data=None, yaml=None):
                 all_tags.update({tag + '_Description': p_tag})
 
 
-    sponsor = asponsor.Sponsor()
-    sponsor.get_sponsors()
-
+    sponsor = asponsor.get_all_sponsors()
 
     with open('/tmp/atta.html', 'w') as fhandler:
         r = template.render(**all_tags)
