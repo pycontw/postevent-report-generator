@@ -22,8 +22,8 @@ class Sponsor:
 
     def __init__(self, sponsor_name):
         self.name = sponsor_name
-        self.package_name = package_name
-        self.package_content_flag = yaml_packages[package_name]
+        self.package_name = yaml_sponsors[sponsor_name]['package']
+        self.package_content_flag = yaml_packages[self.package_name]
         self.package_content_generic_flag = yaml_packages['generic']
 
 
