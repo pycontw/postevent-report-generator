@@ -1,6 +1,6 @@
 Gandi:
-  - level: platinum
-  - description: >-
+  level: platinum
+  description: >-
       Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
       Nullam enim leo, egestas id, condimentum at,
@@ -8,21 +8,21 @@ Gandi:
       Praesent mauris ante, elementum et, bibendum at,
       posuere sit amet, nibh. Duis tincidunt lectus quis dui
       from the customized yaml for gandi.
-  - web_click: 600
-  - promotion:
-    - facebook_url:
+  web_click: 600
+  promotion:
+    facebook_url:
       - https://www.facebook.com/pycontw/posts/1657384737713695
       - https://www.facebook.com/pycontw/posts/1664637866988382
       - https://www.facebook.com/pycontw/posts/1674253916026777
-    - facebook_reach: 10000
-    - facebook_engagement: 10000
-  - booth:
+    facebook_reach: 10000
+    facebook_engagement: 10000
+  booth:
     - participant: 1000
-  - workshop:
-    - pictures:
+  workshop:
+    pictures:
       - /tmp/01.jpg
       - /tmp/02.jpg
-    - description: >-
+    description: >-
         Lorem ipsum dolor sit amet,
         consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
         Nullam enim leo, egestas id, condimentum at,
@@ -30,10 +30,10 @@ Gandi:
         Praesent mauris ante, elementum et, bibendum at,
         posuere sit amet, nibh. Duis tincidunt lectus quis dui
         from the customized yaml for gandi.
-    - event_url: https://pycontw.kktix.cc/events/20180527-domain
+    event_url: https://pycontw.kktix.cc/events/20180527-domain
 Jade:
-  - level: gold
-  - description: >-
+  level: gold
+  description: >-
       Lorem ipsum dolor sit amet,
       consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
       Nullam enim leo, egestas id, condimentum at,
@@ -41,21 +41,21 @@ Jade:
       Praesent mauris ante, elementum et, bibendum at,
       posuere sit amet, nibh. Duis tincidunt lectus quis dui
       from the customized yaml for gandi.
-  - web_click: 400
-  - promotion:
-    - facebook_url:
+  web_click: 400
+  promotion:
+    facebook_url:
       - https://www.facebook.com/pycontw/posts/1657384737713695
       - https://www.facebook.com/pycontw/posts/1664637866988382
       - https://www.facebook.com/pycontw/posts/1674253916026777
-    - facebook_reach: 10000
-    - facebook_engagement: 10000
-  - booth:
-    - participant: 1000
-  - workshop:
-    - pictures:
+    facebook_reach: 10000
+    facebook_engagement: 10000
+  booth:
+    participant: 1000
+  workshop:
+    pictures:
       - /tmp/01.jpg
       - /tmp/02.jpg
-    - description: >-
+    description: >-
         Lorem ipsum dolor sit amet,
         consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
         Nullam enim leo, egestas id, condimentum at,
@@ -63,4 +63,4 @@ Jade:
         Praesent mauris ante, elementum et, bibendum at,
         posuere sit amet, nibh. Duis tincidunt lectus quis dui
         from the customized yaml for gandi.
-    - event_url: https://pycontw.kktix.cc/events/20180527-domain
+    event_url: https://pycontw.kktix.cc/events/20180527-domain
