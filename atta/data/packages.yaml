@@ -1,3 +1,20 @@
+- generic:
+  - description: True
+  - web_click: False
+  - web_click_rank: False
+  - promotion:
+    - facebook_url: False
+    - facebook_reach: False
+    - facebook_reach_rank: False
+    - facebook_engagement: False
+    - facebook_engagement_rank: False
+  - booth:
+    - participant: False
+    - participant_ratio: False
+  - workshop:
+    - pictures: False
+    - description: False
+    - event_url: False
 - platinum:
   - description: True
   - web_click: True
