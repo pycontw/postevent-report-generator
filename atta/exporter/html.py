@@ -50,6 +50,8 @@ def generate(data=None, yaml=None):
 
         all_tags.update({'table_sponsor_package': tsp})
 
-        with open('/tmp/atta.html', 'w') as fhandler:
+        filename_template = '/tmp/post-event-report-sponsor-{}.html'
+        filename = filename_template.format(sponsor.name)
+        with open(filename, 'w') as fhandler:
             r = template.render(**all_tags)
             fhandler.write(r)

@@ -286,6 +286,6 @@ def get_all_sponsors():
         # workshop_event_url = sponsor.workshop_event_url
         # pass
 
-    sponsors.append(sponsor)
+        sponsors.append(sponsor)
 
     return sponsors
