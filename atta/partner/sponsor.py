@@ -4,23 +4,27 @@ import atta.io.yaml as attayaml
 
 logger = logging.getLogger('atta')
 
-resource_package = __name__
-resource_path_packages = '/'.join(('../data', 'packages.yaml'))
-resource_path_sponsors = '/'.join(('../data', 'sponsors.yaml'))
+# resource_package = __name__
+# resource_path_packages = '/'.join(('../data', 'packages.yaml'))
+# resource_path_sponsors = '/'.join(('../data', 'sponsors.yaml'))
+#
+# template_packages = pkg_resources.resource_stream(resource_package,
+#                                                   resource_path_packages)
+#
+# template_sponsors = pkg_resources.resource_stream(resource_package,
+#                                                   resource_path_sponsors)
 
-template_packages = pkg_resources.resource_stream(resource_package,
-                                                  resource_path_packages)
-
-template_sponsors = pkg_resources.resource_stream(resource_package,
-                                                  resource_path_sponsors)
-
-yaml_packages = attayaml.read_yaml(template_packages.name)
-yaml_sponsors = attayaml.read_yaml(template_sponsors.name)
+#yaml_packages = attayaml.read_yaml(template_packages.name)
+#yaml_sponsors = attayaml.read_yaml(template_sponsors.name)
 
 
 class Sponsor:
 
-    def __init__(self, sponsor_name):
+    def __init__(self, sponsor_name, package_yaml, sponsor_yaml):
+        yaml_packages = attayaml.read_yaml(package_yaml)
+        yaml_sponsors = attayaml.read_yaml(sponsor_yaml)
+        self.yaml_sponsors = yaml_sponsors
+
         self.name = sponsor_name
         self.package_name = yaml_sponsors[sponsor_name]['package']
 
@@ -228,32 +232,35 @@ class Sponsor:
 
     def _get_all_sponsor_click(self):
         clicks = []
-        for sponsor in yaml_sponsors.keys():
-            clicks.append(yaml_sponsors[sponsor]['promotion']['web']['click'])
+        for sponsor in self.yaml_sponsors.keys():
+            clicks.append(self.yaml_sponsors[sponsor]['promotion']['web'][
+                              'click'])
 
         return clicks
 
     def _get_all_sponsor_fb_field(self, field):
         all_data = []
-        for sponsor in yaml_sponsors.keys():
-            data = yaml_sponsors[sponsor]['promotion']['facebook'][field]
+        for sponsor in self.yaml_sponsors.keys():
+            data = self.yaml_sponsors[sponsor]['promotion']['facebook'][field]
             all_data.append(data)
 
         return all_data
 
     def _get_all_sponsor_booth_participant(self):
         all_data = []
-        for sponsor in yaml_sponsors.keys():
-            data = yaml_sponsors[sponsor]['boot']['participant']
+        for sponsor in self.yaml_sponsors.keys():
+            data = self.yaml_sponsors[sponsor]['boot']['participant']
             all_data.append(data)
 
         return all_data
 
 
-def get_all_sponsors():
+def get_all_sponsors(package_yaml, sponsor_yaml):
+    yaml_sponsors = attayaml.read_yaml(sponsor_yaml)
+
     sponsors = []
     for entry in yaml_sponsors:
-        sponsor = Sponsor(entry)
+        sponsor = Sponsor(entry, package_yaml, sponsor_yaml)
         # TODO: to port these debug information to be a part of test scripts
         # description = sponsor.description
         #

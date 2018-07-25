@@ -6,7 +6,8 @@ from atta.partner import sponsor
 class TestSponsor(unittest.TestCase):
 
     def test_attributes(self):
-        sponsors = sponsor.get_all_sponsors()
+        sponsors = sponsor.get_all_sponsors('./data/packages.yaml',
+                                            './data/sponsors.yaml')
         self.assertEqual(len(sponsors), 2)
 
 

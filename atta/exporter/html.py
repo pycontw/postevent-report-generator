@@ -8,7 +8,7 @@ loader=PackageLoader('atta.exporter', 'data')
 env = Environment(loader=loader)
 
 
-def generate(data=None, yaml=None):
+def generate(data=None, yaml=None, sponsors=None):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -39,9 +39,6 @@ def generate(data=None, yaml=None):
                         p_tag = p_tag_template.format(tag_description)
 
                 all_tags.update({tag + '_Description': p_tag})
-
-
-    sponsors = asponsor.get_all_sponsors()
 
     for sponsor in sponsors:
         table_sponsor_package_template = '<td>{0}</td><td>{1}</td>'
