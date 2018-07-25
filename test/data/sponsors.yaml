@@ -1,0 +1,70 @@
+Gandi:
+  package: platinum
+  description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for gandi.
+  promotion:
+    web:
+      click: 600
+    facebook:
+      url:
+        - https://www.facebook.com/pycontw/posts/1657384737713695
+        - https://www.facebook.com/pycontw/posts/1664637866988382
+        - https://www.facebook.com/pycontw/posts/1674253916026777
+      reach: 10000
+      engagement: 10000
+  booth:
+    participant: 1000
+  workshop:
+    pictures:
+      - /tmp/01.jpg
+      - /tmp/02.jpg
+    description: >-
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+        Nullam enim leo, egestas id, condimentum at,
+        laoreet mattis, massa. Sed eleifend nonummy diam.
+        Praesent mauris ante, elementum et, bibendum at,
+        posuere sit amet, nibh. Duis tincidunt lectus quis dui
+        from the customized yaml for gandi.
+    event_url: https://pycontw.kktix.cc/events/20180527-domain
+Jade:
+  package: gold
+  description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for gandi.
+  promotion:
+    web:
+      click: 400
+    facebook:
+      url:
+        - https://www.facebook.com/pycontw/posts/1657384737713695
+        - https://www.facebook.com/pycontw/posts/1664637866988382
+        - https://www.facebook.com/pycontw/posts/1674253916026777
+      reach: 9000
+      engagement: 9000
+  booth:
+    participant: 900
+  workshop:
+    pictures:
+      - /tmp/01.jpg
+      - /tmp/02.jpg
+    description: >-
+        Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+        Nullam enim leo, egestas id, condimentum at,
+        laoreet mattis, massa. Sed eleifend nonummy diam.
+        Praesent mauris ante, elementum et, bibendum at,
+        posuere sit amet, nibh. Duis tincidunt lectus quis dui
+        from the customized yaml for gandi.
+    event_url: https://pycontw.kktix.cc/events/20180527-domain
