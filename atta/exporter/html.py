@@ -41,8 +41,15 @@ def generate(data=None, yaml=None):
                 all_tags.update({tag + '_Description': p_tag})
 
 
-    sponsor = asponsor.get_all_sponsors()
+    sponsors = asponsor.get_all_sponsors()
 
-    with open('/tmp/atta.html', 'w') as fhandler:
-        r = template.render(**all_tags)
-        fhandler.write(r)
+    for sponsor in sponsors:
+        table_sponsor_package_template = '<td>{0}</td><td>{1}</td>'
+        data = [sponsor.name, sponsor.package_name]
+        tsp = table_sponsor_package_template.format(*data)
+
+        all_tags.update({'table_sponsor_package': tsp})
+
+        with open('/tmp/atta.html', 'w') as fhandler:
+            r = template.render(**all_tags)
+            fhandler.write(r)

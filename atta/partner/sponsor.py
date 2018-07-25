@@ -254,36 +254,37 @@ def get_all_sponsors():
     sponsors = []
     for entry in yaml_sponsors:
         sponsor = Sponsor(entry)
-        description = sponsor.description
-
-        flag_promotion = sponsor.if_one_true_promotion
-
-        flag_web = sponsor.if_one_true_web
-        web_click = sponsor.web_click
-        web_click_rank = sponsor.web_click_rank
-
-        flag_facebook = sponsor.if_one_true_facebook
-        flag_facebook_reach = sponsor.flag_facebook_reach
-        facebook_reach = sponsor.facebook_reach
-        flag_facebook_reach_rank = sponsor.flag_facebook_reach_rank
-        facebook_reach_rank = sponsor.facebook_reach_rank
-
-        flag_facebook_engagement = sponsor.flag_facebook_engagement
-        facebook_engagement = sponsor.facebook_engagement
-        flag_facebook_engagement_rank = sponsor.flag_facebook_engagement_rank
-        facebook_engagement_rank = sponsor.facebook_engagement_rank
-
-        flag_booth = sponsor.if_one_true_booth
-        flag_booth_participant = sponsor.flag_booth_participant
-        booth_participant = sponsor.boot_participant
-        # flag_booth_participant_rank = sponsor.flag_booth_participant_rank
-        # booth_participant_rank = sponsor.booth_participant_rank
-
-        flag_workshop = sponsor.if_one_true_workshop
-        workshop_pictures = sponsor.flag_workshop_pictures
-        workshop_description = sponsor.workshop_description
-        workshop_event_url = sponsor.workshop_event_url
-        pass
+        # TODO: to port these debug information to be a part of test scripts
+        # description = sponsor.description
+        #
+        # flag_promotion = sponsor.if_one_true_promotion
+        #
+        # flag_web = sponsor.if_one_true_web
+        # web_click = sponsor.web_click
+        # web_click_rank = sponsor.web_click_rank
+        #
+        # flag_facebook = sponsor.if_one_true_facebook
+        # flag_facebook_reach = sponsor.flag_facebook_reach
+        # facebook_reach = sponsor.facebook_reach
+        # flag_facebook_reach_rank = sponsor.flag_facebook_reach_rank
+        # facebook_reach_rank = sponsor.facebook_reach_rank
+        #
+        # flag_facebook_engagement = sponsor.flag_facebook_engagement
+        # facebook_engagement = sponsor.facebook_engagement
+        # flag_facebook_engagement_rank = sponsor.flag_facebook_engagement_rank
+        # facebook_engagement_rank = sponsor.facebook_engagement_rank
+        #
+        # flag_booth = sponsor.if_one_true_booth
+        # flag_booth_participant = sponsor.flag_booth_participant
+        # booth_participant = sponsor.boot_participant
+        # # flag_booth_participant_rank = sponsor.flag_booth_participant_rank
+        # # booth_participant_rank = sponsor.booth_participant_rank
+        #
+        # flag_workshop = sponsor.if_one_true_workshop
+        # workshop_pictures = sponsor.flag_workshop_pictures
+        # workshop_description = sponsor.workshop_description
+        # workshop_event_url = sponsor.workshop_event_url
+        # pass
 
     sponsors.append(sponsor)
 
