@@ -59,6 +59,10 @@ def generate(data=None, yaml=None, sponsors=None):
 
         all_tags.update({'table_promotion_web': tpw})
 
+        # promotion data
+        # promotion - web
+
+
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
         filename = filename_template.format(sponsor.name)
         with open(filename, 'w') as fhandler:
