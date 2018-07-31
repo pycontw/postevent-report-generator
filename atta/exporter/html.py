@@ -41,6 +41,10 @@ def generate(data=None, yaml=None, sponsors=None):
                 all_tags.update({tag + '_Description': p_tag})
 
     for sponsor in sponsors:
+        # general description
+        all_tags.update({'sponsor_description': sponsor.description})
+
+        # general summary tables
         table_sponsor_package_template = '<td>{0}</td><td>{1}</td>'
         data = [sponsor.name, sponsor.package_name]
         tsp = table_sponsor_package_template.format(*data)
