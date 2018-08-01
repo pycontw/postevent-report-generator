@@ -88,7 +88,7 @@ Appier:
       from the customized yaml for gandi.
   promotion:
     web:
-      click: 400
+      click: 300
     facebook:
       url:
         https://www.facebook.com/pycontw/posts/1657384737713695:
@@ -127,7 +127,7 @@ Carousell:
       from the customized yaml for gandi.
   promotion:
     web:
-      click: 400
+      click: 200
     facebook:
       url:
         https://www.facebook.com/pycontw/posts/1657384737713695:

@@ -87,7 +87,7 @@ class Sponsor:
             clicks = self._get_all_sponsor_web_click()
             click_target = self.content['promotion']['web']['click']
             clicks_sorted = sorted(clicks, reverse=True)
-            idx = clicks.index(click_target)
+            idx = clicks_sorted.index(click_target)
             rank = idx + 1
 
             return rank
