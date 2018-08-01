@@ -37,18 +37,76 @@
                 <h1>Summary Python Conference Taiwan</h1>
             </div><!-- /header -->
             <div role="main" class="ui-content jqm-content">
-                <table>
-                    <tr>
-                        <th>Total</th>
-                        <th>xxx</th>
-                        <th>ooo</th>
-                    </tr>
-                    <tr>
-                        <td>aaa</td>
-                        <td>bbb</td>
-                        <td>ccc</td>
-                    </tr>
-                </table>
+                <div class="ui-content jqm-content">
+                    <table>
+                        <tr>
+                            <th>Sponsor Name</th>
+                            <th>Package Name</th>
+                            <th>Total Attendee Number</th>
+                        </tr>
+                        <tr>
+                            {{ table_sponsor_package }}
+                            <td>9999</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ui-content jqm-content">
+                    <table>
+                        <tr>
+                            <th>Logo Web Click Number</th>
+                            <th>Portion of All Clicks</th>
+                            <th>Click Rank Between Logos</th>
+                        </tr>
+                        <tr>
+                            {{ table_promotion_web }}
+                        </tr>
+                    </table>
+                </div>
+               <div class="ui-content jqm-content">
+                    <table>
+                        <tr>
+                            <th>Facebook Post Total Reached People</th>
+                            <th>Portion of Total Reached People</th>
+                            <th>Rank</th>
+                        </tr>
+                        {{ table_promotion_facebook_summary }}
+                    </table>
+                </div>
+               <div class="ui-content jqm-content">
+                    <table>
+                        <tr>
+                            <th>Facebook Post URL</th>
+                            <th>Reached People</th>
+                            <th>Engagement</th>
+                        </tr>
+                        {{ table_promotion_facebook }}
+                    </table>
+                </div>
+               <div class="ui-content jqm-content">
+                    <table>
+                        <tr>
+                            <th>Booth Check-in Number</th>
+                            <th>Check-in Rank</th>
+                        </tr>
+                        <tr>
+                            {{ table_booth }}
+                        </tr>
+                    </table>
+                </div>
+                {% if workshop_flag %}
+                <div class="ui-content jqm-content">
+                    <h2>Workshop Summary</h2>
+                        <div class="ui-content jqm-content">
+                            {{ workshop_event_url }}
+                        </div>
+                        <div class="ui-content jqm-content">
+                            {{ workshop_description }}
+                        </div>
+                </div>
+                {% endif %}
+                <div class="ui-content jqm-content">
+                    {{ sponsor_description }}
+                </div>
                 <div class="ui-content jqm-content">
                     <h2>Job Categories</h2>
                         {{ Title_Categories }}

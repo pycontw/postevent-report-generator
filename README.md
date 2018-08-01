@@ -57,8 +57,14 @@ Now you should be ready to go.
 Go to the test folder and execute the unit tests.
 
 ```
+python -m unittest discover -s ./ -p 'test_*.py
+```
+
+Or you could just run one of them by
+
+```
 cd test
-./title.py
+./test_title.py
 ```
 If you get something like this, it means everything should work as expected.
 
@@ -75,7 +81,12 @@ OK
 
 After launching your virtual environment, issue the following command:
 
-```atta --csv ../attendees-analyzer-working/2017Attendees.csv```
+```
+atta --csv ./a.csv --csv ./b.csv --csv ./c.csv
+--yaml ./atta/data/generic.yaml
+--package-yaml ./examples/packages.yaml
+--sponsor-yaml ./examples/sponsors.yaml
+```
 
 Follow the prompt instruction and you will get jpg images. So far it is well
  tested with the data of year 2017.

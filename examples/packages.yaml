@@ -1,0 +1,95 @@
+generic:
+  description: True
+  promotion:
+    web:
+      click: False
+      click_rank: False
+    facebook:
+      url: False
+      reach: False
+      reach_rank: False
+      engagement: False
+      engagement_rank: False
+  booth:
+    participant: False
+    participant_rank: False
+  workshop:
+    pictures: False
+    description: False
+    event_url: False
+Platinum:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: True
+    facebook:
+      url: True
+      reach: True
+      reach_rank: True
+      engagement: True
+      engagement_rank: True
+  booth:
+    participant: True
+    participant_rank: True
+  workshop:
+    pictures: True
+    description: True
+    event_url: True
+Gold:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: True
+    facebook:
+      url: True
+      reach: True
+      reach_rank: True
+      engagement: True
+      engagement_rank: True
+  booth:
+    participant: True
+    participant_rank: True
+  workshop:
+    pictures: False
+    description: False
+    event_url: False
+Silver:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: False
+    facebook:
+      url: True
+      reach: True
+      reach_rank: False
+      engagement: True
+      engagement_rank: False
+  booth:
+    participant: True
+    participant_rank: False
+  workshop:
+    pictures: False
+    description: False
+    event_url: False
+Bronze:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: False
+    facebook:
+      url: True
+      reach: True
+      reach_rank: False
+      engagement: True
+      engagement_rank: False
+  booth:
+    participant: False
+    participant_rank: False
+  workshop:
+    pictures: False
+    description: False
+    event_url: False

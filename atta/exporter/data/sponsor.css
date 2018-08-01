@@ -180,6 +180,10 @@
     font-size: 1.2em;
     line-height: 1.5;
 }
+.jqm-demos .jqm-content > table{
+    width: 100%;
+    text-align: left;
+}
 .jqm-demos .jqm-content > ul:not(.jqm-list) li {
     font-size: 1.2em;
     line-height: 1.5;

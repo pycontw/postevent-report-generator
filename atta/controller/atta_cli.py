@@ -9,6 +9,7 @@ import atta.io.plotter as plotter
 import atta.io.csv as attacsv
 import atta.io.yaml as attayaml
 import atta.exporter.html as exporter_html
+from atta.partner import sponsor as apsponsor
 
 
 logger = logging.getLogger('atta')
@@ -27,7 +28,11 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option('--conf', help='Configuration file of how to analyze')
 @click.option('--yaml', help='Report yaml file to describe how a report '
                              'would be')
-def main(csv, interactive, conf, yaml):
+@click.option('--package-yaml', help='Package yaml file to describe how a '
+                                     'package is defined')
+@click.option('--sponsor-yaml', help='Sponsor yaml file to describe how a '
+                                     'sponsor is defined')
+def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml):
     conf_singlet = attaconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
@@ -60,8 +65,10 @@ def main(csv, interactive, conf, yaml):
     # read the other report data
     report_yaml = attayaml.read_yaml(yaml)
 
+    sponsors = apsponsor.get_all_sponsors(package_yaml, sponsor_yaml)
+
     # generate the report
-    exporter_html.generate(figs, report_yaml)
+    exporter_html.generate(figs, report_yaml, sponsors)
 
 
     print('Analysis process finished completely.')
