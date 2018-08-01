@@ -17,7 +17,7 @@ generic:
     pictures: False
     description: False
     event_url: False
-platinum:
+Platinum:
   description: True
   promotion:
     web:
@@ -36,7 +36,7 @@ platinum:
     pictures: True
     description: True
     event_url: True
-gold:
+Gold:
   description: True
   promotion:
     web:
@@ -51,6 +51,44 @@ gold:
   booth:
     participant: True
     participant_rank: True
+  workshop:
+    pictures: False
+    description: False
+    event_url: False
+Silver:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: False
+    facebook:
+      url: True
+      reach: True
+      reach_rank: False
+      engagement: True
+      engagement_rank: False
+  booth:
+    participant: True
+    participant_rank: False
+  workshop:
+    pictures: False
+    description: False
+    event_url: False
+Bronze:
+  description: True
+  promotion:
+    web:
+      click: True
+      click_rank: False
+    facebook:
+      url: True
+      reach: True
+      reach_rank: False
+      engagement: True
+      engagement_rank: False
+  booth:
+    participant: False
+    participant_rank: False
   workshop:
     pictures: False
     description: False

@@ -18,6 +18,9 @@ logger = logging.getLogger('atta')
 #yaml_sponsors = attayaml.read_yaml(template_sponsors.name)
 
 
+NA_CONTENT_MESSAGE = 'Not Available form this Package'
+
+
 class Sponsor:
 
     def __init__(self, sponsor_name, package_yaml, sponsor_yaml):
@@ -41,7 +44,7 @@ class Sponsor:
         if self.flag_description:
             return self.content['description']
         else:
-            self.flag_description
+            return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_promotion(self):
@@ -62,7 +65,7 @@ class Sponsor:
         if self.flag_web_click:
             return self.content['promotion']['web']['click']
         else:
-            return self.flag_web_click
+            return NA_CONTENT_MESSAGE
 
     @property
     def flag_web_click_rank(self):
@@ -76,7 +79,7 @@ class Sponsor:
             percentage = click_target / float(sum(clicks))
             return "{:.1%}".format(percentage)
         else:
-            return self.flag_web_click_rank
+            return NA_CONTENT_MESSAGE
 
     @property
     def web_click_rank(self):
@@ -89,7 +92,7 @@ class Sponsor:
 
             return rank
         else:
-            return self.flag_web_click_rank
+            return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_facebook(self):
@@ -105,7 +108,7 @@ class Sponsor:
         if self.flag_facebook_url:
             return self.content['promotion']['facebook']['url']
         else:
-            return self.flag_facebook_url
+            return NA_CONTENT_MESSAGE
 
     @property
     def facebook_total_reached_people(self):
@@ -124,7 +127,7 @@ class Sponsor:
             percentage = sum(target_data) / float(sum(all_data))
             return "{:.1%}".format(percentage)
         else:
-            return self.flag_facebook_reach_rank
+            return NA_CONTENT_MESSAGE
 
     @property
     def facebook_total_reach_rank(self):
@@ -138,7 +141,7 @@ class Sponsor:
 
             return rank
         else:
-            return self.flag_facebook_reach_rank
+            return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_booth(self):
@@ -154,7 +157,7 @@ class Sponsor:
         if self.flag_booth_participant:
             return self.content['booth']['participant']
         else:
-            return self.flag_booth_participant
+            return NA_CONTENT_MESSAGE
 
     @property
     def flag_booth_participant_rank(self):
@@ -171,7 +174,7 @@ class Sponsor:
 
             return rank
         else:
-            return self.flag_booth_participant_rank
+            return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_workshop(self):
@@ -198,7 +201,7 @@ class Sponsor:
         if self.flag_workshop_description:
             return self.content['workshop']['description']
         else:
-            return self.flag_workshop_description
+            return NA_CONTENT_MESSAGE
 
     @property
     def flag_workshop_event_url(self):
@@ -209,7 +212,7 @@ class Sponsor:
         if self.flag_workshop_event_url:
             return self.content['workshop']['event_url']
         else:
-            return self.flag_workshop_event_url
+            return NA_CONTENT_MESSAGE
 
     def _if_one_true_in_1_fold(self, tree):
         flag = False
