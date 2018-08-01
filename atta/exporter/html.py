@@ -63,6 +63,14 @@ def generate(data=None, yaml=None, sponsors=None):
 
         # promotion - facebook
         # table_promotion_facebook: tpf
+        tpf_row_template = '<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>'
+        data = [sponsor.facebook_total_reached_people,
+                sponsor.facebook_total_reach_portion,
+                sponsor.facebook_total_reach_rank]
+        tpf_row = tpf_row_template.format(*data)
+        all_tags.update({'table_promotion_facebook_summary': tpf_row})
+
+        # table_promotion_facebook: tpf
         tpf_rows = ''
         for url in sponsor.facebook_url.keys():
             tpf_row_template = '<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>'
@@ -71,9 +79,7 @@ def generate(data=None, yaml=None, sponsors=None):
                     sponsor.facebook_url[url]['engagement']]
             tpf_row = tpf_row_template.format(*data)
             tpf_rows += tpf_row
-
         all_tags.update({'table_promotion_facebook': tpf_rows})
-
 
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
         filename = filename_template.format(sponsor.name)

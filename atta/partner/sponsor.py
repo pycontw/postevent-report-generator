@@ -95,6 +95,39 @@ class Sponsor:
             return self.flag_facebook_url
 
     @property
+    def facebook_total_reached_people(self):
+        return sum(self._get_sponsor_fb_field('reach'))
+
+    @property
+    def flag_facebook_reach_rank(self):
+        return self.package_content_flag['promotion']['facebook']['reach_rank']
+
+    @property
+    def facebook_total_reach_portion(self):
+        field = 'reach'
+        if self.flag_facebook_reach_rank:
+            all_data = self._get_all_sponsor_fb_field(field)
+            target_data = self._get_sponsor_fb_field(field)
+            percentage = sum(target_data) / float(sum(all_data))
+            return "{:.1%}".format(percentage)
+        else:
+            return self.flag_facebook_reach_rank
+
+    @property
+    def facebook_total_reach_rank(self):
+        field = 'reach'
+        if self.flag_facebook_reach_rank:
+            all_data = self._get_all_sponsor_fb_field(field)
+            target_data = self._get_sponsor_fb_field(field)
+            all_data_sorted = sorted(all_data, reverse=True)
+            idx =  all_data_sorted.index(sum(target_data))
+            rank = idx + 1
+
+            return rank
+        else:
+            return self.flag_facebook_reach_rank
+
+    @property
     def if_one_true_booth(self):
         tree = self.package_content_flag['booth']
         return self._if_one_true_in_1_fold(tree)
@@ -187,11 +220,24 @@ class Sponsor:
 
         return clicks
 
+    def _get_sponsor_fb_field(self, field):
+        all_data = []
+        for url in self.content['promotion']['facebook']['url']:
+            data = self.content['promotion']['facebook']['url'][url][field]
+            all_data.append(data)
+
+        return all_data
+
     def _get_all_sponsor_fb_field(self, field):
         all_data = []
         for sponsor in self.yaml_sponsors.keys():
-            data = self.yaml_sponsors[sponsor]['promotion']['facebook'][field]
-            all_data.append(data)
+            all_data_each_sponsor = []
+            spf = self.yaml_sponsors[sponsor]['promotion']['facebook']['url']
+            for url in spf:
+                data = spf[url][field]
+                all_data_each_sponsor.append(data)
+
+            all_data.append(sum(all_data_each_sponsor))
 
         return all_data
 
