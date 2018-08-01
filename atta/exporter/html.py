@@ -81,6 +81,12 @@ def generate(data=None, yaml=None, sponsors=None):
             tpf_rows += tpf_row
         all_tags.update({'table_promotion_facebook': tpf_rows})
 
+        # booth
+        table_booth_template = '<td>{0}</td><td>{1}</td>'
+        data = [sponsor.booth_participant, sponsor.booth_participant_rank]
+        table_booth = table_booth_template.format(*data)
+        all_tags.update({'table_booth': table_booth})
+
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
         filename = filename_template.format(sponsor.name)
         with open(filename, 'w') as fhandler:

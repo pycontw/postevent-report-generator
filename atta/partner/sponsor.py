@@ -156,19 +156,22 @@ class Sponsor:
         else:
             return self.flag_booth_participant
 
-    # @property
-    # def flag_booth_participant_rank(self):
-    #     return self.package_content_flag['booth']['participant_rank']
-    #
-    # @property
-    # def boot_participant_rank(self):
-    #     if self.flag_booth_participant_rank:
-    #         data = self._get_all_sponsor_booth_participant()
-    #         data_target = self.content['booth']['participant']
-    #         percentage = data_target / float(sum(data))
-    #         return "{:.1%}".format(percentage)
-    #     else:
-    #         return self.flag_booth_participant
+    @property
+    def flag_booth_participant_rank(self):
+        return self.package_content_flag['booth']['participant_rank']
+
+    @property
+    def booth_participant_rank(self):
+        if self.flag_booth_participant_rank:
+            data = self._get_all_sponsor_booth_participant()
+            data_target = self.content['booth']['participant']
+            data_sorted = sorted(data, reverse=True)
+            idx = data_sorted.index(data_target)
+            rank = idx + 1
+
+            return rank
+        else:
+            return self.flag_booth_participant_rank
 
     @property
     def if_one_true_workshop(self):
@@ -257,7 +260,7 @@ class Sponsor:
     def _get_all_sponsor_booth_participant(self):
         all_data = []
         for sponsor in self.yaml_sponsors.keys():
-            data = self.yaml_sponsors[sponsor]['boot']['participant']
+            data = self.yaml_sponsors[sponsor]['booth']['participant']
             all_data.append(data)
 
         return all_data

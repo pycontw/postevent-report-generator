@@ -12,7 +12,7 @@ generic:
       engagement_rank: False
   booth:
     participant: False
-    participant_ratio: False
+    participant_rank: False
   workshop:
     pictures: False
     description: False
@@ -31,7 +31,7 @@ platinum:
       engagement_rank: True
   booth:
     participant: True
-    participant_ratio: True
+    participant_rank: True
   workshop:
     pictures: True
     description: True
@@ -50,7 +50,7 @@ gold:
       engagement_rank: True
   booth:
     participant: True
-    participant_ratio: True
+    participant_rank: True
   workshop:
     pictures: False
     description: False
