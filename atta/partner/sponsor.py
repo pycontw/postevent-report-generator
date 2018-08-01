@@ -104,7 +104,7 @@ class Sponsor:
         return self.package_content_flag['booth']['participant']
 
     @property
-    def boot_participant(self):
+    def booth_participant(self):
         if self.flag_booth_participant:
             return self.content['booth']['participant']
         else:
