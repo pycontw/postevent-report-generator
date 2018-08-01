@@ -69,12 +69,25 @@ class Sponsor:
         return self.package_content_flag['promotion']['web']['click_rank']
 
     @property
-    def web_click_rank(self):
+    def web_click_portion(self):
         if self.flag_web_click_rank:
-            clicks = self._get_all_sponsor_click()
+            clicks = self._get_all_sponsor_web_click()
             click_target = self.content['promotion']['web']['click']
             percentage = click_target / float(sum(clicks))
             return "{:.1%}".format(percentage)
+        else:
+            return self.flag_web_click_rank
+
+    @property
+    def web_click_rank(self):
+        if self.flag_web_click_rank:
+            clicks = self._get_all_sponsor_web_click()
+            click_target = self.content['promotion']['web']['click']
+            clicks_sorted = sorted(clicks, reverse=True)
+            idx = clicks.index(click_target)
+            rank = idx + 1
+
+            return rank
         else:
             return self.flag_web_click_rank
 
@@ -212,13 +225,13 @@ class Sponsor:
 
         return flag
 
-    def _get_all_sponsor_click(self):
-        clicks = []
+    def _get_all_sponsor_web_click(self):
+        all_data = []
         for sponsor in self.yaml_sponsors.keys():
-            clicks.append(self.yaml_sponsors[sponsor]['promotion']['web'][
-                              'click'])
+            spw = self.yaml_sponsors[sponsor]['promotion']['web']['click']
+            all_data.append(spw)
 
-        return clicks
+        return all_data
 
     def _get_sponsor_fb_field(self, field):
         all_data = []

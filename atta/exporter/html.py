@@ -55,7 +55,7 @@ def generate(data=None, yaml=None, sponsors=None):
         # promotion - web
         table_promotion_web = '<td>{0}</td><td>{1}</td><td>{2}</td>'
         data_tpw = [sponsor.web_click,
-                    sponsor.web_click_rank,
+                    sponsor.web_click_portion,
                     sponsor.web_click_rank]
         tpw = table_promotion_web.format(*data_tpw)
 
