@@ -95,57 +95,6 @@ class Sponsor:
             return self.flag_facebook_url
 
     @property
-    def flag_facebook_reach(self):
-        return self.package_content_flag['promotion']['facebook']['reach']
-
-    @property
-    def facebook_reach(self):
-        if self.flag_facebook_reach:
-            return self.content['promotion']['facebook']['reach']
-        else:
-            return self.flag_facebook_reach
-
-    @property
-    def flag_facebook_reach_rank(self):
-        return self.package_content_flag['promotion']['facebook']['reach_rank']
-
-    @property
-    def facebook_reach_rank(self):
-        if self.flag_facebook_reach_rank:
-            data = self._get_all_sponsor_fb_field('reach')
-            data_target = self.content['promotion']['facebook']['reach']
-            percentage = data_target / float(sum(data))
-            return "{:.1%}".format(percentage)
-        else:
-            return self.flag_facebook_reach_rank
-
-    @property
-    def flag_facebook_engagement(self):
-        return self.package_content_flag['promotion']['facebook']['engagement']
-
-    @property
-    def facebook_engagement(self):
-        if self.flag_facebook_engagement:
-            return self.content['promotion']['facebook']['engagement']
-        else:
-            return self.flag_facebook_engagement
-
-    @property
-    def flag_facebook_engagement_rank(self):
-        return self.package_content_flag['promotion']['facebook'][
-            'engagement_rank']
-
-    @property
-    def facebook_engagement_rank(self):
-        if self.flag_facebook_reach_rank:
-            data = self._get_all_sponsor_fb_field('engagement')
-            data_target = self.content['promotion']['facebook']['engagement']
-            percentage = data_target / float(sum(data))
-            return "{:.1%}".format(percentage)
-        else:
-            return self.flag_facebook_engagement_rank
-
-    @property
     def if_one_true_booth(self):
         tree = self.package_content_flag['booth']
         return self._if_one_true_in_1_fold(tree)

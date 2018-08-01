@@ -41,6 +41,10 @@ def generate(data=None, yaml=None, sponsors=None):
                 all_tags.update({tag + '_Description': p_tag})
 
     for sponsor in sponsors:
+        # general description
+        all_tags.update({'sponsor_description': sponsor.description})
+
+        # general summary tables
         table_sponsor_package_template = '<td>{0}</td><td>{1}</td>'
         data = [sponsor.name, sponsor.package_name]
         tsp = table_sponsor_package_template.format(*data)
@@ -54,6 +58,10 @@ def generate(data=None, yaml=None, sponsors=None):
         tpw = table_promotion_web.format(*data_tpw)
 
         all_tags.update({'table_promotion_web': tpw})
+
+        # promotion data
+        # promotion - web
+
 
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
         filename = filename_template.format(sponsor.name)

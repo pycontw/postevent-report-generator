@@ -13,11 +13,15 @@ Gandi:
       click: 600
     facebook:
       url:
-        - https://www.facebook.com/pycontw/posts/1657384737713695
-        - https://www.facebook.com/pycontw/posts/1664637866988382
-        - https://www.facebook.com/pycontw/posts/1674253916026777
-      reach: 10000
-      engagement: 10000
+        https://www.facebook.com/pycontw/posts/1657384737713695:
+          reach: 1000
+          engagement: 2000
+        https://www.facebook.com/pycontw/posts/1664637866988382:
+          reach: 3000
+          engagement: 4000
+        https://www.facebook.com/pycontw/posts/1674253916026777:
+          reach: 5000
+          engagement: 6000
   booth:
     participant: 1000
   workshop:
@@ -48,11 +52,15 @@ Jade:
       click: 400
     facebook:
       url:
-        - https://www.facebook.com/pycontw/posts/1657384737713695
-        - https://www.facebook.com/pycontw/posts/1664637866988382
-        - https://www.facebook.com/pycontw/posts/1674253916026777
-      reach: 9000
-      engagement: 9000
+        https://www.facebook.com/pycontw/posts/1657384737713695:
+          reach: 100
+          engagement: 200
+        https://www.facebook.com/pycontw/posts/1664637866988382:
+          reach: 300
+          engagement: 400
+        https://www.facebook.com/pycontw/posts/1674253916026777:
+          reach: 500
+          engagement: 600
   booth:
     participant: 900
   workshop:
