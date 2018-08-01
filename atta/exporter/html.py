@@ -87,6 +87,11 @@ def generate(data=None, yaml=None, sponsors=None):
         table_booth = table_booth_template.format(*data)
         all_tags.update({'table_booth': table_booth})
 
+        # workshop
+        all_tags.update({'workshop_flag': sponsor.if_one_true_workshop})
+        all_tags.update({'workshop_event_url': sponsor.workshop_event_url})
+        all_tags.update({'workshop_description': sponsor.workshop_description})
+
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
         filename = filename_template.format(sponsor.name)
         with open(filename, 'w') as fhandler:

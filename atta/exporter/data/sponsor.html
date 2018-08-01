@@ -93,6 +93,17 @@
                         </tr>
                     </table>
                 </div>
+                {% if workshop_flag %}
+                <div class="ui-content jqm-content">
+                    <h2>Workshop Summary</h2>
+                        <div class="ui-content jqm-content">
+                            {{ workshop_event_url }}
+                        </div>
+                        <div class="ui-content jqm-content">
+                            {{ workshop_description }}
+                        </div>
+                </div>
+                {% endif %}
                 <div class="ui-content jqm-content">
                     {{ sponsor_description }}
                 </div>
