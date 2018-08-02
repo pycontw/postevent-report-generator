@@ -12,16 +12,43 @@ def plot_counts(df, year):
 
 
 def plot_count(df, col, year):
+    """
+    Core function to plot counts.
+
+    If you want to change the count plots in the report, you would probably
+    need to change this function.
+
+    :param df: dataframe
+    :param col: column
+    :param year: year string
+    :return: saved figure object
+    """
+    col_title = str(col)
+    if col_title == 'Title_Categories':
+        plot_x_description = 'Job Titles'
+    else:
+        plot_x_description = col_title
+
+    # plot seaborn countplot on this fig
     fig, ax = plt.subplots(figsize=(12, 8))
-    plt.title(str(col)+' of the Attendees at PyCon Taiwan in ' + str(year))
-    ax.set_xticklabels(str(col), rotation=0, fontdict={"fontsize": '8'})
-    ax.set_xlabel(xlabel=str(col))
-    ax.set_ylabel(ylabel="Counts")
-    sns.set(font_scale=2)
+
     order = get_order(df, col)
 
-    sns.countplot(x=str(col), data=df, order=order)
-    return save_fig(str(col))
+    sns.set(font_scale=2)
+    # let seaborn controls ax
+    ax = sns.countplot(x=col_title, data=df, order=order)
+
+    ax.set_title(plot_x_description + ' of the Attendees in ' + str(year))
+    ax.set_xlabel(plot_x_description)
+    ax.set_ylabel('Attendee Number')
+    ax.set_xticklabels(order,
+                      rotation=45,
+                      fontdict={"fontsize": '16'})
+
+    # Tweak spacing to prevent clipping of ylabel or xlabel
+    fig.tight_layout()
+
+    return save_fig(col_title)
 
 
 def save_fig(identifier):
