@@ -82,21 +82,37 @@ def reorder(order, tag):
     return order
 
 
-def get_order(df, col):
-    """
-    If there is 'others' col, it should be the last bar.
-
-    :param df:
-    :param col:
-    :return:
-    """
-    pattern = "Other|other"
-
+def get_reorder_by(df, col, pattern, order=None):
     col_counts = df[col].value_counts()
 
-    order = col_counts.index
+    if order is None:
+        order = col_counts.index
+
     for col_title in col_counts.keys():
         if re.search(pattern, col_title) is not None:
-            order = reorder(col_counts.index, col_title)
+            order = reorder(order, col_title)
+
+    return order
+
+
+def get_order(df, col):
+    """
+    If there is 'others' or 'no record' col, it should be the last bar
+
+    If there are others-like and no-record-like in the meantime, no-record-like
+    will be the last one.
+
+    :param df: dataframe
+    :param col: col
+    :return: iterable
+    """
+    col_counts = df[col].value_counts()
+    order = col_counts.index
+
+    pattern = "Other|other"
+    order = get_reorder_by(df, col, pattern, order)
+
+    pattern = "No Record"
+    order = get_reorder_by(df, col, pattern, order)
 
     return order
