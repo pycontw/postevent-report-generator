@@ -1,3 +1,4 @@
+import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
@@ -65,31 +66,37 @@ def save_fig(identifier):
     return {identifier: fig_path}
 
 
-def reorder(order, tag, col, chart_type='Title_Categories'):
+def reorder(order, tag):
     """
     Relocate the tag column to be the last bin of the order.
 
     :param order: iterable order.
     :param tag: string
-    :param col: input column title
-    :param chart_type: which chart you want to reorder
     :return: ordered order
     """
-    if col == chart_type:
-        order = list(order)
-        others_index = order.index(tag)
-        order.pop(others_index)
-        order.append(tag)
+    order = list(order)
+    others_index = order.index(tag)
+    order.pop(others_index)
+    order.append(tag)
 
     return order
 
 
 def get_order(df, col):
+    """
+    If there is 'others' col, it should be the last bar.
+
+    :param df:
+    :param col:
+    :return:
+    """
+    pattern = "Other|other"
+
     col_counts = df[col].value_counts()
 
-    if col_counts.get('Others'):
-        order = reorder(col_counts.index, 'Others', col)
-    else:
-        order = col_counts.index
+    order = col_counts.index
+    for col_title in col_counts.keys():
+        if re.search(pattern, col_title) is not None:
+            order = reorder(col_counts.index, col_title)
 
     return order
