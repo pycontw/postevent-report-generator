@@ -1,5 +1,11 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+
+new_fonts = ['AR PL UKai TW'] + mpl.rcParams['font.sans-serif']
+mpl.rcParams['font.sans-serif'] = new_fonts
+#mpl.rcParams.update({'font.size': 24})
 
 
 def plot_counts(df, year):
@@ -23,6 +29,16 @@ def plot_count(df, col, year):
     :param year: year string
     :return: saved figure object
     """
+    #sns.set(font=new_fonts)
+    #sns.set_style({"font.sans-serif": new_fonts})
+    # chnage seaborn font configuration will override matplotlib font conf
+    # so the CJK fonts could not show correctly. Do not use sns until
+    # I found a solution for it.
+    #
+    # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
+    #
+    #sns.set(font_scale=2)
+
     col_title = str(col)
     if col_title == 'Title_Categories':
         plot_x_description = 'Job Titles'
@@ -34,7 +50,6 @@ def plot_count(df, col, year):
 
     order = get_order(df, col)
 
-    sns.set(font_scale=2)
     # let seaborn controls ax
     ax = sns.countplot(x=col_title, data=df, order=order)
 
