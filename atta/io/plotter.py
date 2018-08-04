@@ -3,11 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 
 
-new_fonts = ['AR PL UKai TW'] + mpl.rcParams['font.sans-serif']
-mpl.rcParams['font.sans-serif'] = new_fonts
-#mpl.rcParams.update({'font.size': 24})
-
-
 def plot_counts(df, year):
     cols = df.keys().tolist()
     figs = {}
@@ -29,15 +24,11 @@ def plot_count(df, col, year):
     :param year: year string
     :return: saved figure object
     """
-    #sns.set(font=new_fonts)
-    #sns.set_style({"font.sans-serif": new_fonts})
-    # chnage seaborn font configuration will override matplotlib font conf
-    # so the CJK fonts could not show correctly. Do not use sns until
-    # I found a solution for it.
-    #
     # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
-    #
-    #sns.set(font_scale=2)
+    # to support CJK fonts
+    sns.set(font_scale=2)
+    new_fonts = ['AR PL UKai TW'] + mpl.rcParams['font.sans-serif']
+    mpl.rcParams['font.sans-serif'] = new_fonts
 
     col_title = str(col)
     if col_title == 'Title_Categories':
@@ -57,7 +48,7 @@ def plot_count(df, col, year):
     ax.set_xlabel(plot_x_description)
     ax.set_ylabel('Attendee Number')
     ax.set_xticklabels(order,
-                      rotation=45,
+                      rotation=90,
                       fontdict={"fontsize": '16'})
 
     # Tweak spacing to prevent clipping of ylabel or xlabel
