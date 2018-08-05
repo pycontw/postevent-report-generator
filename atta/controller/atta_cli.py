@@ -8,6 +8,7 @@ import atta.viewer.text as vtext
 import atta.io.plotter as plotter
 import atta.io.csv as attacsv
 import atta.io.yaml as attayaml
+import atta.ticket.attendee as attendee
 import atta.exporter.html as exporter_html
 from atta.partner import sponsor as apsponsor
 
@@ -59,6 +60,9 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml):
     df_all = ag.add_cat_title(df_all)
     df_all = df_all.fillna(value="No Record")
 
+    # all datafram general data object
+    df_all_g_data_obj = attendee.Attendee(df_all)
+
     # analyzed data frame is ready. let's plot
     figs = plotter.plot_counts(df_all, year)
 
@@ -68,7 +72,13 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml):
     sponsors = apsponsor.get_all_sponsors(package_yaml, sponsor_yaml)
 
     # generate the report
-    exporter_html.generate(figs, report_yaml, sponsors)
+    # general info (everyone could see it):
+    #   figs: plots from attendee dataframe
+    #   df_all_g_data_obj: numbers from attendee dataframe
+    #   report_yaml: plot description of figs
+    # sponsors:
+    #   sponsor specific information based on yaml descriptor
+    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors)
 
 
     print('Analysis process finished completely.')
