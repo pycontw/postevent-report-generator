@@ -101,10 +101,12 @@ def get_reorder_by(df, col, pattern, order=None, reverse=False):
 
 def get_order(df, col):
     """
-    If there is 'others' or 'no record' col, it should be the last bar
+    Get order of x tick labels
 
     If there are others-like and no-record-like in the meantime, no-record-like
     will be the last one.
+
+    If there is seniority within 1 year, it will be the 1st.
 
     :param df: dataframe
     :param col: col
@@ -112,6 +114,9 @@ def get_order(df, col):
     """
     col_counts = df[col].value_counts()
     order = col_counts.index
+
+    pattern = '年以內'
+    order = get_reorder_by(df, col, pattern, order, reverse=True)
 
     pattern = "Other|other"
     order = get_reorder_by(df, col, pattern, order)
