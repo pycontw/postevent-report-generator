@@ -31,7 +31,7 @@ def plot_count(df, col, year):
     new_fonts = ['AR PL UKai TW'] + mpl.rcParams['font.sans-serif']
     mpl.rcParams['font.sans-serif'] = new_fonts
 
-    col_title = str(col)
+    col_title = col
     if col_title == 'Title_Categories':
         plot_x_description = 'Job Titles'
     else:
@@ -51,6 +51,12 @@ def plot_count(df, col, year):
     ax.set_xticklabels(order,
                       rotation=90,
                       fontdict={"fontsize": '16'})
+
+    # Add count value for fileds which counts are too small
+    col_value_counts = df[col_title].value_counts()
+    for idx in range(len(order)):
+        count_on_y = col_value_counts[order[idx]]
+        ax.text(idx, count_on_y, count_on_y)
 
     # Tweak spacing to prevent clipping of ylabel or xlabel
     fig.tight_layout()
