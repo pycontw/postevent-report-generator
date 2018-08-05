@@ -66,23 +66,27 @@ def save_fig(identifier):
     return {identifier: fig_path}
 
 
-def reorder(order, tag):
+def reorder(order, tag, reverse=False):
     """
     Relocate the tag column to be the last bin of the order.
 
     :param order: iterable order.
     :param tag: string
+    :param reverse: True to put it at the beginning, false to be the last
     :return: ordered order
     """
     order = list(order)
     others_index = order.index(tag)
     order.pop(others_index)
-    order.append(tag)
+    if reverse:
+        order = [tag] + order
+    else:
+        order.append(tag)
 
     return order
 
 
-def get_reorder_by(df, col, pattern, order=None):
+def get_reorder_by(df, col, pattern, order=None, reverse=False):
     col_counts = df[col].value_counts()
 
     if order is None:
@@ -90,7 +94,7 @@ def get_reorder_by(df, col, pattern, order=None):
 
     for col_title in col_counts.keys():
         if re.search(pattern, col_title) is not None:
-            order = reorder(order, col_title)
+            order = reorder(order, col_title, reverse)
 
     return order
 
