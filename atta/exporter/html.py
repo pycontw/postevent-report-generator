@@ -1,10 +1,9 @@
 import base64
-import atta.partner.sponsor as asponsor
 from jinja2 import Environment, PackageLoader
 from jinja2 import Markup
 
 
-loader=PackageLoader('atta.exporter', 'data')
+loader = PackageLoader('atta.exporter', 'data')
 env = Environment(loader=loader)
 
 
@@ -18,12 +17,16 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
 
     template = env.get_template('sponsor.html')
 
+    # hosting all tags that will be applied to the jinja2 target string
     all_tags = {}
+
+    # apply general information which everyone could see it
+    # general info - plots
     for tag in data:
         img_path = data[tag]
 
         img_data = open(img_path, 'rb').read()
-        data_uri = base64.b64encode(img_data).decode('utf-8').replace('\n','')
+        data_uri = base64.b64encode(img_data).decode('utf-8').replace('\n', '')
         tag_template = '<img src="data:image/jpg;base64,{0}">'
         img_tag = tag_template.format(data_uri)
         all_tags.update({tag: img_tag})
@@ -40,6 +43,13 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
 
                 all_tags.update({tag + '_Description': p_tag})
 
+        # general info - attendee number
+        total_attendee_number = str(attendee_obj.total_attendee_number)
+        total_attendee_number_tag = '<td>' + total_attendee_number + '</td>'
+        all_tags.update({'general_total_attendee_number':
+                        total_attendee_number_tag})
+
+    # apply information specific to each sponsor
     for sponsor in sponsors:
         # sponsor description
         all_tags.update({'sponsor_description': sponsor.description})
@@ -50,12 +60,6 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         tsp = table_sponsor_package_template.format(*data)
 
         all_tags.update({'table_sponsor_package': tsp})
-
-        # general info - attendee number
-        total_attendee_number = str(attendee_obj.total_attendee_number)
-        total_attendee_number_tag = '<td>' + total_attendee_number + '</td>'
-        all_tags.update({'general_total_attendee_number':
-                             total_attendee_number_tag})
 
         # promotion data
         # promotion - web
