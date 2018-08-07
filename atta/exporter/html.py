@@ -44,11 +44,19 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
 
                 all_tags.update({tag + '_Description': p_tag})
 
-        # general info - attendee number
-        total_attendee_number = str(attendee_obj.total_attendee_number)
-        total_attendee_number_tag = '<td>' + total_attendee_number + '</td>'
-        all_tags.update({'general_total_attendee_number':
-                        total_attendee_number_tag})
+    # general info - more info
+    tag_yaml_gi = yaml[0]['General_Info']
+    p_tag_template = '<p>{0}</p>'
+    for meta in tag_yaml_gi:
+        tag_gi_description = meta.get('description')
+        p_tag = p_tag_template.format(tag_gi_description)
+    all_tags.update({'General_Info_Description': p_tag})
+
+    # general info - attendee number
+    total_attendee_number = str(attendee_obj.total_attendee_number)
+    total_attendee_number_tag = '<td>' + total_attendee_number + '</td>'
+    all_tags.update({'general_total_attendee_number':
+                    total_attendee_number_tag})
 
     # apply information specific to each sponsor
     for sponsor in sponsors:
