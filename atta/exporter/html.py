@@ -21,7 +21,8 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
     all_tags = {}
 
     # apply general information which everyone could see it
-    # general info - plots
+    # general info - description for plots
+    #    Add plot description if it could be found in the yaml
     for tag in data:
         img_path = data[tag]
 

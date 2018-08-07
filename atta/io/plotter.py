@@ -2,6 +2,7 @@ import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import atta.analyzer.generic as ag
 
 
 def plot_counts(df, year):
@@ -34,6 +35,9 @@ def plot_count(df, col, year):
     col_title = col
     if col_title == 'Title_Categories':
         plot_x_description = 'Job Titles'
+    elif col_title == 'Interesting_Field':
+        df = ag.extract_interesting_field(df)
+        plot_x_description = 'Interesting Fields'
     else:
         plot_x_description = col_title
 
@@ -52,11 +56,12 @@ def plot_count(df, col, year):
                       rotation=90,
                       fontdict={"fontsize": '16'})
 
-    # Add count value for fileds which counts are too small
-    col_value_counts = df[col_title].value_counts()
-    for idx in range(len(order)):
-        count_on_y = col_value_counts[order[idx]]
-        ax.text(idx, count_on_y, count_on_y)
+    if col_title is not 'Interesting_Field':
+        # Add count value for fileds which counts are too small
+        col_value_counts = df[col_title].value_counts()
+        for idx in range(len(order)):
+            count_on_y = col_value_counts[order[idx]]
+            ax.text(idx, count_on_y, count_on_y)
 
     # Tweak spacing to prevent clipping of ylabel or xlabel
     fig.tight_layout()
