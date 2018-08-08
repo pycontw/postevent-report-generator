@@ -14,7 +14,7 @@ def add_cat_title(df):
 
 
 def extract_interesting_field(df):
-    col_data = df['Interesting_Field']
+    col_data = df['Interested_Field']
     fields = []
     for col in col_data:
         if isinstance(col, str):
@@ -24,6 +24,6 @@ def extract_interesting_field(df):
     for ele in fields:
         fields_strip.append(ele.strip())
 
-    new_df = pd.DataFrame.from_dict({'Interesting_Field': fields_strip})
+    new_df = pd.DataFrame.from_dict({'Interested_Field': fields_strip})
 
     return new_df

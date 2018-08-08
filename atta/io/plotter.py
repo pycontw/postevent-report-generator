@@ -35,9 +35,9 @@ def plot_count(df, col, year):
     col_title = col
     if col_title == 'Title_Categories':
         plot_x_description = 'Job Titles'
-    elif col_title == 'Interesting_Field':
+    elif col_title == 'Interested_Field':
         df = ag.extract_interesting_field(df)
-        plot_x_description = 'Interesting Fields'
+        plot_x_description = 'Interested Fields'
     else:
         plot_x_description = col_title
 

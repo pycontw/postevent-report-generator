@@ -47,18 +47,18 @@ def select_column(df, interactive, csv_index):
         gender = int(pickup_column('gender', csv_index))
         job_title = int(pickup_column('job_title', csv_index))
         seniority = int(pickup_column('seniority', csv_index))
-        interesting_field = int(pickup_column('interesting_field', csv_index))
+        interested_field = int(pickup_column('interested_field', csv_index))
 
     df_selected = df.iloc[:, [gender,
                               nationality,
                               registration_date,
                               job_title,
                               seniority,
-                              interesting_field]]
+                              interested_field]]
 
     df_selected.columns = ['Gender', 'Nationality',
                            'Registration_date', 'Title',
                            'Seniority',
-                           'Interesting_Field']
+                           'Interested_Field']
 
     return df_selected
