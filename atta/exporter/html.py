@@ -81,7 +81,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         all_tags.update({'table_promotion_web': tpw})
 
         # promotion - facebook
-        # table_promotion_facebook: tpf
+        # table_promotion_facebook: tpf summary
         tpf_row_template = '<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>'
         data = [sponsor.facebook_total_reached_people,
                 sponsor.facebook_total_reach_portion,
@@ -92,7 +92,8 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         # table_promotion_facebook: tpf
         tpf_rows = ''
         for url in sponsor.facebook_url.keys():
-            tpf_row_template = '<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>'
+            tpf_row_template = '<tr><td><a href={0}>{0}</a></td>'\
+                               '<td>{1}</td><td>{2}</td></tr>'
             data = [url,
                     sponsor.facebook_url[url]['reach'],
                     sponsor.facebook_url[url]['engagement']]
@@ -107,8 +108,12 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         all_tags.update({'table_booth': table_booth})
 
         # workshop
+        workshop_url_tag_template = '<a href={0}>{0}</a>'
+        data = sponsor.workshop_event_url
+        workshop_url_tag = 'Event Link - ' \
+                           + workshop_url_tag_template.format(data)
         all_tags.update({'workshop_flag': sponsor.if_one_true_workshop})
-        all_tags.update({'workshop_event_url': sponsor.workshop_event_url})
+        all_tags.update({'workshop_event_url': workshop_url_tag})
         all_tags.update({'workshop_description': sponsor.workshop_description})
 
         filename_template = '/tmp/post-event-report-sponsor-{}.html'
