@@ -258,7 +258,7 @@
 /* Images */
 .jqm-demos .jqm-content > img {
     float: left;
-    width: 600px;
+    width: 100%;
 }
 
 @media (min-width: 60em) {
