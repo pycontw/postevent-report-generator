@@ -102,10 +102,12 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         all_tags.update({'table_promotion_facebook': tpf_rows})
 
         # booth
-        table_booth_template = '<td>{0}</td><td>{1}</td>'
-        data = [sponsor.booth_participant, sponsor.booth_participant_rank]
-        table_booth = table_booth_template.format(*data)
-        all_tags.update({'table_booth': table_booth})
+        all_tags.update({'booth_flag': sponsor.if_one_true_booth})
+        if sponsor.if_one_true_booth:
+            table_booth_template = '<td>{0}</td><td>{1}</td>'
+            data = [sponsor.booth_participant, sponsor.booth_participant_rank]
+            table_booth = table_booth_template.format(*data)
+            all_tags.update({'table_booth': table_booth})
 
         # workshop
         workshop_url_tag_template = '<a href={0}>{0}</a>'
