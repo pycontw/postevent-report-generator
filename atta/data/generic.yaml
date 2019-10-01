@@ -1,43 +1,63 @@
+# TODO: general info should be always the first entry
+- General_Info:
+  - represent: text
+  - description: >-
+      <p>
+      Portion and Rank mean the number calculated between the other sponsors.
+      They are only available for Golden and Platinum sponsors.
+      The engagement number of Facebook posts means "how many clicks of the post".
+      It does not include its reaction and shares.
+      </p>
+      <p>Overall post-event questionnaire 4.17 ( Max. is 5 )，
+      Job Fair 3.66 ( Max. is 5 )，
+      Sponsor booth 4.09 ( Max. is 5 )，
+      Please refer to here for more details:
+      <a href=https://pycontaiwan.typeform.com/report/iSWtzq/Q8j1VNeAeEmpjlPt>
+      Post-event Questionnaire
+      </a>
+      </p>
+      <p><a href=https://www.flickr.com/photos/pycon_tw/albums>Photos（Please click me）</a></p>
+      <p><a href=https://www.youtube.com/watch?v=GyKS0O2Jpfw&feature=youtu.be>Video（Please clicke me）</a></p>
+      <p>
+      If the photos and video are used internally in the company to finalize the sponsorship proposal/budget,
+      please feel free to use it. If the photos and video need to be used publicly for commercial purpose.
+      Please contact us before using it to make sure the authorization.
+      </p>
+      <p>
+      It is the first time that we use HackMD to display logos of sponsors between talks and sessions.
+      The advertisement effect is great. We suggest we could leverage this way to promote what you want to promote
+      more specifically.
+      </p>
+      <p>
+      If you need a pdf version of this report, please choose "print" and "save as PDF" of your browser.
+      </p>
+# TODO: the data structure is not necessary to be list
 - Title_Categories:
   - represent: barchart
   - description: >-
-      Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
-      Nullam enim leo, egestas id, condimentum at,
-      laoreet mattis, massa. Sed eleifend nonummy diam.
-      Praesent mauris ante, elementum et, bibendum at,
-      posuere sit amet, nibh. Duis tincidunt lectus quis dui
-      from the customized yaml for job titles.
+      It is the same as before. The mainstream attendees are engineers. However we still have the other people with
+      different job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
+
+      If it is hard to be categorized, they will be "potential job seeker".
 - Nationality:
   - represent: barchart
   - description: >-
-      Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
-      Nullam enim leo, egestas id, condimentum at,
-      laoreet mattis, massa. Sed eleifend nonummy diam.
-      Praesent mauris ante, elementum et, bibendum at,
-      posuere sit amet, nibh. Duis tincidunt lectus quis dui
-      from the customized yaml for nationality.
+      We have a basic portion of foreigners even it is not Pycon APAC this year.
 - Seniority:
   - represent: barchart
   - description: >-
-      Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
-      Nullam enim leo, egestas id, condimentum at,
-      laoreet mattis, massa. Sed eleifend nonummy diam.
-      Praesent mauris ante, elementum et, bibendum at,
-      posuere sit amet, nibh. Duis tincidunt lectus quis dui
-      from the customized yaml for seniority.
+      Most of the attendees are intermedia level users/developers. ( 1 to 5 years python using experience )
+- Interested_Field:
+  - represent: barchart
+  - description: >-
+      It is a histogram of multi-choice for each attendee.
+
+      The trend is explicit to show the mainstream field: AI and machine learning.
+      Science is more and less the same as DevOps. This is a little bit unexpectedly.
 - Gender:
   - represent: barchart
   - description: >-
-      Lorem ipsum dolor sit amet,
-      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
-      Nullam enim leo, egestas id, condimentum at,
-      laoreet mattis, massa. Sed eleifend nonummy diam.
-      Praesent mauris ante, elementum et, bibendum at,
-      posuere sit amet, nibh. Duis tincidunt lectus quis dui
-      from the customized yaml for gender.
+      性別為自由填寫，因此有「沒有紀錄」的欄位。
 - Registration_date:
   - represent: barchart
   - description: >-
@@ -48,3 +68,11 @@
       Praesent mauris ante, elementum et, bibendum at,
       posuere sit amet, nibh. Duis tincidunt lectus quis dui
       from the customized yaml for registration date.
+- post_event_questionnaire:
+    satisfaction_overall:
+      score: 4.17
+      image: /tmp/01.jpg
+      description: xxx
+- Topics:
+    uri: ./topics.png
+    description: We keep the goal to keep topic diversity.
