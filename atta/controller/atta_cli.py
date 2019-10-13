@@ -7,7 +7,7 @@ import pandas as pd
 import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext
-import atta.io.plotter as plotter
+import atta.analyzer.plotter as plotter
 import atta.io.csv as attacsv
 import atta.io.yaml as attayaml
 import atta.ticket.attendee as attendee
