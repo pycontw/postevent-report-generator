@@ -29,6 +29,12 @@ def test(cmd):
 
 
 @task
+def cov(cmd):
+    """Run testcase"""
+    cmd.run(f"{PIPENV_PREFIX} pytest --cov-report term-missing --cov=atta test", pty=True)
+
+
+@task
 def develop(cmd):
     """Install script in pipenv environement in development mode"""
     cmd.run(f"{PIPENV_PREFIX} python setup.py develop")
