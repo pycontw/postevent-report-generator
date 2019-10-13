@@ -29,15 +29,15 @@ def plot_count(df, col, year):
     # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
     # to support CJK fonts
     sns.set(font_scale=2)
-    new_fonts = ['AR PL UKai TW'] + mpl.rcParams['font.sans-serif']
-    mpl.rcParams['font.sans-serif'] = new_fonts
+    new_fonts = ["AR PL UKai TW"] + mpl.rcParams["font.sans-serif"]
+    mpl.rcParams["font.sans-serif"] = new_fonts
 
     col_title = col
-    if col_title == 'Title_Categories':
-        plot_x_description = 'Job Titles'
-    elif col_title == 'Interested_Field':
+    if col_title == "Title_Categories":
+        plot_x_description = "Job Titles"
+    elif col_title == "Interested_Field":
         df = ag.extract_interesting_field(df)
-        plot_x_description = 'Interested Fields'
+        plot_x_description = "Interested Fields"
     else:
         plot_x_description = col_title
 
@@ -49,14 +49,12 @@ def plot_count(df, col, year):
     # let seaborn controls ax
     ax = sns.countplot(x=col_title, data=df, order=order)
 
-    ax.set_title(plot_x_description + ' of the Attendees in ' + str(year))
+    ax.set_title(plot_x_description + " of the Attendees in " + str(year))
     ax.set_xlabel(plot_x_description)
-    ax.set_ylabel('Attendee Number')
-    ax.set_xticklabels(order,
-                      rotation=90,
-                      fontdict={"fontsize": '16'})
+    ax.set_ylabel("Attendee Number")
+    ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
 
-    if col_title is not 'Interesting_Field':
+    if col_title is not "Interesting_Field":
         # Add count value for fileds which counts are too small
         col_value_counts = df[col_title].value_counts()
         for idx in range(len(order)):
@@ -70,8 +68,8 @@ def plot_count(df, col, year):
 
 
 def save_fig(identifier):
-    fig_name = identifier + '.jpg'
-    fig_path = '/tmp/' + fig_name
+    fig_name = identifier + ".jpg"
+    fig_path = "/tmp/" + fig_name
     plt.savefig(fig_path)
 
     return {identifier: fig_path}
@@ -126,7 +124,7 @@ def get_order(df, col):
     col_counts = df[col].value_counts()
     order = col_counts.index
 
-    pattern = '年以內'
+    pattern = "年以內"
     order = get_reorder_by(df, col, pattern, order, reverse=True)
 
     pattern = "Other|other"
