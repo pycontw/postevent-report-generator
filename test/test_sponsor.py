@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import unittest
-
 import pytest
 
 from atta.partner import sponsor

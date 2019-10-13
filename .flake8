@@ -1,0 +1,6 @@
+[flake8]
+ignore =
+    # F632: use ==/!= to compare str, bytes, and int literals
+    F632,
+
+max-line-length = 119
