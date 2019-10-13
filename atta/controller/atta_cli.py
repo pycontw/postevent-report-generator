@@ -24,14 +24,14 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 
 
 @click.command()
-@click.option("--csv", default="data.csv", multiple=True, help="Read csv format data")
+@click.option("--csv", required=True, default="data.csv", multiple=True, help="Read csv format data")
 @click.option(
     "--interactive/--no-interactive", default=False, help="Quiet mode. Useful for automation. True for no prompt."
 )
 @click.option("--conf", help="Configuration file of how to analyze")
-@click.option("--yaml", help="Report yaml file to describe how a report " "would be")
-@click.option("--package-yaml", help="Package yaml file to describe how a " "package is defined")
-@click.option("--sponsor-yaml", help="Sponsor yaml file to describe how a " "sponsor is defined")
+@click.option("--yaml", required=True, help="Report yaml file to describe how a report would be")
+@click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
+@click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
 def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
     conf_singlet = attaconfig.Configuration.get_instance()
