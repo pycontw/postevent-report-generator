@@ -1,6 +1,3 @@
-import logging
-
-
 class Attendee:
     def __init__(self, df):
         self.df = df

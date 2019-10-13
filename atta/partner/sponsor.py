@@ -1,8 +1,10 @@
 import logging
-import pkg_resources
+
 import atta.io.yaml as attayaml
 
+
 logger = logging.getLogger("atta")
+
 
 # resource_package = __name__
 # resource_path_packages = '/'.join(('../data', 'packages.yaml'))

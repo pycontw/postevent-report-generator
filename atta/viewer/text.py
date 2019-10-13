@@ -35,7 +35,7 @@ def select_column(df, interactive, csv_index):
         gender = int(input("Please select the number for " '"性別/Gender": '))
         job_title = int(input("Please select the number for " '"職稱/Job Titles": '))
         seniority = int(input("Please select the seniority: "))
-        interesting_field = int(input("Please select the number for" "Area of Interest / 興趣領域 :"))
+        interested_field = int(input("Please select the number for" "Area of Interest / 興趣領域 :"))
     else:
         registration_date = int(pickup_column("paid_date", csv_index))
         nationality = int(pickup_column("nationality", csv_index))

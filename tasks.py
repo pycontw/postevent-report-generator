@@ -60,7 +60,7 @@ def mypy(cmd):
     """Check style through mypy"""
     mypy_arguments = ["--ignore-missing-imports"]
     packages = ["atta", "test"]
-    cmd.run(f"mypy {' '.join(mypy_arguments)} {'-p '.join(packages)}")
+    cmd.run(f"mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
 
 
 @task(pre=[flake8, mypy])
