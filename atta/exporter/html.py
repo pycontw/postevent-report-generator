@@ -1,4 +1,6 @@
 import base64
+from pathlib import Path
+
 from jinja2 import Environment, PackageLoader
 from jinja2 import Markup
 
@@ -7,7 +9,7 @@ loader = PackageLoader("atta.exporter", "data")
 env = Environment(loader=loader)
 
 
-def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
+def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path="/tmp"):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -113,8 +115,9 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None):
         all_tags.update({"workshop_event_url": workshop_url_tag})
         all_tags.update({"workshop_description": sponsor.workshop_description})
 
-        filename_template = "/tmp/post-event-report-sponsor-{}.html"
+        filename_template = "post-event-report-sponsor-{}.html"
         filename = filename_template.format(sponsor.name)
-        with open(filename, "w") as fhandler:
+        full_output_path = Path(output_path).absolute() / Path(filename)
+        with open(full_output_path, "w") as fhandler:
             r = template.render(**all_tags)
             fhandler.write(r)

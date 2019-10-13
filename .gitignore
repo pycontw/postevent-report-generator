@@ -102,3 +102,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+-a
+
+# generate html
+post-event-report*.html
