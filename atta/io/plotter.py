@@ -54,10 +54,10 @@ def plot_count(df, col, year):
     ax.set_ylabel("Attendee Number")
     ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
 
-    if col_title is not "Interesting_Field":
+    if col_title != "Interesting_Field":
         # Add count value for fileds which counts are too small
         col_value_counts = df[col_title].value_counts()
-        for idx in range(len(order)):
+        for idx, _ in enumerate(order):
             count_on_y = col_value_counts[order[idx]]
             ax.text(idx, count_on_y, count_on_y)
 

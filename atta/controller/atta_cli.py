@@ -1,7 +1,9 @@
-import click
-import pkg_resources
 import logging
+import pkg_resources
+
+import click
 import pandas as pd
+
 import atta.config as attaconfig
 import atta.analyzer.generic as ag
 import atta.viewer.text as vtext

@@ -1,9 +1,10 @@
 """
 Global config singlet.
 """
-import pkg_resources
 import logging
 from configparser import ConfigParser
+import pkg_resources
+
 
 logger = logging.getLogger("atta")
 
@@ -48,13 +49,13 @@ class Configuration(object):
 
         if conf_file:
             logger.debug("Reading conf...")
-            logger.debug("Found %s" % conf_file)
+            logger.debug("Found %s", conf_file)
             config.read(conf_file)
 
         try:
             if conf_file and config["ATTENDEE"]["year"]:
                 logger.debug("Override year by the given conf file.")
-                logger.debug("It is %s " % config["ATTENDEE"]["year"])
+                logger.debug("It is %s ", config["ATTENDEE"]["year"])
         except KeyError:
             # fallback value
             config["ATTENDEE"]["year"] = config_default["ATTENDEE"]["year"]
@@ -63,7 +64,7 @@ class Configuration(object):
         try:
             if conf_file and config["ATTENDEE"]["paid_date"]:
                 logger.debug("Override year by the given conf file.")
-                logger.debug("It is %s " % config["ATTENDEE"]["paid_date"])
+                logger.debug("It is %s ", config["ATTENDEE"]["paid_date"])
         except KeyError:
             # fallback value
             config["ATTENDEE"]["paid_date"] = config_default["ATTENDEE"]["paid_date"]
@@ -72,7 +73,7 @@ class Configuration(object):
         try:
             if conf_file and config["ATTENDEE"]["nationality"]:
                 logger.debug("Override nationality by the given conf file.")
-                logger.debug("It is %s " % config["ATTENDEE"]["nationality"])
+                logger.debug("It is %s ", config["ATTENDEE"]["nationality"])
         except KeyError:
             # fallback value
             config["ATTENDEE"]["nationality"] = config_default["ATTENDEE"]["nationality"]
@@ -81,7 +82,7 @@ class Configuration(object):
         try:
             if conf_file and config["ATTENDEE"]["gender"]:
                 logger.debug("Override gender by the given conf file.")
-                logger.debug("It is %s " % config["ATTENDEE"]["gender"])
+                logger.debug("It is %s ", config["ATTENDEE"]["gender"])
         except KeyError:
             # fallback value
             config["ATTENDEE"]["gender"] = config_default["ATTENDEE"]["gender"]
@@ -90,7 +91,7 @@ class Configuration(object):
         try:
             if conf_file and config["ATTENDEE"]["job_title"]:
                 logger.debug("Override job_title by the given conf file.")
-                logger.debug("It is %s " % config["ATTENDEE"]["job_title"])
+                logger.debug("It is %s ", config["ATTENDEE"]["job_title"])
         except KeyError:
             # fallback value
             config["ATTENDEE"]["job_title"] = config_default["ATTENDEE"]["job_title"]

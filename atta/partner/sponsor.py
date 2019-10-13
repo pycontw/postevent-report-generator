@@ -44,8 +44,7 @@ class Sponsor:
     def description(self):
         if self.flag_description:
             return self.content["description"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_promotion(self):
@@ -65,8 +64,7 @@ class Sponsor:
     def web_click(self):
         if self.flag_web_click:
             return self.content["promotion"]["web"]["click"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def flag_web_click_rank(self):
@@ -79,8 +77,7 @@ class Sponsor:
             click_target = self.content["promotion"]["web"]["click"]
             percentage = click_target / float(sum(clicks))
             return "{:.1%}".format(percentage)
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def web_click_rank(self):
@@ -92,8 +89,7 @@ class Sponsor:
             rank = idx + 1
 
             return rank
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_facebook(self):
@@ -108,8 +104,7 @@ class Sponsor:
     def facebook_url(self):
         if self.flag_facebook_url:
             return self.content["promotion"]["facebook"]["url"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def facebook_total_reached_people(self):
@@ -127,8 +122,7 @@ class Sponsor:
             target_data = self._get_sponsor_fb_field(field)
             percentage = sum(target_data) / float(sum(all_data))
             return "{:.1%}".format(percentage)
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def facebook_total_reach_rank(self):
@@ -141,8 +135,7 @@ class Sponsor:
             rank = idx + 1
 
             return rank
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_booth(self):
@@ -157,8 +150,7 @@ class Sponsor:
     def booth_participant(self):
         if self.flag_booth_participant:
             return self.content["booth"]["participant"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def flag_booth_participant_rank(self):
@@ -174,8 +166,7 @@ class Sponsor:
             rank = idx + 1
 
             return rank
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def if_one_true_workshop(self):
@@ -190,8 +181,7 @@ class Sponsor:
     def workshop_pictures(self):
         if self.flag_workshop_pictures:
             return self.content["workshop"]["pictures"]
-        else:
-            return self.flag_workshop_pictures
+        return self.flag_workshop_pictures
 
     @property
     def flag_workshop_description(self):
@@ -201,8 +191,7 @@ class Sponsor:
     def workshop_description(self):
         if self.flag_workshop_description:
             return self.content["workshop"]["description"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     @property
     def flag_workshop_event_url(self):
@@ -212,8 +201,7 @@ class Sponsor:
     def workshop_event_url(self):
         if self.flag_workshop_event_url:
             return self.content["workshop"]["event_url"]
-        else:
-            return NA_CONTENT_MESSAGE
+        return NA_CONTENT_MESSAGE
 
     def _if_one_true_in_1_fold(self, tree):
         flag = False
