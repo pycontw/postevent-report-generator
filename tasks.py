@@ -38,3 +38,12 @@ def develop(cmd):
 def install(cmd):
     """Install script in pipenv environement"""
     cmd.run(f"{PIPENV_PREFIX} python setup.py install")
+
+
+@task
+def reformat(cmd):
+    """Reformat python files throguh black"""
+    black_args = ["-l 119"]
+    target_fils = ["atta", "scripts", "test", "setup.py", "tasks.py"]
+
+    cmd.run(f"black {' '.join(black_args)} {' '.join(target_fils)}")
