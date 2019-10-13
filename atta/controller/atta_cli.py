@@ -32,7 +32,8 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--yaml", help="Report yaml file to describe how a report " "would be")
 @click.option("--package-yaml", help="Package yaml file to describe how a " "package is defined")
 @click.option("--sponsor-yaml", help="Sponsor yaml file to describe how a " "sponsor is defined")
-def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml):
+@click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
+def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
     conf_singlet = attaconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
@@ -77,7 +78,7 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml):
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
-    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors)
+    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors, output_path)
 
     print("Analysis process finished completely.")
 
