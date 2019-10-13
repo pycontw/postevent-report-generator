@@ -65,5 +65,12 @@ def mypy(cmd):
 
 @task(pre=[flake8, mypy])
 def lint(cmd):
-    """Check style throguh linter"""
+    """Check style throguh linter (Note that pylint is not included)"""
     pass
+
+
+@task
+def pylint(cmd):
+    """Check style through pylint"""
+    targets = ["atta", "test", "scripts", "setup.py", "tasks.py"]
+    cmd.run(f"pylint {' '.join(targets)}")
