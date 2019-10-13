@@ -47,3 +47,23 @@ def reformat(cmd):
     target_fils = ["atta", "scripts", "test", "setup.py", "tasks.py"]
 
     cmd.run(f"black {' '.join(black_args)} {' '.join(target_fils)}")
+
+
+@task
+def flake8(cmd):
+    """Check style through flake8"""
+    cmd.run(f"flake8")
+
+
+@task
+def mypy(cmd):
+    """Check style through mypy"""
+    mypy_arguments = ["--ignore-missing-imports"]
+    packages = ["atta", "test"]
+    cmd.run(f"mypy {' '.join(mypy_arguments)} {'-p '.join(packages)}")
+
+
+@task(pre=[flake8, mypy])
+def lint(cmd):
+    """Check style throguh linter"""
+    pass
