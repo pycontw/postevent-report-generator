@@ -29,7 +29,7 @@ mkdir attendees-analyzer-working
 ### Create Your Own Python Virtual Environment and Install package
 
 ```sh
-inv init_dev
+inv init-dev
 ```
 
 ### Install Attendees Analyzer
