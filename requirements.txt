@@ -1,9 +1,0 @@
-pandas
-seaborn
-numpy
-matplotlib
-click
-pillow
-pytest
-jinja2
-pyyaml
