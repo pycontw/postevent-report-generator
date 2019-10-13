@@ -7,8 +7,10 @@ Currently it only supports a csv file as raw data input.
 * [Python 3.7](https://www.python.org/downloads/)
 * [pipenv](https://github.com/pypa/pipenv)
     * for dependency management
+    * `pip install pipenv`
 * [invoke](https://github.com/pyinvoke/invoke)
     * for task management
+    * `pip install invoke`
 
 ## Installation
 
@@ -51,24 +53,45 @@ Now you should be ready to go.
 ### Test The Installation
 
 ```sh
-pipenv run atta
+pipenv run atta --help
 ```
 
-## Run Test Cases
+### Run Test Cases
 
 ```sh
 inv test
 ```
 
-## Example
+### Example
 
 After launching your virtual environment, issue the following command:
 
 ```sh
-atta --csv ./a.csv --csv ./b.csv --csv ./c.csv
---yaml ./atta/data/generic.yaml
---package-yaml ./examples/packages.yaml
---sponsor-yaml ./examples/sponsors.yaml
+atta --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./atta/data/generic.yaml --package-yaml ./examples/packages.yaml --sponsor-yaml ./examples/sponsors.yaml
 ```
 
 Follow the prompt instruction and you will get jpg images. So far it is well tested with the data of year 2017.
+
+## How to contribute
+
+1. Fork this repository to your GitHub
+2. Clone the repository from your GitHub
+    ```sh
+    git clone https://github.com/[YOUR GITHUB ACCOUNT]/attendees-analyzer.git
+    ```
+3. Add this repository to the remote in your local repository
+    ```sh
+    git remote add upstream "https://github.com/tai271828/attendees-analyzer"
+    ```
+    You can pull the latest code in master branch through `git pull upstream master` afterward.
+4. Check out a branch for your new feature
+    ```sh
+    git checkout -b [YOUR FEATURE]
+    ```
+5. Work on your new feature
+6. Run `inv cov` to check the test coverage and see where you can add test cases
+7. Run `inv test` and make sure all tests pass.
+8. Run `inv lint` and make sure your coding style passes the linter checks
+9. [Optional] Run `inv pylint` to check your coding style through `pylint`. Note that you do not have to fix all the issues warned by `pylint`.
+10. Run `inv reformat` to format your code through `black`.
+11. Create a Pull Request
