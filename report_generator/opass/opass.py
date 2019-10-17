@@ -1,6 +1,3 @@
-import logging
-
-
 class Opass:
     def __init__(self, df):
         self.df = df
