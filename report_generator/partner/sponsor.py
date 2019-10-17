@@ -1,9 +1,9 @@
 import logging
 
-import atta.io.yaml as attayaml
+import report_generator.io.yaml as report_generatoryaml
 
 
-logger = logging.getLogger("atta")
+logger = logging.getLogger("report_generator")
 
 
 # resource_package = __name__
@@ -16,8 +16,8 @@ logger = logging.getLogger("atta")
 # template_sponsors = pkg_resources.resource_stream(resource_package,
 #                                                   resource_path_sponsors)
 
-# yaml_packages = attayaml.read_yaml(template_packages.name)
-# yaml_sponsors = attayaml.read_yaml(template_sponsors.name)
+# yaml_packages = report_generatoryaml.read_yaml(template_packages.name)
+# yaml_sponsors = report_generatoryaml.read_yaml(template_sponsors.name)
 
 
 NA_CONTENT_MESSAGE = "Not Available form this Package"
@@ -25,8 +25,8 @@ NA_CONTENT_MESSAGE = "Not Available form this Package"
 
 class Sponsor:
     def __init__(self, sponsor_name, package_yaml, sponsor_yaml):
-        yaml_packages = attayaml.read_yaml(package_yaml)
-        yaml_sponsors = attayaml.read_yaml(sponsor_yaml)
+        yaml_packages = report_generatoryaml.read_yaml(package_yaml)
+        yaml_sponsors = report_generatoryaml.read_yaml(sponsor_yaml)
         self.yaml_sponsors = yaml_sponsors
 
         self.name = sponsor_name
@@ -259,7 +259,7 @@ class Sponsor:
 
 
 def get_all_sponsors(package_yaml, sponsor_yaml):
-    yaml_sponsors = attayaml.read_yaml(sponsor_yaml)
+    yaml_sponsors = report_generatoryaml.read_yaml(sponsor_yaml)
 
     sponsors = []
     for entry in yaml_sponsors:

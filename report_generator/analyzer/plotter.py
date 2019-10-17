@@ -2,7 +2,7 @@ import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import atta.analyzer.generic as ag
+import report_generator.analyzer.generic as ag
 
 
 def plot_counts(df, year):

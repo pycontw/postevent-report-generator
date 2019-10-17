@@ -1,7 +1,7 @@
-import atta.config as attaconfig
+import report_generator.config as report_generatorconfig
 
 
-conf_singlet = attaconfig.Configuration.get_instance()
+conf_singlet = report_generatorconfig.Configuration.get_instance()
 
 
 def welcome_ask_year(interactive=False):

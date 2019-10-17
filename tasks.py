@@ -25,7 +25,7 @@ def test(cmd):
 @task
 def cov(cmd):
     """Run testcase"""
-    cmd.run(f"{PIPENV_PREFIX} pytest --cov-report term-missing --cov=atta test", pty=True)
+    cmd.run(f"{PIPENV_PREFIX} pytest --cov-report term-missing --cov=report_generator test", pty=True)
 
 
 @task
@@ -44,7 +44,7 @@ def install(cmd):
 def reformat(cmd):
     """Reformat python files throguh black"""
     black_args = ["-l 119"]
-    target_fils = ["atta", "scripts", "test", "setup.py", "tasks.py"]
+    target_fils = ["report_generator", "scripts", "test", "setup.py", "tasks.py"]
 
     cmd.run(f"black {' '.join(black_args)} {' '.join(target_fils)}")
 
@@ -59,7 +59,7 @@ def flake8(cmd):
 def mypy(cmd):
     """Check style through mypy"""
     mypy_arguments = ["--ignore-missing-imports"]
-    packages = ["atta", "test"]
+    packages = ["report_generator", "test"]
     cmd.run(f"mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
 
 
@@ -72,5 +72,5 @@ def lint(cmd):
 @task
 def pylint(cmd):
     """Check style through pylint"""
-    targets = ["atta", "test", "scripts", "setup.py", "tasks.py"]
+    targets = ["report_generator", "test", "scripts", "setup.py", "tasks.py"]
     cmd.run(f"pylint {' '.join(targets)}")
