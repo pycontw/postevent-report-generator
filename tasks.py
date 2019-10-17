@@ -46,13 +46,13 @@ def reformat(cmd):
     black_args = ["-l 119"]
     target_fils = ["report_generator", "scripts", "test", "setup.py", "tasks.py"]
 
-    cmd.run(f"black {' '.join(black_args)} {' '.join(target_fils)}")
+    cmd.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} {' '.join(target_fils)}")
 
 
 @task
 def flake8(cmd):
     """Check style through flake8"""
-    cmd.run(f"flake8")
+    cmd.run(f"{PIPENV_PREFIX} flake8")
 
 
 @task
@@ -60,7 +60,7 @@ def mypy(cmd):
     """Check style through mypy"""
     mypy_arguments = ["--ignore-missing-imports"]
     packages = ["report_generator", "test"]
-    cmd.run(f"mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
+    cmd.run(f"{PIPENV_PREFIX} mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
 
 
 @task(pre=[flake8, mypy])
@@ -73,4 +73,4 @@ def lint(cmd):
 def pylint(cmd):
     """Check style through pylint"""
     targets = ["report_generator", "test", "scripts", "setup.py", "tasks.py"]
-    cmd.run(f"pylint {' '.join(targets)}")
+    cmd.run(f"{PIPENV_PREFIX} pylint {' '.join(targets)}")
