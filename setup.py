@@ -5,7 +5,6 @@ setup(
     name="attendees-analyzer",
     packages=find_packages(),
     zip_safe=False,
-    include_package_data=True,
     version="0.0.1",
     description="To analyze attendee data",
     author="Taihsiang Ho (tai271828)",
