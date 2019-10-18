@@ -97,4 +97,4 @@ def install(cmd):
 @task(pre=[clean_env, init, install])
 def test_cli(cmd):
     """Test whether the cli is runnable"""
-    cmd.run(f"{PIPENV_PREFIX} rg-cli")
+    cmd.run(f"{PIPENV_PREFIX} rg-cli --help")

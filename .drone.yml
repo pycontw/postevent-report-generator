@@ -64,10 +64,11 @@ steps:
       - name: virtual_env
         path: /root/.local/share/virtualenvs
     commands:
-      - inv install
-      - pipenv run rg-cli --help
+      - inv test-cli
     depends_on:
-      - setup
+      - lint
+      - test
+      - check package security
 
 volumes:
   - name: system_dependencies
