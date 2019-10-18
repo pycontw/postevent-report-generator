@@ -4,18 +4,18 @@ import pkg_resources
 import click
 import pandas as pd
 
-import atta.config as attaconfig
-import atta.analyzer.generic as ag
-import atta.viewer.text as vtext
-import atta.analyzer.plotter as plotter
-import atta.io.csv as attacsv
-import atta.io.yaml as attayaml
-import atta.ticket.attendee as attendee
-import atta.exporter.html as exporter_html
-from atta.partner import sponsor as apsponsor
+import report_generator.config as report_generatorconfig
+import report_generator.analyzer.generic as ag
+import report_generator.viewer.text as vtext
+import report_generator.analyzer.plotter as plotter
+import report_generator.io.csv as report_generatorcsv
+import report_generator.io.yaml as report_generatoryaml
+import report_generator.ticket.attendee as attendee
+import report_generator.exporter.html as exporter_html
+from report_generator.partner import sponsor as apsponsor
 
 
-logger = logging.getLogger("atta")
+logger = logging.getLogger("report_generator")
 
 resource_package = __name__
 resource_path = "/".join(("../data", "default.ini"))
@@ -34,7 +34,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
 def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
-    conf_singlet = attaconfig.Configuration.get_instance()
+    conf_singlet = report_generatorconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
         logger.debug("User customized conf is specified: %s" % conf_singlet)
@@ -47,7 +47,7 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
     for csv_single in csv:
         csv_index = csv.index(csv_single)
 
-        df = attacsv.csv_to_dataframe(csv_single)
+        df = report_generatorcsv.csv_to_dataframe(csv_single)
 
         # select necessary columns from df
         df = vtext.select_column(df, interactive, csv_index)
@@ -67,7 +67,7 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
     figs = plotter.plot_counts(df_all, year)
 
     # read the other report data
-    report_yaml = attayaml.read_yaml(yaml)
+    report_yaml = report_generatoryaml.read_yaml(yaml)
 
     sponsors = apsponsor.get_all_sponsors(package_yaml, sponsor_yaml)
 

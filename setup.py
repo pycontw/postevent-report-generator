@@ -4,6 +4,8 @@ from setuptools import setup, find_packages
 setup(
     name="attendees-analyzer",
     packages=find_packages(),
+    zip_safe=False,
+    include_package_data=True,
     version="0.0.1",
     description="To analyze attendee data",
     author="Taihsiang Ho (tai271828)",
@@ -11,6 +13,6 @@ setup(
     url="https://github.com/tai271828/attendees-analyzer",
     download_url="https://github.com/tai271828/attendees-analyzer",
     keywords=["attendee", "pycontw"],
-    entry_points={"console_scripts": ["atta=atta.controller.atta_cli:main"]},
+    entry_points={"console_scripts": ["rg-cli=report_generator.controller.report_generator_cli:main"]},
     classifiers=["Programming Language :: Python"],
 )

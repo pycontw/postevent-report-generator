@@ -1,6 +1,6 @@
-# Attendees-analyzer (atta)
+# Attendees-analyzer (rg-cli)
 
-Attendees-analyzer (atta) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
+Attendees-analyzer (rg-cli) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
 
 ## Prerequsite
@@ -53,7 +53,7 @@ Now you should be ready to go.
 ### Test The Installation
 
 ```sh
-pipenv run atta --help
+pipenv run rg-cli --help
 ```
 
 ### Run Test Cases
@@ -67,7 +67,7 @@ inv test
 After launching your virtual environment, issue the following command:
 
 ```sh
-atta --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./atta/data/generic.yaml --package-yaml ./examples/packages.yaml --sponsor-yaml ./examples/sponsors.yaml
+rg-cli --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./report_generator/data/generic.yaml --package-yaml ./examples/packages.yaml --sponsor-yaml ./examples/sponsors.yaml
 ```
 
 Follow the prompt instruction and you will get jpg images. So far it is well tested with the data of year 2017.

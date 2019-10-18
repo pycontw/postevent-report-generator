@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import pytest
 
-from atta.partner import sponsor
+from report_generator.partner import sponsor
 
 
 class TestSponsor:

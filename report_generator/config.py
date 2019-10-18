@@ -6,7 +6,7 @@ from configparser import ConfigParser
 import pkg_resources
 
 
-logger = logging.getLogger("atta")
+logger = logging.getLogger("report_generator")
 
 resource_package = __name__
 resource_path = "/".join(("data", "default.ini"))
@@ -35,7 +35,7 @@ class Configuration(object):
         found.
 
         All the read values will be then overridden by the special
-        environmental variables if this function is invoked by atta_cli:main.
+        environmental variables if this function is invoked by report_generator_cli:main.
 
         :param conf_file: user specified configuration file.
         :return: configuration object

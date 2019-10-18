@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import csv
-from atta.cleaner.title import cat_title
+from report_generator.cleaner.title import cat_title
 
 
 class TestTitleCategory:

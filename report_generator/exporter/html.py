@@ -5,7 +5,7 @@ from jinja2 import Environment, PackageLoader
 from jinja2 import Markup
 
 
-loader = PackageLoader("atta.exporter", "data")
+loader = PackageLoader("report_generator.exporter", "data")
 env = Environment(loader=loader)
 
 

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from atta.cleaner.title import cat_title
+from report_generator.cleaner.title import cat_title
 
 
 def apply_others(x):
