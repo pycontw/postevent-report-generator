@@ -1,0 +1,77 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: setup
+    image: python:3.7-slim
+    pull: if-not-exists
+    volumes:
+      - name: system_dependencies
+        path: /usr/local
+      - name: virtual_env
+        path: /root/.local/share/virtualenvs
+    commands:
+      - pip install pipenv invoke
+      - inv init-dev
+
+  - name: lint
+    image: python:3.7-slim
+    pull: if-not-exists
+    volumes:
+      - name: system_dependencies
+        path: /usr/local
+      - name: virtual_env
+        path: /root/.local/share/virtualenvs
+    commands:
+      - inv lint
+    depends_on:
+      - setup
+
+  - name: check package security
+    image: python:3.7-slim
+    pull: if-not-exists
+    volumes:
+      - name: system_dependencies
+        path: /usr/local
+      - name: virtual_env
+        path: /root/.local/share/virtualenvs
+    commands:
+      - inv secure
+    depends_on:
+      - setup
+
+  - name: test
+    image: python:3.7-slim
+    pull: if-not-exists
+    volumes:
+      - name: system_dependencies
+        path: /usr/local
+      - name: virtual_env
+        path: /root/.local/share/virtualenvs
+    commands:
+      - inv test
+    depends_on:
+      - setup
+
+  - name: test-package-runable
+    image: python:3.7-slim
+    pull: if-not-exists
+    volumes:
+      - name: system_dependencies
+        path: /usr/local
+      - name: virtual_env
+        path: /root/.local/share/virtualenvs
+    commands:
+      - inv test-cli
+    depends_on:
+      - lint
+      - test
+      - check package security
+
+volumes:
+  - name: system_dependencies
+    temp: {}
+  - name: virtual_env
+    temp: {}

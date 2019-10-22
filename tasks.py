@@ -11,6 +11,18 @@ def clean(cmd):
 
 
 @task
+def clean_env(cmd):
+    """Remove virtual environement"""
+    cmd.run("pipenv --rm", warn=True)
+
+
+@task
+def init(cmd):
+    """Install production dependencies"""
+    cmd.run("pipenv install")
+
+
+@task
 def init_dev(cmd):
     """Install development dependencies"""
     cmd.run("pipenv install --dev")
@@ -26,18 +38,6 @@ def test(cmd):
 def cov(cmd):
     """Run testcase"""
     cmd.run(f"{PIPENV_PREFIX} pytest --cov-report term-missing --cov=report_generator test", pty=True)
-
-
-@task
-def develop(cmd):
-    """Install script in pipenv environement in development mode"""
-    cmd.run(f"{PIPENV_PREFIX} python setup.py develop")
-
-
-@task
-def install(cmd):
-    """Install script in pipenv environement"""
-    cmd.run(f"{PIPENV_PREFIX} python setup.py install")
 
 
 @task
@@ -74,3 +74,27 @@ def pylint(cmd):
     """Check style through pylint"""
     targets = ["report_generator", "test", "scripts", "setup.py", "tasks.py"]
     cmd.run(f"{PIPENV_PREFIX} pylint {' '.join(targets)}")
+
+
+@task
+def secure(cmd):
+    """Check package security"""
+    cmd.run("pipenv check")
+
+
+@task
+def develop(cmd):
+    """Install script in pipenv environement in development mode"""
+    cmd.run(f"{PIPENV_PREFIX} python setup.py develop")
+
+
+@task
+def install(cmd):
+    """Install script in pipenv environement"""
+    cmd.run(f"{PIPENV_PREFIX} python setup.py install")
+
+
+@task(pre=[clean_env, init, install])
+def test_cli(cmd):
+    """Test whether the cli is runnable"""
+    cmd.run(f"{PIPENV_PREFIX} rg-cli --help")
