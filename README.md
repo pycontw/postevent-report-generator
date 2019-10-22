@@ -1,5 +1,7 @@
 # Attendees-analyzer (rg-cli)
 
+[![Build Status](https://cloud.drone.io/api/badges/tai271828/attendees-analyzer/status.svg)](https://cloud.drone.io/tai271828/attendees-analyzer)
+
 Attendees-analyzer (rg-cli) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
 
