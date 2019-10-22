@@ -26,7 +26,7 @@ def clean(ctx):
 @task(pre=[clean_env, _init, install])
 def test_cli(ctx):
     """Test whether the cli is runnable"""
-    ctx.run(f"{PIPENV_PREFIX} rg-cli")
+    ctx.run(f"{PIPENV_PREFIX} rg-cli --help")
 
 
 build_ns = Collection("build")
