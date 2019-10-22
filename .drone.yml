@@ -14,7 +14,7 @@ steps:
         path: /root/.local/share/virtualenvs
     commands:
       - pip install pipenv invoke
-      - inv init-dev
+      - inv env.init-dev
 
   - name: lint
     image: python:3.7-slim
@@ -25,7 +25,7 @@ steps:
       - name: virtual_env
         path: /root/.local/share/virtualenvs
     commands:
-      - inv lint
+      - inv style
     depends_on:
       - setup
 
@@ -64,7 +64,7 @@ steps:
       - name: virtual_env
         path: /root/.local/share/virtualenvs
     commands:
-      - inv test-cli
+      - inv build.test-cli
     depends_on:
       - lint
       - test

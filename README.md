@@ -1,5 +1,7 @@
 # Attendees-analyzer (rg-cli)
 
+[![Build Status](https://cloud.drone.io/api/badges/tai271828/attendees-analyzer/status.svg)](https://cloud.drone.io/tai271828/attendees-analyzer)
+
 Attendees-analyzer (rg-cli) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
 
@@ -31,7 +33,7 @@ mkdir attendees-analyzer-working
 ### Create Your Own Python Virtual Environment and Install package
 
 ```sh
-inv init-dev
+inv env.init-dev
 ```
 
 ### Install Attendees Analyzer
@@ -39,13 +41,13 @@ inv init-dev
 If you want to develop it, please run:
 
 ```sh
-inv develop
+inv build.develop
 ```
 
 If you just want to install it in your virtual environment lib, please run:
 
 ```sh
-inv install
+inv build.install
 ```
 
 Now you should be ready to go.
@@ -53,7 +55,7 @@ Now you should be ready to go.
 ### Test The Installation
 
 ```sh
-pipenv run rg-cli --help
+inv build.test-cli
 ```
 
 ### Run Test Cases
@@ -89,9 +91,9 @@ Follow the prompt instruction and you will get jpg images. So far it is well tes
     git checkout -b [YOUR FEATURE]
     ```
 5. Work on your new feature
-6. Run `inv cov` to check the test coverage and see where you can add test cases
+6. Run `inv test.cov` to check the test coverage and see where you can add test cases
 7. Run `inv test` and make sure all tests pass.
-8. Run `inv lint` and make sure your coding style passes the linter checks
-9. [Optional] Run `inv pylint` to check your coding style through `pylint`. Note that you do not have to fix all the issues warned by `pylint`.
-10. Run `inv reformat` to format your code through `black`.
+8. Run `inv style` and make sure your coding style passes the linter checks
+9. [Optional] Run `inv style.pylint` to check your coding style through `pylint`. Note that you do not have to fix all the issues warned by `pylint`.
+10. Run `inv style.reformat` to format your code through `black`.
 11. Create a Pull Request
