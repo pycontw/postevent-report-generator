@@ -54,7 +54,7 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
 
         frames.append(df)
 
-    df_all = pd.concat(frames, join="outer", axis=0)
+    df_all = pd.concat(frames, join="outer", axis=0, ignore_index=True)
 
     # everything is ready. let's call analyzer to do something
     df_all = ag.add_cat_title(df_all)
