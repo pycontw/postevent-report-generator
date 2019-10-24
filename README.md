@@ -1,8 +1,8 @@
-# Attendees-analyzer (rg-cli)
+# PyCon TW post-event report generator (rg-cli)
 
-[![Build Status](https://cloud.drone.io/api/badges/tai271828/pycontw-postevent-report-generator/status.svg)](https://cloud.drone.io/tai271828/pycontw-postevent-report-generator)
+[![Build Status](https://cloud.drone.io/api/badges/pycontw/pycontw-postevent-report-generator/status.svg)](https://cloud.drone.io/pycontw/pycontw-postevent-report-generator)
 
-Attendees-analyzer (rg-cli) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
+rg-cli is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
 
 ## Prerequsite
