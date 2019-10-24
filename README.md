@@ -1,6 +1,6 @@
 # Attendees-analyzer (rg-cli)
 
-[![Build Status](https://cloud.drone.io/api/badges/tai271828/attendees-analyzer/status.svg)](https://cloud.drone.io/tai271828/attendees-analyzer)
+[![Build Status](https://cloud.drone.io/api/badges/tai271828/pycontw-postevent-report-generator/status.svg)](https://cloud.drone.io/tai271828/pycontw-postevent-report-generator)
 
 Attendees-analyzer (rg-cli) is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
@@ -21,13 +21,13 @@ Currently it only supports a csv file as raw data input.
 Fetch the source
 
 ```sh
-git clone https://github.com/tai271828/attendees-analyzer.git
+git clone https://github.com/tai271828/pycontw-postevent-report-generator.git
 ```
 
 Create a working folder to place your attendee raw data outside of the source folder so you won't commit your raw data accidentally.
 
 ```sh
-mkdir attendees-analyzer-working
+mkdir pycontw-postevent-report-generator-working
 ```
 
 ### Create Your Own Python Virtual Environment and Install package
@@ -79,11 +79,11 @@ Follow the prompt instruction and you will get jpg images. So far it is well tes
 1. Fork this repository to your GitHub
 2. Clone the repository from your GitHub
     ```sh
-    git clone https://github.com/[YOUR GITHUB ACCOUNT]/attendees-analyzer.git
+    git clone https://github.com/[YOUR GITHUB ACCOUNT]/pycontw-postevent-report-generator.git
     ```
 3. Add this repository to the remote in your local repository
     ```sh
-    git remote add upstream "https://github.com/tai271828/attendees-analyzer"
+    git remote add upstream "https://github.com/tai271828/pycontw-postevent-report-generator"
     ```
     You can pull the latest code in master branch through `git pull upstream master` afterward.
 4. Check out a branch for your new feature
