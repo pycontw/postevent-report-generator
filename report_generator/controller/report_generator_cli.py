@@ -28,12 +28,17 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option(
     "--interactive/--no-interactive", default=False, help="Quiet mode. Useful for automation. True for no prompt."
 )
+@click.option(
+    "--cjk-support/--no-cjk-support", default=False,
+    help="Enable CJK support in the plot or not."
+)
 @click.option("--conf", help="Configuration file of how to analyze")
 @click.option("--yaml", required=True, help="Report yaml file to describe how a report would be")
 @click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
-def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
+def main(csv, interactive, cjk_support, conf, yaml, package_yaml,
+         sponsor_yaml, output_path):
     conf_singlet = report_generatorconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
@@ -56,15 +61,16 @@ def main(csv, interactive, conf, yaml, package_yaml, sponsor_yaml, output_path):
 
     df_all = pd.concat(frames, join="outer", axis=0, ignore_index=True)
 
-    # everything is ready. let's call analyzer to do something
+    # all raw data is imported. let's call analyzer to do something
     df_all = ag.add_cat_title(df_all)
     df_all = df_all.fillna(value="No Record")
+    df_all = ag.get_sanity_data(df_all, cjk_support)
 
     # all datafram general data object
     df_all_g_data_obj = attendee.Attendee(df_all)
 
     # analyzed data frame is ready. let's plot
-    figs = plotter.plot_counts(df_all, year)
+    figs = plotter.plot_counts(df_all, year, cjk_support)
 
     # read the other report data
     report_yaml = report_generatoryaml.read_yaml(yaml)
