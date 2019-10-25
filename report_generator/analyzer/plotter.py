@@ -1,20 +1,25 @@
 import re
+import logging
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import report_generator.analyzer.generic as ag
 
 
-def plot_counts(df, year):
+format_str = "[ %(funcName)s() ] %(message)s"
+logging.basicConfig(level=logging.INFO, format=format_str)
+
+
+def plot_counts(df, year, cjk_support=False):
     cols = df.keys().tolist()
     figs = {}
     for col in cols:
-        figs.update(plot_count(df, col, year))
+        figs.update(plot_count(df, col, year, cjk_support))
 
     return figs
 
 
-def plot_count(df, col, year):
+def plot_count(df, col, year, cjk_support=False):
     """
     Core function to plot counts.
 
@@ -24,14 +29,46 @@ def plot_count(df, col, year):
     :param df: dataframe
     :param col: column
     :param year: year string
+    :param cjk_support: if enable CJK font support in the report
     :return: saved figure object
     """
-    # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
-    # to support CJK fonts
-    sns.set(font_scale=2)
-    new_fonts = ["AR PL UKai TW"] + mpl.rcParams["font.sans-serif"]
-    mpl.rcParams["font.sans-serif"] = new_fonts
+    if cjk_support:
+        logging.debug('CJK support is enabled.')
+        # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
+        # to support CJK fonts
+        sns.set(font_scale=2)
+        new_fonts = ["AR PL UKai TW"] + mpl.rcParams["font.sans-serif"]
+        mpl.rcParams["font.sans-serif"] = new_fonts
+    else:
+        logging.debug("Let's strip non-latin characters")
+        # so matplotlib won't show warnings
+        # issue #2
+        # https://github.com/pycontw/pycontw-postevent-report-generator/
+        # issues/2
+        for df_col in df:
+            for idx in range(len(df[df_col])):
+                text = df[df_col][idx]
 
+                # replace the specific cells
+                # TODO: this stage should be completed at data sanity stage
+                replace_dic = {"1 年以內": "within 1 year",
+                               "1 到 5 年": "1 - 5 years",
+                               "5 到 10 年": "5 - 10 years",
+                               "10 到 20 年": "10 - 20 years",
+                               "China or HongKong or Macau 中國/香港/澳門":
+                               "China or HongKong or Macau",
+                               "Singapore or Malaysia 新加坡/馬來西亞":
+                               "Singapore or Malaysia"}
+                for key in replace_dic:
+                    if key in text:
+                        text = replace_dic[key]
+
+                # strip non-ascii
+                strip_cjk = re.sub(r'[^\x00-\x7f]', r'', text)
+
+                df[df_col][idx] = strip_cjk
+
+    logging.debug('Mapping column and description')
     col_title = col
     if col_title == "Title_Categories":
         plot_x_description = "Job Titles"
@@ -46,6 +83,7 @@ def plot_count(df, col, year):
 
     order = get_order(df, col)
 
+    logging.debug("Plotting...")
     # let seaborn controls ax
     ax = sns.countplot(x=col_title, data=df, order=order)
 
@@ -54,6 +92,7 @@ def plot_count(df, col, year):
     ax.set_ylabel("Attendee Number")
     ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
 
+    logging.debug("Fine tune for too small fields")
     if col_title != "Interesting_Field":
         # Add count value for fileds which counts are too small
         col_value_counts = df[col_title].value_counts()
@@ -61,9 +100,11 @@ def plot_count(df, col, year):
             count_on_y = col_value_counts[order[idx]]
             ax.text(idx, count_on_y, count_on_y)
 
+    logging.debug("Tweak spacing")
     # Tweak spacing to prevent clipping of ylabel or xlabel
     fig.tight_layout()
 
+    logging.debug("Saving figures...")
     return save_fig(col_title)
 
 
