@@ -21,7 +21,7 @@ Currently it only supports a csv file as raw data input.
 Fetch the source
 
 ```sh
-git clone https://github.com/tai271828/pycontw-postevent-report-generator.git
+git clone https://github.com/pycontw/pycontw-postevent-report-generator.git
 ```
 
 Create a working folder to place your attendee raw data outside of the source folder so you won't commit your raw data accidentally.
@@ -83,7 +83,7 @@ Follow the prompt instruction and you will get jpg images. So far it is well tes
     ```
 3. Add this repository to the remote in your local repository
     ```sh
-    git remote add upstream "https://github.com/tai271828/pycontw-postevent-report-generator"
+    git remote add upstream "https://github.com/pycontw/pycontw-postevent-report-generator"
     ```
     You can pull the latest code in master branch through `git pull upstream master` afterward.
 4. Check out a branch for your new feature
