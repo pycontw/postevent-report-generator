@@ -1,20 +1,25 @@
 import re
+import logging
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import report_generator.analyzer.generic as ag
 
 
-def plot_counts(df, year):
+format_str = "[ %(funcName)s() ] %(message)s"
+logging.basicConfig(level=logging.INFO, format=format_str)
+
+
+def plot_counts(df, year, cjk_support=False):
     cols = df.keys().tolist()
     figs = {}
     for col in cols:
-        figs.update(plot_count(df, col, year))
+        figs.update(plot_count(df, col, year, cjk_support))
 
     return figs
 
 
-def plot_count(df, col, year):
+def plot_count(df, col, year, cjk_support=False):
     """
     Core function to plot counts.
 
@@ -24,14 +29,20 @@ def plot_count(df, col, year):
     :param df: dataframe
     :param col: column
     :param year: year string
+    :param cjk_support: if enable CJK font support in the report
     :return: saved figure object
     """
-    # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
-    # to support CJK fonts
-    sns.set(font_scale=2)
-    new_fonts = ["AR PL UKai TW"] + mpl.rcParams["font.sans-serif"]
-    mpl.rcParams["font.sans-serif"] = new_fonts
+    if cjk_support:
+        logging.debug('CJK support is enabled.')
+        # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
+        # to support CJK fonts
+        sns.set(font_scale=2)
+        new_fonts = ["AR PL UKai TW"] + mpl.rcParams["font.sans-serif"]
+        mpl.rcParams["font.sans-serif"] = new_fonts
+    else:
+        logging.debug("CJK support is disabled")
 
+    logging.debug('Mapping column and description')
     col_title = col
     if col_title == "Title_Categories":
         plot_x_description = "Job Titles"
@@ -46,6 +57,7 @@ def plot_count(df, col, year):
 
     order = get_order(df, col)
 
+    logging.debug("Plotting...")
     # let seaborn controls ax
     ax = sns.countplot(x=col_title, data=df, order=order)
 
@@ -54,6 +66,7 @@ def plot_count(df, col, year):
     ax.set_ylabel("Attendee Number")
     ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
 
+    logging.debug("Fine tune for too small fields")
     if col_title != "Interesting_Field":
         # Add count value for fileds which counts are too small
         col_value_counts = df[col_title].value_counts()
@@ -61,9 +74,11 @@ def plot_count(df, col, year):
             count_on_y = col_value_counts[order[idx]]
             ax.text(idx, count_on_y, count_on_y)
 
+    logging.debug("Tweak spacing")
     # Tweak spacing to prevent clipping of ylabel or xlabel
     fig.tight_layout()
 
+    logging.debug("Saving figures...")
     return save_fig(col_title)
 
 
