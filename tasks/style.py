@@ -1,6 +1,6 @@
 from invoke import task
 
-from tasks.common import PIPENV_PREFIX
+from tasks.common import PIPENV_PREFIX, COMMON_TARGETS_AS_STR
 
 
 @task
@@ -26,14 +26,12 @@ def run(ctx):
 @task
 def pylint(ctx):
     """Check style through pylint"""
-    targets = ["report_generator", "test", "scripts", "setup.py", "tasks"]
-    ctx.run(f"{PIPENV_PREFIX} pylint {' '.join(targets)}")
+    ctx.run(f"{PIPENV_PREFIX} pylint {COMMON_TARGETS_AS_STR}")
 
 
 @task
 def reformat(ctx):
     """Reformat python files throguh black"""
     black_args = ["-l 119"]
-    target_fils = ["report_generator", "scripts", "test", "setup.py", "tasks"]
 
-    ctx.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} {' '.join(target_fils)}")
+    ctx.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} {COMMON_TARGETS_AS_STR}")
