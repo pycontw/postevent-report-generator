@@ -4,6 +4,12 @@ type: docker
 name: default
 
 steps:
+  - name: lint drone settings
+    image: sdesbure/yamllint
+    pull: if-no-exists
+    commands:
+      - yamllint .drone.yml
+
   - name: setup
     image: python:3.7-slim
     pull: if-not-exists
@@ -15,6 +21,8 @@ steps:
     commands:
       - pip install pipenv invoke
       - inv env.init-dev
+    depends_on:
+      - lint drone settings
 
   - name: lint
     image: python:3.7-slim
@@ -55,7 +63,7 @@ steps:
     depends_on:
       - setup
 
-  - name: test-package-runable
+  - name: test package runable
     image: python:3.7-slim
     pull: if-not-exists
     volumes:

@@ -94,6 +94,9 @@ Follow the prompt instruction and you will get jpg images. So far it is well tes
 6. Run `inv test.cov` to check the test coverage and see where you can add test cases
 7. Run `inv test` and make sure all tests pass.
 8. Run `inv style` and make sure your coding style passes the linter checks
-9. [Optional] Run `inv style.pylint` to check your coding style through `pylint`. Note that you do not have to fix all the issues warned by `pylint`.
+9. *[Optional]* Run `inv style.pylint` to check your coding style through `pylint`. Note that you do not have to fix all the issues warned by `pylint`.
 10. Run `inv style.reformat` to format your code through `black`.
-11. Create a Pull Request
+11. Run `inv secure` to ensure the packages installed are secure
+12. *[Optional]* Run `inv secure.bandit` to check whether there is common security issue in the code. Note that you do not have to fix all the issues warned by `bandit`
+13. Run `inv build.test-cli` to ensure that the command is runable
+14. Create a Pull Request
