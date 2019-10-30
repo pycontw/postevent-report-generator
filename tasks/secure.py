@@ -12,4 +12,4 @@ def check_package(ctx):
 @task
 def bandit(ctx):
     """Check common software vulnerabilities (Use it as reference only)"""
-    ctx.run(f"{PIPENV_PREFIX} bandit -r {COMMON_TARGETS_AS_STR}")
+    ctx.run(f"{PIPENV_PREFIX} bandit -r {COMMON_TARGETS_AS_STR}", pty=True)
