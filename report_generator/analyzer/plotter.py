@@ -83,8 +83,34 @@ def plot_count(df, col, year, cjk_support=False):
 
 
 def plot_talk_categories(df):
+
+    # Change category column to readables
+    df["category"] = df["category"].map({
+        "PRAC":  "Best Practices & Patterns",
+        "COM":   "Community",
+        "DB":    "Databases",
+        "DATA":  "Data Analysis",
+        "EDU":   "Education",
+        "EMBED": "Embedded Systems",
+        "FIN":   "FinTech",
+        "GAME":  "Gaming",
+        "GRAPH": "Graphics",
+        "OTHER": "Other",
+        "CORE":  "Python Core (language, stdlib, etc.)",
+        "INTNL": "Python Internals",
+        "IOT":   "Internet Of Things",
+        "LIBS":  "Python Libraries",
+        "SCI":   "Science",
+        "SEC":   "Security",
+        "ADMIN": "Systems Administration",
+        "TEST":  "Testing",
+        "WEB":   "Web Frameworks",
+    })
+
     # plot seaborn countplot on this fig
     fig, ax = plt.subplots(figsize=(12, 8))
+    # Make additional white space to fit xticklabels
+    fig.subplots_adjust(bottom=0.35)
 
     order = get_order(df, "category")
 
@@ -92,9 +118,9 @@ def plot_talk_categories(df):
     ax = sns.countplot(x="category", data=df, order=order)
 
     ax.set_title("Count of Talks by Categories")
-    ax.set_xlabel("Category")
+    ax.set_xlabel(None) # Ticks are already explaining themselves
     ax.set_ylabel("Number of Talks")
-    ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
+    ax.set_xticklabels(order, rotation=45, fontdict={"fontsize": "12"}, ha="right")
 
     return save_fig('talk-categories')
 
