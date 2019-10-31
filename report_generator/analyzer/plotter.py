@@ -82,6 +82,23 @@ def plot_count(df, col, year, cjk_support=False):
     return save_fig(col_title)
 
 
+def plot_talk_categories(df):
+    # plot seaborn countplot on this fig
+    fig, ax = plt.subplots(figsize=(12, 8))
+
+    order = get_order(df, "category")
+
+    logging.debug("Plotting...")
+    ax = sns.countplot(x="category", data=df, order=order)
+
+    ax.set_title("Count of Talks by Categories")
+    ax.set_xlabel("Category")
+    ax.set_ylabel("Number of Talks")
+    ax.set_xticklabels(order, rotation=90, fontdict={"fontsize": "16"})
+
+    return save_fig('talk-categories')
+
+
 def save_fig(identifier):
     fig_name = identifier + ".jpg"
     fig_path = "/tmp/" + fig_name
