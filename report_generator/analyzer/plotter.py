@@ -117,12 +117,12 @@ def plot_talk_categories(df):
     logging.debug("Plotting...")
     ax = sns.countplot(x="category", data=df, order=order)
 
-    ax.set_title("Count of Talks by Categories")
+    ax.set_title("Count of Talks by Topics")
     ax.set_xlabel(None) # Ticks are already explaining themselves
     ax.set_ylabel("Number of Talks")
     ax.set_xticklabels(order, rotation=45, fontdict={"fontsize": "12"}, ha="right")
 
-    return save_fig('talk-categories')
+    return save_fig('Talk_Topics')
 
 
 def save_fig(identifier):
