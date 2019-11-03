@@ -54,18 +54,6 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         p_tag = p_tag_template.format(tag_gi_description)
     all_tags.update({"General_Info_Description": p_tag})
 
-    # insert topic figure
-    tag_yaml_topic = yaml[-1]['Topics']
-    img_data = open(tag_yaml_topic['uri'], 'rb').read()
-    data_uri = base64.b64encode(img_data).decode('utf-8').replace('\n', '')
-    tag_template = '<img src="data:image/png;base64,{0}">'
-    img_tag = tag_template.format(data_uri)
-    all_tags.update({'Topics': img_tag})
-
-    p_tag_template = '<p>{0}</p>'
-    p_tag = p_tag_template.format(tag_yaml_topic['description'])
-    all_tags.update({'Topics_Description': p_tag})
-
     # general info - attendee number
     total_attendee_number = str(attendee_obj.total_attendee_number)
     total_attendee_number_tag = "<td>" + total_attendee_number + "</td>"

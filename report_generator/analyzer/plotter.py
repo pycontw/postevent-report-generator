@@ -147,7 +147,7 @@ def plot_talk_categories(df):
         text.set_fontsize(14)
 
     ax.set_title("Count of Talks by Topics")
-    return save_fig('Talk_Topics')
+    return save_fig('Topics')
 
 
 def save_fig(identifier):

@@ -74,5 +74,5 @@
       image: /tmp/01.jpg
       description: xxx
 - Topics:
-    uri: /tmp/Talk_Topics.jpg
-    description: We keep the goal to keep topic diversity.
+    - represent: piechart
+    - description: We keep the goal to keep topic diversity.

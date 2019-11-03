@@ -75,6 +75,7 @@ def main(csv, talks_csv, interactive, cjk_support, conf, yaml, package_yaml,
 
     talks_df = report_generatorcsv.csv_to_dataframe(talks_csv)
     talks_fig = plotter.plot_talk_categories(talks_df)
+    figs.update(talks_fig)
 
     # read the other report data
     report_yaml = report_generatoryaml.read_yaml(yaml)
