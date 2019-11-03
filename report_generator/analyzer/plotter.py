@@ -87,34 +87,32 @@ def plot_talk_categories(df):
 
     # Change category column to readables
     df["category"] = df["category"].map({
-        "PRAC":  "Best Practices & Patterns",
-        "COM":   "Community",
-        "DB":    "Databases",
-        "DATA":  "Data Analysis",
-        "EDU":   "Education",
+        "PRAC": "Best Practices & Patterns",
+        "COM": "Community",
+        "DB": "Databases",
+        "DATA": "Data Analysis",
+        "EDU": "Education",
         "EMBED": "Embedded Systems",
-        "FIN":   "FinTech",
-        "GAME":  "Gaming",
+        "FIN": "FinTech",
+        "GAME": "Gaming",
         "GRAPH": "Graphics",
         "OTHER": "Other",
-        "CORE":  "Python Core (language, stdlib, etc.)",
+        "CORE": "Python Core (language, stdlib, etc.)",
         "INTNL": "Python Internals",
-        "IOT":   "Internet Of Things",
-        "LIBS":  "Python Libraries",
-        "SCI":   "Science",
-        "SEC":   "Security",
+        "IOT": "Internet Of Things",
+        "LIBS": "Python Libraries",
+        "SCI": "Science",
+        "SEC": "Security",
         "ADMIN": "Systems Administration",
-        "TEST":  "Testing",
-        "WEB":   "Web Frameworks",
+        "TEST": "Testing",
+        "WEB": "Web Frameworks",
     })
 
     fig, ax = plt.subplots(figsize=(12, 8))
-    order = get_order(df, "category")
 
     logging.debug("Plotting...")
 
     counts_by_category = df["category"].value_counts()
-    labels = counts_by_category.index
 
     wedges, _, autotexts = plt.pie(
         counts_by_category,
@@ -132,14 +130,17 @@ def plot_talk_categories(df):
               bbox=bbox_props, zorder=0, va="center")
 
     for i, p in enumerate(wedges):
-        ang = (p.theta2 - p.theta1)/2. + p.theta1
+        ang = (p.theta2 - p.theta1) / 2. + p.theta1
         y = np.sin(np.deg2rad(ang))
         x = np.cos(np.deg2rad(ang))
         horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
         connectionstyle = "angle,angleA=0,angleB={}".format(ang)
         kw["arrowprops"].update({"connectionstyle": connectionstyle})
-        ax.annotate(counts_by_category.index[i], xy=(x, y), xytext=(np.sign(x)+0.4 * x, 1.4*y),
-                    horizontalalignment=horizontalalignment, **kw)
+        ax.annotate(counts_by_category.index[i],
+                    xy=(x, y),
+                    xytext=(np.sign(x) + 0.4 * x, 1.4 * y),
+                    horizontalalignment=horizontalalignment,
+                    **kw)
 
     # Setting font styles for talk counts
     for text in autotexts:
