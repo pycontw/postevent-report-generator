@@ -3,6 +3,7 @@ import logging
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import numpy as np
 import report_generator.analyzer.generic as ag
 
 
@@ -80,6 +81,74 @@ def plot_count(df, col, year, cjk_support=False):
 
     logging.debug("Saving figures...")
     return save_fig(col_title)
+
+
+def plot_talk_categories(df):
+
+    # Change category column to readables
+    df["category"] = df["category"].map({
+        "PRAC": "Best Practices & Patterns",
+        "COM": "Community",
+        "DB": "Databases",
+        "DATA": "Data Analysis",
+        "EDU": "Education",
+        "EMBED": "Embedded Systems",
+        "FIN": "FinTech",
+        "GAME": "Gaming",
+        "GRAPH": "Graphics",
+        "OTHER": "Other",
+        "CORE": "Python Core (language, stdlib, etc.)",
+        "INTNL": "Python Internals",
+        "IOT": "Internet Of Things",
+        "LIBS": "Python Libraries",
+        "SCI": "Science",
+        "SEC": "Security",
+        "ADMIN": "Systems Administration",
+        "TEST": "Testing",
+        "WEB": "Web Frameworks",
+    })
+
+    fig, ax = plt.subplots(figsize=(12, 8))
+
+    logging.debug("Plotting...")
+
+    counts_by_category = df["category"].value_counts()
+
+    wedges, _, autotexts = plt.pie(
+        counts_by_category,
+        # Calculate the percentage back to actual number of talks
+        autopct=lambda x: int(round((x / 100) * counts_by_category.sum())),
+        pctdistance=0.8,
+        # There's too much categories, joining two color palettes to avoid repeating
+        colors=sns.color_palette("muted") + sns.color_palette()
+    )
+
+    # Following snippet copied from
+    # https://matplotlib.org/3.1.0/gallery/pie_and_polar_charts/pie_and_donut_labels.html
+    bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+    kw = dict(arrowprops=dict(arrowstyle="-"),
+              bbox=bbox_props, zorder=0, va="center")
+
+    for i, p in enumerate(wedges):
+        ang = (p.theta2 - p.theta1) / 2. + p.theta1
+        y = np.sin(np.deg2rad(ang))
+        x = np.cos(np.deg2rad(ang))
+        horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
+        connectionstyle = "angle,angleA=0,angleB={}".format(ang)
+        kw["arrowprops"].update({"connectionstyle": connectionstyle})
+        ax.annotate(counts_by_category.index[i],
+                    xy=(x, y),
+                    xytext=(np.sign(x) + 0.4 * x, 1.4 * y),
+                    horizontalalignment=horizontalalignment,
+                    **kw)
+
+    # Setting font styles for talk counts
+    for text in autotexts:
+        text.set_color("white")
+        text.set_fontsize(14)
+
+    ax.set_title("Count of Talks by Topics")
+    return save_fig('Topics')
 
 
 def save_fig(identifier):
