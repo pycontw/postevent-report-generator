@@ -33,7 +33,7 @@ def plot_count(df, col, year, cjk_support=False):
     :return: saved figure object
     """
     if cjk_support:
-        logging.debug('CJK support is enabled.')
+        logging.debug("CJK support is enabled.")
         # ref: https://www.one-tab.com/page/DHKTSk5CQ1eRobxOZxWnjQ
         # to support CJK fonts
         sns.set(font_scale=2)
@@ -42,7 +42,7 @@ def plot_count(df, col, year, cjk_support=False):
     else:
         logging.debug("CJK support is disabled")
 
-    logging.debug('Mapping column and description')
+    logging.debug("Mapping column and description")
     col_title = col
     if col_title == "Title_Categories":
         plot_x_description = "Job Titles"
