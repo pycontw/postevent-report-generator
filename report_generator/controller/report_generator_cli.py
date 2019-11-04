@@ -35,8 +35,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
-def main(csv, talks_csv, interactive, cjk_support, conf, yaml, package_yaml,
-         sponsor_yaml, output_path):
+def main(csv, talks_csv, interactive, cjk_support, conf, yaml, package_yaml, sponsor_yaml, output_path):
     conf_singlet = report_generatorconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
