@@ -17,7 +17,15 @@ def mypy(ctx):
     ctx.run(f"{PIPENV_PREFIX} mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
 
 
-@task(pre=[flake8, mypy], default=True)
+@task
+def black(ctx):
+    """Check style through black"""
+    black_args = ["-l 119"]
+
+    ctx.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} --check {COMMON_TARGETS_AS_STR}")
+
+
+@task(pre=[flake8, mypy, black], default=True)
 def run(ctx):
     """Check style throguh linter (Note that pylint is not included)"""
     pass
