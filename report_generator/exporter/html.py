@@ -1,5 +1,6 @@
 import base64
 from pathlib import Path
+from collections.abc import Iterable
 
 from jinja2 import Environment, PackageLoader
 from jinja2 import Markup
@@ -7,6 +8,16 @@ from jinja2 import Markup
 
 loader = PackageLoader("report_generator.exporter", "data")
 env = Environment(loader=loader)
+
+
+def _generate_html_rows(*data):
+    if not isinstance(data, Iterable):
+        data = (data,)
+    return "".join([f"<td>{datum}</td>" for datum in data])
+
+
+def _generate_html_link(url: str):
+    return f"<a href={url}>{url}</a>"
 
 
 def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path="/tmp"):
@@ -54,7 +65,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
     all_tags.update({"General_Info_Description": p_tag})
 
     # general info - attendee number
-    total_attendee_number_tag = f"<td>{attendee_obj.total_attendee_number}</td>"
+    total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
     all_tags.update({"general_total_attendee_number": total_attendee_number_tag})
 
     # apply information specific to each sponsor
@@ -63,27 +74,22 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         all_tags.update({"sponsor_description": sponsor.description})
 
         # sponsor summary tables
-        table_sponsor_package = f"<td>{sponsor.name}</td><td>{sponsor.package_name}</d>"
+        table_sponsor_package = _generate_html_rows(sponsor.name, sponsor.package_name)
         all_tags.update({"table_sponsor_package": table_sponsor_package})
 
         # promotion data
         # promotion - web
-        table_promotion_web = (
-            f"<td>{sponsor.web_click}</td>"
-            f"<td>{sponsor.web_click_portion}</td>"
-            f"<td>{sponsor.web_click_rank}</td>"
-        )
+        table_promotion_web = _generate_html_rows(sponsor.web_click, sponsor.web_click_portion, sponsor.web_click_rank)
         all_tags.update({"table_promotion_web": table_promotion_web})
 
         # promotion - facebook
         # table_promotion_facebook: tpf summary
-        tpf_row = (
-            "<tr>"
-            f"<td>{sponsor.facebook_total_reached_people}</td>"
-            f"<td>{sponsor.facebook_total_reach_portion}</td>"
-            f"<td>{sponsor.facebook_total_reach_rank}</td>"
-            "</tr>"
+        html_rows = _generate_html_rows(
+            sponsor.facebook_total_reached_people,
+            sponsor.facebook_total_reach_portion,
+            sponsor.facebook_total_reach_rank,
         )
+        tpf_row = f"<tr>{html_rows}</tr>"
         all_tags.update({"table_promotion_facebook_summary": tpf_row})
 
         # table_promotion_facebook: tpf
@@ -91,18 +97,21 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         for url in sponsor.facebook_url.keys():
             reach = sponsor.facebook_url[url]["reach"]
             engagement = sponsor.facebook_url[url]["engagement"]
-            tpf_row = f"<tr><td><a href={url}>{url}</a></td><td>{reach}</td><td>{engagement}</td></tr>"
+            html_url = _generate_html_link(url)
+            rows = _generate_html_rows(html_url, reach, engagement)
+            tpf_row = f"<tr>{rows}</tr>"
             tpf_rows += tpf_row
         all_tags.update({"table_promotion_facebook": tpf_rows})
 
         # booth
         all_tags.update({"booth_flag": sponsor.if_one_true_booth})
         if sponsor.if_one_true_booth:
-            table_booth = f"<td>{sponsor.booth_participant}</td><td>{sponsor.booth_participant_rank}</td>"
+            table_booth = _generate_html_rows(sponsor.booth_participant, sponsor.booth_participant_rank)
             all_tags.update({"table_booth": table_booth})
 
         # workshop
         workshop_url_tag = f"Event Link - <a href={sponsor.workshop_event_url}>{sponsor.workshop_event_url}</a>"
+        workshop_url_tag = f"Event Link - {_generate_html_link(sponsor.workshop_event_url)}"
         all_tags.update({"workshop_flag": sponsor.if_one_true_workshop})
         all_tags.update({"workshop_event_url": workshop_url_tag})
         all_tags.update({"workshop_description": sponsor.workshop_description})
