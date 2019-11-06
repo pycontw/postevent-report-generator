@@ -10,10 +10,13 @@ loader = PackageLoader("report_generator.exporter", "data")
 env = Environment(loader=loader)
 
 
-def _generate_html_rows(*data):
+def _generate_html_rows(*data, with_tr=False):
     if not isinstance(data, Iterable):
         data = (data,)
-    return "".join([f"<td>{datum}</td>" for datum in data])
+    html_rows = "".join([f"<td>{datum}</td>" for datum in data])
+    if not with_tr:
+        return html_rows
+    return f"<tr>{html_rows}</tr>"
 
 
 def _generate_html_link(url: str):
@@ -84,22 +87,21 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
 
         # promotion - facebook
         # table_promotion_facebook: tpf summary
-        html_rows = _generate_html_rows(
+        tpf_row = _generate_html_rows(
             sponsor.facebook_total_reached_people,
             sponsor.facebook_total_reach_portion,
             sponsor.facebook_total_reach_rank,
+            with_tr=True,
         )
-        tpf_row = f"<tr>{html_rows}</tr>"
         all_tags.update({"table_promotion_facebook_summary": tpf_row})
 
         # table_promotion_facebook: tpf
         tpf_rows = ""
         for url in sponsor.facebook_url.keys():
+            html_url = _generate_html_link(url)
             reach = sponsor.facebook_url[url]["reach"]
             engagement = sponsor.facebook_url[url]["engagement"]
-            html_url = _generate_html_link(url)
-            rows = _generate_html_rows(html_url, reach, engagement)
-            tpf_row = f"<tr>{rows}</tr>"
+            tpf_row = _generate_html_rows(html_url, reach, engagement, with_tr=True)
             tpf_rows += tpf_row
         all_tags.update({"table_promotion_facebook": tpf_rows})
 
