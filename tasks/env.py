@@ -10,7 +10,7 @@ def clean(ctx):
 @task
 def init(ctx):
     """Install production dependencies"""
-    ctx.run("pipenv install")
+    ctx.run("pipenv install --deploy")
 
 
 @task
