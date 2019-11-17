@@ -83,7 +83,7 @@ def plot_count(df, col, year, cjk_support=False):
     return save_fig(col_title)
 
 
-def plot_talk_categories(df):
+def plot_talk_categories(df, fig_title="Topics"):
 
     # Change category column to readables
     df["category"] = df["category"].map(
@@ -151,7 +151,7 @@ def plot_talk_categories(df):
         text.set_fontsize(14)
 
     ax.set_title("Count of Talks by Topics")
-    return save_fig("Topics")
+    return save_fig(fig_title)
 
 
 def save_fig(identifier):

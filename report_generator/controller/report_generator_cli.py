@@ -26,6 +26,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.command()
 @click.option("--csv", required=True, default="data.csv", multiple=True, help="Read csv format data")
 @click.option("--talks-csv", required=True, default="talks.csv", help="CSV file for talks")
+@click.option("--proposed-talks-csv", required=True, default="talks.csv", help="CSV file for proposed talks")
 @click.option(
     "--interactive/--no-interactive", default=False, help="Quiet mode. Useful for automation. True for no prompt."
 )
@@ -35,7 +36,9 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
-def main(csv, talks_csv, interactive, cjk_support, conf, yaml, package_yaml, sponsor_yaml, output_path):
+def main(
+    csv, talks_csv, proposed_talks_csv, interactive, cjk_support, conf, yaml, package_yaml, sponsor_yaml, output_path
+):
     conf_singlet = report_generatorconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
     if conf:
@@ -69,9 +72,15 @@ def main(csv, talks_csv, interactive, cjk_support, conf, yaml, package_yaml, spo
     # analyzed data frame is ready. let's plot
     figs = plotter.plot_counts(df_all, year, cjk_support)
 
+    # prepared the selected topic pie chart
     talks_df = report_generatorcsv.csv_to_dataframe(talks_csv)
     talks_fig = plotter.plot_talk_categories(talks_df)
     figs.update(talks_fig)
+
+    # prepared the proposed topic pie chart
+    p_talks_df = report_generatorcsv.csv_to_dataframe(proposed_talks_csv)
+    p_talks_fig = plotter.plot_talk_categories(p_talks_df, fig_title="Proposed_Topics")
+    figs.update(p_talks_fig)
 
     # read the other report data
     report_yaml = report_generatoryaml.read_yaml(yaml)
