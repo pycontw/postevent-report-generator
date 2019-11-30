@@ -11,16 +11,16 @@ format_str = "[ %(funcName)s() ] %(message)s"
 logging.basicConfig(level=logging.INFO, format=format_str)
 
 
-def plot_counts(df, year, cjk_support=False):
+def plot_attendee_counts(df, year, cjk_support=False):
     cols = df.keys().tolist()
     figs = {}
     for col in cols:
-        figs.update(plot_count(df, col, year, cjk_support))
+        figs.update(plot_attendee_count(df, col, year, cjk_support))
 
     return figs
 
 
-def plot_count(df, col, year, cjk_support=False):
+def plot_attendee_count(df, col, year, cjk_support=False):
     """
     Core function to plot counts.
 
