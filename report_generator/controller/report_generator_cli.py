@@ -35,7 +35,7 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--yaml", required=True, help="Report yaml file to describe how a report would be")
 @click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
-@click.option("--output-path", help="Where the reports exprted", default="/tmp", show_default=True)
+@click.option("--output-path", help="Where the reports exported", default="/tmp", show_default=True)
 def main(
     csv, talks_csv, proposed_talks_csv, interactive, cjk_support, conf, yaml, package_yaml, sponsor_yaml, output_path
 ):
@@ -69,8 +69,8 @@ def main(
     # all datafram general data object
     df_all_g_data_obj = attendee.Attendee(df_all)
 
-    # analyzed data frame is ready. let's plot
-    figs = plotter.plot_counts(df_all, year, cjk_support)
+    # analyzed data frame is ready. let's plot attendee data
+    figs = plotter.plot_attendee_counts(df_all, year, cjk_support)
 
     # prepared the selected topic pie chart
     talks_df = report_generatorcsv.csv_to_dataframe(talks_csv)
@@ -89,7 +89,7 @@ def main(
 
     # generate the report
     # general info (everyone could see it):
-    #   figs: plots from attendee dataframe
+    #   figs: plots from attendee dataframe and talks
     #   df_all_g_data_obj: numbers from attendee dataframe
     #   report_yaml: plot description of figs
     # sponsors:
