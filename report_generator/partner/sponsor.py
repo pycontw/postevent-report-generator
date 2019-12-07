@@ -157,6 +157,15 @@ class Sponsor:
         return self.package_content_flag["booth"]["participant_rank"]
 
     @property
+    def booth_participant_portion(self):
+        if self.flag_booth_participant_rank:
+            data = self._get_all_sponsor_booth_participant()
+            data_target = self.content["booth"]["participant"]
+            percentage = data_target / float(sum(data))
+            return "{:.1%}".format(percentage)
+        return NA_CONTENT_MESSAGE
+
+    @property
     def booth_participant_rank(self):
         if self.flag_booth_participant_rank:
             data = self._get_all_sponsor_booth_participant()

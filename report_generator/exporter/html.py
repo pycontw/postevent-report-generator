@@ -110,7 +110,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
         # booth
         all_tags.update({"booth_flag": sponsor.if_one_true_booth})
         if sponsor.if_one_true_booth:
-            table_booth = _generate_html_rows(sponsor.booth_participant)
+            table_booth = _generate_html_rows(sponsor.booth_participant, sponsor.booth_participant_portion)
             all_tags.update({"table_booth": table_booth})
 
         # workshop
@@ -218,7 +218,9 @@ def generate_summary(data=None, yaml=None, attendee_obj=None, sponsors=None,
 
         # booth
         table_booth = _generate_html_rows(sponsor.name, sponsor.package_name,
-                                          sponsor.booth_participant, sponsor.booth_participant_rank,
+                                          sponsor.booth_participant,
+                                          sponsor.booth_participant_portion,
+                                          sponsor.booth_participant_rank,
                                           with_tr=True)
         table_booth_all = table_booth_all + table_booth
 
