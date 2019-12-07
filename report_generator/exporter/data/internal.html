@@ -27,26 +27,16 @@
     <body>
         <div data-url="demo-intro" data-role="page" class="jqm-demos ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active">
             <div data-role="header" class="jqm-header">
-                <h1>Python Conference Taiwan Post-event Summary</h1>
+                <h1>Python Conference Taiwan Post-event Summary (for Internal Organizer Committee Use)</h1>
             </div><!-- /header -->
             <div role="main" class="ui-content jqm-content">
-                <div class="ui-content jqm-content">
-                    {{ sponsor_description }}
-                </div>
                 <p></p><p></p>
-                <div class="ui-content jqm-content">
-                    <h2>Information and Description</h2>
-                        {{ General_Info_Description }}
-                </div>
                 <div class="ui-content jqm-content">
                     <table>
                         <tr>
-                            <th>Sponsor Name</th>
-                            <th>Package Name</th>
                             <th>Total Attendee Number</th>
                         </tr>
                         <tr>
-                            {{ table_sponsor_package }}
                             {{ general_total_attendee_number }}
                         </tr>
                     </table>
@@ -54,57 +44,55 @@
                 <div class="ui-content jqm-content">
                     <table>
                         <tr>
+                            <th>Sponsor Name</th>
+                            <th>Package Name</th>
                             <th>Logo Web Click Number</th>
                             <th>Portion of All Clicks</th>
+                            <th>Click Rank Between Logos</th>
                         </tr>
                         <tr>
-                            {{ table_promotion_web }}
+                            {{ table_promotion_web_all }}
                         </tr>
                     </table>
                 </div>
                <div class="ui-content jqm-content">
                     <table>
                         <tr>
+                            <th>Sponsor Name</th>
+                            <th>Package Name</th>
                             <th>Facebook Post Total Reached People</th>
                             <th>Portion of Total Reached People</th>
+                            <th>Rank</th>
                         </tr>
-                        {{ table_promotion_facebook_summary }}
+                        {{ table_promotion_facebook_summary_all }}
                     </table>
                 </div>
                <div class="ui-content jqm-content">
                     <table>
                         <tr>
-                            <th>Facebook Post URL</th>
+                            <th>Sponsor Name</th>
+                            <th>Package Name</th>
                             <th>Reached People</th>
                             <th>Engagement</th>
+                            <th>Facebook Post URL</th>
                         </tr>
-                        {{ table_promotion_facebook }}
+                        {{ table_promotion_facebook_all }}
                     </table>
                 </div>
-               {% if booth_flag %}
                <div class="ui-content jqm-content">
                     <table>
                         <tr>
+                            <th>Sponsor Name</th>
+                            <th>Package Name</th>
                             <th>Booth Check-in Number</th>
                             <th>Portion of Total Check-in Number</th>
+                            <th>Check-in Rank</th>
                         </tr>
                         <tr>
                             {{ table_booth }}
                         </tr>
                     </table>
                 </div>
-                {% endif %}
-                {% if workshop_flag %}
-                <div class="ui-content jqm-content">
-                    <h2>Workshop Summary</h2>
-                        <div class="ui-content jqm-content">
-                            {{ workshop_event_url }}
-                        </div>
-                        <div class="ui-content jqm-content">
-                            {{ workshop_description }}
-                        </div>
-                </div>
-                {% endif %}
                 <div class="ui-content jqm-content">
                     <h2>Job Categories</h2>
                         {{ Title_Categories }}
@@ -120,16 +108,16 @@
                         {{ Seniority }}
                         {{ Seniority_Description }}
                 </div>
-                <!-- div class="ui-content jqm-content">
+                <div class="ui-content jqm-content">
                     <h2>Gender</h2>
                         {{ Gender }}
                         {{ Gender_Description }}
-                </div -->
-                <!-- div class="ui-content jqm-content">
+                </div>
+                <div class="ui-content jqm-content">
                     <h2>Registration Date</h2>
                         {{ Registration_date }}
                         {{ Registration_date_Description }}
-                </div -->
+                </div>
                 <div class="ui-content jqm-content">
                     <h2>Interested Fields</h2>
                         {{ Interested_Field }}

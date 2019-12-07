@@ -38,8 +38,17 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
 @click.option("--output-path", help="Where the reports exported", default="/tmp", show_default=True)
 def main(
-    csv, talks_csv, proposed_talks_csv, booth_csv,
-    interactive, cjk_support, conf, yaml, package_yaml, sponsor_yaml, output_path
+    csv,
+    talks_csv,
+    proposed_talks_csv,
+    booth_csv,
+    interactive,
+    cjk_support,
+    conf,
+    yaml,
+    package_yaml,
+    sponsor_yaml,
+    output_path,
 ):
     conf_singlet = report_generatorconfig.Configuration.get_instance()
     conf_singlet.read_configuration(template)
@@ -100,7 +109,12 @@ def main(
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
-    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors, output_path)
+    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors, "sponsor.html", output_path=output_path)
+
+    # summary for internal review
+    exporter_html.generate_summary(
+        figs, report_yaml, df_all_g_data_obj, sponsors, "internal.html", "internal-post-event", output_path
+    )
 
     print("Analysis process finished completely.")
 
