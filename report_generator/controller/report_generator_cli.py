@@ -85,7 +85,8 @@ def main(
     figs.update(p_talks_fig)
 
     booth_df = report_generatorcsv.csv_to_dataframe(booth_csv)
-    booth_fig = plotter.plot_booth(booth_df, "booth")
+    # TODO: if we want to enhance the issue #11 in the future like #23, we may start here by using the returned value
+    plotter.plot_booth(booth_df, "booth")
 
     # read the other report data
     report_yaml = report_generatoryaml.read_yaml(yaml)
