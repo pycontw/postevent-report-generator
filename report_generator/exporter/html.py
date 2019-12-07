@@ -82,7 +82,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
 
         # promotion data
         # promotion - web
-        table_promotion_web = _generate_html_rows(sponsor.web_click, sponsor.web_click_portion, sponsor.web_click_rank)
+        table_promotion_web = _generate_html_rows(sponsor.web_click, sponsor.web_click_portion)
         all_tags.update({"table_promotion_web": table_promotion_web})
 
         # promotion - facebook
@@ -90,7 +90,6 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         tpf_row = _generate_html_rows(
             sponsor.facebook_total_reached_people,
             sponsor.facebook_total_reach_portion,
-            sponsor.facebook_total_reach_rank,
             with_tr=True,
         )
         all_tags.update({"table_promotion_facebook_summary": tpf_row})
@@ -108,7 +107,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         # booth
         all_tags.update({"booth_flag": sponsor.if_one_true_booth})
         if sponsor.if_one_true_booth:
-            table_booth = _generate_html_rows(sponsor.booth_participant, sponsor.booth_participant_rank)
+            table_booth = _generate_html_rows(sponsor.booth_participant)
             all_tags.update({"table_booth": table_booth})
 
         # workshop
