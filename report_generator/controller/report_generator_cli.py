@@ -104,7 +104,8 @@ def main(
 
     accepted_talk_number = talks_df["category"].value_counts().sum()
     all_talk_number = p_talks_df["category"].value_counts().sum()
-    talk_info = int(round(accepted_talk_number / all_talk_number * 100))
+    talk_info_ratio = accepted_talk_number / all_talk_number
+    talk_info = "{:.1%}".format(talk_info_ratio)
     # generate the report
     # general info (everyone could see it):
     #   figs: plots from attendee dataframe and talks
