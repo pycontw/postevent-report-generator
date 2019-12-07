@@ -23,8 +23,15 @@ def _generate_html_link(url: str):
     return f"<a href={url}>{url}</a>"
 
 
-def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
-             html_template="sponsor.html", output_prefix="post-event", output_path="/tmp"):
+def generate(
+    data=None,
+    yaml=None,
+    attendee_obj=None,
+    sponsors=None,
+    html_template="sponsor.html",
+    output_prefix="post-event",
+    output_path="/tmp",
+):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -91,9 +98,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
         # promotion - facebook
         # table_promotion_facebook: tpf summary
         tpf_row = _generate_html_rows(
-            sponsor.facebook_total_reached_people,
-            sponsor.facebook_total_reach_portion,
-            with_tr=True,
+            sponsor.facebook_total_reached_people, sponsor.facebook_total_reach_portion, with_tr=True
         )
         all_tags.update({"table_promotion_facebook_summary": tpf_row})
 
@@ -129,8 +134,15 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
     print("Dumping post event reports for each sponsor to {}".format(output_path))
 
 
-def generate_summary(data=None, yaml=None, attendee_obj=None, sponsors=None,
-                     html_template="sponsor.html", output_prefix="internal-summary-post-event", output_path="/tmp"):
+def generate_summary(
+    data=None,
+    yaml=None,
+    attendee_obj=None,
+    sponsors=None,
+    html_template="sponsor.html",
+    output_prefix="internal-summary-post-event",
+    output_path="/tmp",
+):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -188,16 +200,21 @@ def generate_summary(data=None, yaml=None, attendee_obj=None, sponsors=None,
     for sponsor in sponsors:
         # promotion data
         # promotion - web
-        table_promotion_web = _generate_html_rows(sponsor.name, sponsor.package_name,
-                                                  sponsor.web_click, sponsor.web_click_portion, sponsor.web_click_rank,
-                                                  with_tr=True,
-                                                  )
+        table_promotion_web = _generate_html_rows(
+            sponsor.name,
+            sponsor.package_name,
+            sponsor.web_click,
+            sponsor.web_click_portion,
+            sponsor.web_click_rank,
+            with_tr=True,
+        )
         table_promotion_web_all = table_promotion_web_all + table_promotion_web
 
         # promotion - facebook
         # table_promotion_facebook_summary: tpf summary
         tpfs_row = _generate_html_rows(
-            sponsor.name, sponsor.package_name,
+            sponsor.name,
+            sponsor.package_name,
             sponsor.facebook_total_reached_people,
             sponsor.facebook_total_reach_portion,
             sponsor.web_click_rank,
@@ -211,17 +228,21 @@ def generate_summary(data=None, yaml=None, attendee_obj=None, sponsors=None,
             html_url = _generate_html_link(url)
             reach = sponsor.facebook_url[url]["reach"]
             engagement = sponsor.facebook_url[url]["engagement"]
-            tpf_row = _generate_html_rows(sponsor.name, sponsor.package_name,
-                                          reach, engagement, html_url, with_tr=True)
+            tpf_row = _generate_html_rows(
+                sponsor.name, sponsor.package_name, reach, engagement, html_url, with_tr=True
+            )
             tpf_rows += tpf_row
         tpf_rows_all = tpf_rows_all + tpf_rows
 
         # booth
-        table_booth = _generate_html_rows(sponsor.name, sponsor.package_name,
-                                          sponsor.booth_participant,
-                                          sponsor.booth_participant_portion,
-                                          sponsor.booth_participant_rank,
-                                          with_tr=True)
+        table_booth = _generate_html_rows(
+            sponsor.name,
+            sponsor.package_name,
+            sponsor.booth_participant,
+            sponsor.booth_participant_portion,
+            sponsor.booth_participant_rank,
+            with_tr=True,
+        )
         table_booth_all = table_booth_all + table_booth
 
     all_tags.update({"table_promotion_web_all": table_promotion_web_all})
