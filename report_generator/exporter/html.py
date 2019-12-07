@@ -23,7 +23,8 @@ def _generate_html_link(url: str):
     return f"<a href={url}>{url}</a>"
 
 
-def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path="/tmp"):
+def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
+             html_template="sponsor.html", output_prefix="post-event", output_path="/tmp"):
     def include_file(name):
         # This helper function insert static files literally into Jinja
         # templates without parsing them.
@@ -31,7 +32,8 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
 
     env.globals["include_file"] = include_file
 
-    template = env.get_template("sponsor.html")
+    print("Exporting a html report based on the template: {}".format(html_template))
+    template = env.get_template(html_template)
 
     # hosting all tags that will be applied to the jinja2 target string
     all_tags = {}
@@ -118,7 +120,7 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None, output_path
         all_tags.update({"workshop_description": sponsor.workshop_description})
 
         # export report
-        filename = f"post-event-report-sponsor-{sponsor.name}.html"
+        filename = f"{output_prefix}-report-sponsor-{sponsor.name}.html"
         full_output_path = Path(output_path).absolute() / Path(filename)
         with open(full_output_path, "w") as fhandler:
             r = template.render(**all_tags)
