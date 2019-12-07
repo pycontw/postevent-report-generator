@@ -105,7 +105,7 @@ def main(
 
     # summary for internal review
     exporter_html.generate_summary(figs, report_yaml, df_all_g_data_obj, sponsors,
-                           "internal.html", "internal-post-event", output_path)
+                                   "internal.html", "internal-post-event", output_path)
 
     print("Analysis process finished completely.")
 

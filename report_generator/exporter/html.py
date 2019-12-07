@@ -190,7 +190,7 @@ def generate_summary(data=None, yaml=None, attendee_obj=None, sponsors=None,
         # promotion - web
         table_promotion_web = _generate_html_rows(sponsor.name, sponsor.package_name,
                                                   sponsor.web_click, sponsor.web_click_portion, sponsor.web_click_rank,
-                                                  with_tr = True,
+                                                  with_tr=True,
                                                   )
         table_promotion_web_all = table_promotion_web_all + table_promotion_web
 
