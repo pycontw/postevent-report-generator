@@ -102,6 +102,9 @@ def main(
 
     sponsors = apsponsor.get_all_sponsors(package_yaml, sponsor_yaml)
 
+    accepted_talk_number = talks_df["category"].value_counts().sum()
+    all_talk_number = p_talks_df["category"].value_counts().sum()
+    talk_info = int(round(accepted_talk_number / all_talk_number * 100))
     # generate the report
     # general info (everyone could see it):
     #   figs: plots from attendee dataframe and talks
@@ -109,11 +112,13 @@ def main(
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
-    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors, "sponsor.html", output_path=output_path)
+    exporter_html.generate(
+        figs, report_yaml, df_all_g_data_obj, sponsors, talk_info, "sponsor.html", output_path=output_path
+    )
 
     # summary for internal review
     exporter_html.generate_summary(
-        figs, report_yaml, df_all_g_data_obj, sponsors, "internal.html", "internal-post-event", output_path
+        figs, report_yaml, df_all_g_data_obj, sponsors, talk_info, "internal.html", "internal-post-event", output_path
     )
 
     print("Analysis process finished completely.")

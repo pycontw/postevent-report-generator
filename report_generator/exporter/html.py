@@ -28,6 +28,7 @@ def generate(
     yaml=None,
     attendee_obj=None,
     sponsors=None,
+    talk_info=None,
     html_template="sponsor.html",
     output_prefix="post-event",
     output_path="/tmp",
@@ -80,6 +81,10 @@ def generate(
     # general info - attendee number
     total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
     all_tags.update({"general_total_attendee_number": total_attendee_number_tag})
+
+    # general info - accepted rate
+    accepted_rate_tag = _generate_html_rows(talk_info)
+    all_tags.update({"table_proposal_info": accepted_rate_tag})
 
     # apply information specific to each sponsor
     for sponsor in sponsors:
@@ -139,6 +144,7 @@ def generate_summary(
     yaml=None,
     attendee_obj=None,
     sponsors=None,
+    talk_info=None,
     html_template="sponsor.html",
     output_prefix="internal-summary-post-event",
     output_path="/tmp",
@@ -191,6 +197,10 @@ def generate_summary(
     # general info - attendee number
     total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
     all_tags.update({"general_total_attendee_number": total_attendee_number_tag})
+
+    # general info - accepted rate
+    accepted_rate_tag = _generate_html_rows(talk_info)
+    all_tags.update({"table_proposal_info": accepted_rate_tag})
 
     # apply information specific to each sponsor
     table_promotion_web_all = ""
