@@ -227,7 +227,7 @@ def generate_summary(
             sponsor.package_name,
             sponsor.facebook_total_reached_people,
             sponsor.facebook_total_reach_portion,
-            sponsor.web_click_rank,
+            sponsor.facebook_total_reach_rank,
             with_tr=True,
         )
         tpfs_row_all = tpfs_row_all + tpfs_row
