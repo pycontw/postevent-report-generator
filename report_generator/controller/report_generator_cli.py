@@ -12,7 +12,6 @@ import report_generator.io.csv as report_generatorcsv
 import report_generator.io.yaml as report_generatoryaml
 import report_generator.ticket.attendee as attendee
 import report_generator.exporter.html as exporter_html
-import report_generator.exporter.summary_csv as exporter_summary_csv
 from report_generator.partner import sponsor as apsponsor
 
 
@@ -105,9 +104,8 @@ def main(
                            "sponsor.html", output_path=output_path)
 
     # summary for internal review
-    exporter_html.generate(figs, report_yaml, df_all_g_data_obj, sponsors,
+    exporter_html.generate_summary(figs, report_yaml, df_all_g_data_obj, sponsors,
                            "internal.html", "internal-post-event", output_path)
-    #exporter_summary_csv.generate(report_yaml, df_all_g_data_obj, sponsors, output_path)
 
     print("Analysis process finished completely.")
 
