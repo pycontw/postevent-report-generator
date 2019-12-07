@@ -154,6 +154,10 @@ def plot_talk_categories(df, fig_title="Topics"):
     return save_fig(fig_title)
 
 
+def plot_booth(df, col):
+    print(df[col].value_counts())
+
+
 def save_fig(identifier):
     fig_name = identifier + ".jpg"
     fig_path = "/tmp/" + fig_name
