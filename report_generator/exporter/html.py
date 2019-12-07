@@ -113,7 +113,6 @@ def generate(data=None, yaml=None, attendee_obj=None, sponsors=None,
             all_tags.update({"table_booth": table_booth})
 
         # workshop
-        workshop_url_tag = f"Event Link - <a href={sponsor.workshop_event_url}>{sponsor.workshop_event_url}</a>"
         workshop_url_tag = f"Event Link - {_generate_html_link(sponsor.workshop_event_url)}"
         all_tags.update({"workshop_flag": sponsor.if_one_true_workshop})
         all_tags.update({"workshop_event_url": workshop_url_tag})
