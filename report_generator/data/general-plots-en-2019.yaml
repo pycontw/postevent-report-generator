@@ -43,6 +43,8 @@
   - represent: barchart
   - description: >-
       We have a basic portion of foreigners even it is not Pycon APAC this year.
+      The overall recorded nationality diversity is more than double of 2018.
+      There is "No Record" because this is an optional field when registering.
 - Seniority:
   - represent: barchart
   - description: >-
