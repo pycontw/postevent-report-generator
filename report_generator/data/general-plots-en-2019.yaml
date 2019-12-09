@@ -72,10 +72,12 @@
   - description: >-
       In PyCon TW 2019, 80% of the attendees are Taiwanese. 
       There were also a significant amount of foreigners (50 people, 7.5%.) 
-      Among all the talks, there were {50%} talks given in English language, 
-      and {50%} talks with English subtitle. This allows a great opportunities for 
-      english-speakers to enjoy the conference. At the same time,  enhance immediate 
-      knowledge exchange across sea and borders. 
+      We have a basic portion of foreigners even it is not Pycon APAC this year.
+      The overall recorded nationality diversity is more than double in 2019 compared to 2018.
+      There is "No Record" because this is an optional field when registering.
+      This allows a great opportunities for English-speakers to enjoy the conference. 
+      At the same time, enhancing immediate knowledge exchange across sea and borders. 
+      
 - Seniority:
   - represent: barchart
   - description: >-
