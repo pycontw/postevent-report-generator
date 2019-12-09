@@ -3,56 +3,98 @@
   - represent: text
   - description: >-
       <p>
-      The proposal acceptance rate is 38.5%.
+      Dear sponsor,
+      </p>
+      
+      <p>
+      PyCon TW 2019 had an exciting and fulfilling time because of your help. This year, 
+      we provided more than 7000 USD financial aid to engage a wider communities. 
+      For example, people who have significantly contributed to the Python communities, 
+      or people and students who are not able to attend due to economic considerations. 
+      This greatly enhanced our community diversity. This became possible only because of you, 
+      our sponsors.
       </p>
       <p>
-      Portion means the number calculated between the other sponsors.
-      The engagement number of Facebook posts means "how many clicks of the post".
-      It does not include its reaction and shares.
+      This year, we have in total 675 python enthusiast who joined us at glamorous hall at the 
+      Humanities and Social Science Building (HSSB), Academia Sinica, Taipei, Taiwan. This year, 
+      109 brilliant talks were shared with the participants, this was strictly selected from all 
+      submitted talks. The acceptance rate of proposal is 38.5%. We also invited four world-renowned
+      speakers from around the world. All the talks are published on youtube. You could find them in 
+      the following link:
       </p>
-      <p>Overall post-event questionnaire 4.2 ( Max. is 5, 144 responses ),
-      Job Fair 3.9 ( Max. is 5 ),
-      Sponsor booth 4.2 ( Max. is 5 )
-      </p>
+      <p><a href=https://www.youtube.com/playlist?list=PLqtzN042QpffQ1j_gK9KGMAqlbRTwXF5c>Talk Video（Please click me）</a></p>
       <p>
-      We provided more than 7000 USD financial aid to people who contribute the Python communities but not able to
-      attend for economic reasons, including students, for enhancing our community diversity.
+      For more visual impression, please check out our photo and video collections: 
+      </p>
+      <p><a href=https://www.flickr.com/photos/pycon_tw/albums>Photos（Please click me）</a></p>
+      <p><a href=https://www.youtube.com/channel/UCHLnNgRnfGYDzPCCH8qGbQw>Video（Please click me）</a></p>
+
+      <p>
+      One delightful fact we would like to share with you is the overall satisfaction 
+      toward PyConTW 2019 of the attendees. 
+      <ul>
+      <li>Overall satisfaction score: 4.2 out of 5.</li>
+      <li>Job Fair satisfaction score: 3.9 out of 5</li>
+      <li>Sponsor booths satisfaction score: 4.2 out of 5.</li>
+      </ul>
+      (calculated from 144 responses retrieved from post-event questionnaire.)     
+      </p>
+      <p>In the following sections, we are presenting some statistics that are 
+      specific to your sponsorship, as well as general statistics on the background 
+      information of participants. 
       </p>
       <p>
       The web click number is the sum during 20181129 - 20191129.
       </p>
-      <p><a href=https://www.flickr.com/photos/pycon_tw/albums>Photos（Please click me）</a></p>
-      <p><a href=https://www.youtube.com/channel/UCHLnNgRnfGYDzPCCH8qGbQw>Video（Please click me）</a></p>
-      <p>
-      If the photos and video are used internally in the company to finalize the sponsorship proposal/budget,
-      please feel free to use it. If the photos and video need to be used publicly for commercial purpose.
-      Please contact us before using it to make sure the authorization.
+      <p>Notes:
+      <ul>
+      <li>(i) "Facebook Post Total Reached People" indicates "Post-clicks." It does not include reactions 
+      and shares or views.</li>
+      <li>(ii) "Portion of all clicks" and "Portion of Total Reached People" indicate the portion among all sponsors.</li>
+      <li>(iii)"Logo web click number" is calculated from the sum during 2018/11/29 - 2019/11/29. 
+      And "Facebook Post Total Reached People" is calculated from the sum from the date online till 2019/11/29.</li>
+      </ul>
       </p>
       <p>
       If you need a pdf version of this report, please choose "print" and "save as PDF" of your browser.
       </p>
+      
 # TODO: the data structure is not necessary to be list
 - Title_Categories:
   - represent: barchart
   - description: >-
-      It is the same as before. The mainstream attendees are engineers. However we still have the other people with
-      different job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
-
-      If it is hard to be categorized, they will be "potential job seeker".
+      The mainstream attendees are engineers. However we also have other people with different 
+      job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
+      If the attendee did not specify or refused to tell, they are categorized as 
+      "potential job seeker."
 - Nationality:
   - represent: barchart
   - description: >-
+      In PyCon TW 2019, 80% of the attendees are Taiwanese. 
+      There were also a significant amount of foreigners (50 people, 7.5%.) 
       We have a basic portion of foreigners even it is not Pycon APAC this year.
-      The overall recorded nationality diversity is more than double of 2018.
+      The overall recorded nationality diversity is more than double in 2019 compared to 2018.
       There is "No Record" because this is an optional field when registering.
+      This allows a great opportunities for English-speakers to enjoy the conference. 
+      At the same time, enhancing immediate knowledge exchange across sea and borders. 
+      
 - Seniority:
   - represent: barchart
   - description: >-
-      Most of the attendees are intermediate level users/developers. ( 1 to 5 years python using experience )
+      Most of the attendees are intermediate level python users/developers. 
+      ( 1 to 5 years experience in python scripting.) It is a great opportunity 
+      for companies to recruit potential enthusiastic developer who are willing 
+      to participate in the event and enhance their knowledge and abilities. 
 - Interested_Field:
   - represent: barchart
   - description: >-
-      It is a histogram of multi-choice for each attendee.
+      The top seven popular topics among attendees are “AI and machine learning”, 
+      “web technology”, “Engineering and Mathematics”, “Science”, “Technology”, 
+      and “DevOps.” This ranking is approximately reflecting the topics of the 
+      talks in the conference. “AI and machine learning” remains as the top hot 
+      topic. We also see a great portion of people showed 
+      interests in engineering, mathematics and science. The statistics is based 
+      on a multiple-choice question. 
 
       The trend is explicit to show the mainstream field: AI and machine learning.
       Science is more than DevOps. This is a little bit unexpectedly.
@@ -77,7 +119,15 @@
       description: xxx
 - Topics:
     - represent: piechart
-    - description: We keep the goal to keep topic diversity.
+    - description: 
+        As a Python conference, we aim to contribute not only to attendee’s interested 
+        fields, but also to core python language itself. As a result, the three 
+        main topics are “Python best practice and patterns,” “Data analysis,” 
+        and “Science.” We also try to keep the topic as diverse as possible. You could 
+        observe from the pie chart above that there are in total 25 categories covered. 
+
 - Proposed_Topics:
     - represent: piechart
-    - description: The proposal diversity is more and less as the selected talk diversity.
+    - description: 
+        There were 109 talk proposal for this year's PyCon. We could see the same distribution of topics in the proposals as well as the selected talk lineups.
+       The diversity is maintained during the proposal selection. The proposal acceptance rate is 38.5%.  
