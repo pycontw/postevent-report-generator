@@ -113,6 +113,7 @@ def main(
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
+    print(f"{accepted_talk_number} accepted proposals out of {all_talk_number}. Accepted rate: {talk_info}")
     exporter_html.generate(
         figs, report_yaml, df_all_g_data_obj, sponsors, talk_info, "sponsor.html", output_path=output_path
     )
