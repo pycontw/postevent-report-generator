@@ -1,0 +1,81 @@
+# TODO: general info should be always the first entry
+- General_Info:
+  - represent: text
+  - description: >-
+      <p>
+      The proposal acceptance rate is 38.5%.
+      </p>
+      <p>
+      Portion means the number calculated between the other sponsors.
+      The engagement number of Facebook posts means "how many clicks of the post".
+      It does not include its reaction and shares.
+      </p>
+      <p>Overall post-event questionnaire 4.2 ( Max. is 5, 144 responses ),
+      Job Fair 3.9 ( Max. is 5 ),
+      Sponsor booth 4.2 ( Max. is 5 )
+      </p>
+      <p>
+      We provided more than 7000 USD financial aid to people who contribute the Python communities but not able to
+      attend for economic reasons, including students, for enhancing our community diversity.
+      </p>
+      <p>
+      The web click number is the sum during 20181129 - 20191129.
+      </p>
+      <p><a href=https://www.flickr.com/photos/pycon_tw/albums>Photos（Please click me）</a></p>
+      <p><a href=https://www.youtube.com/channel/UCHLnNgRnfGYDzPCCH8qGbQw>Video（Please click me）</a></p>
+      <p>
+      If the photos and video are used internally in the company to finalize the sponsorship proposal/budget,
+      please feel free to use it. If the photos and video need to be used publicly for commercial purpose.
+      Please contact us before using it to make sure the authorization.
+      </p>
+      <p>
+      If you need a pdf version of this report, please choose "print" and "save as PDF" of your browser.
+      </p>
+# TODO: the data structure is not necessary to be list
+- Title_Categories:
+  - represent: barchart
+  - description: >-
+      It is the same as before. The mainstream attendees are engineers. However we still have the other people with
+      different job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
+
+      If it is hard to be categorized, they will be "potential job seeker".
+- Nationality:
+  - represent: barchart
+  - description: >-
+      We have a basic portion of foreigners even it is not Pycon APAC this year.
+- Seniority:
+  - represent: barchart
+  - description: >-
+      Most of the attendees are intermediate level users/developers. ( 1 to 5 years python using experience )
+- Interested_Field:
+  - represent: barchart
+  - description: >-
+      It is a histogram of multi-choice for each attendee.
+
+      The trend is explicit to show the mainstream field: AI and machine learning.
+      Science is more than DevOps. This is a little bit unexpectedly.
+- Gender:
+  - represent: barchart
+  - description: >-
+      "No record" is also an option when registering.
+- Registration_date:
+  - represent: barchart
+  - description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for registration date.
+- post_event_questionnaire:
+    satisfaction_overall:
+      score: 4.17
+      image: /tmp/01.jpg
+      description: xxx
+- Topics:
+    - represent: piechart
+    - description: We keep the goal to keep topic diversity.
+- Proposed_Topics:
+    - represent: piechart
+    - description: The proposal diversity is more and less as the selected talk diversity.
