@@ -17,7 +17,7 @@
       <p>
       This year, we have in total 675 python enthusiast who joined us at glamorous hall at the 
       Humanities and Social Science Building (HSSB), Academia Sinica, Taipei, Taiwan. This year, 
-      108 brilliant talks were shared with the participants, this was strictly selected from all 
+      109 brilliant talks were shared with the participants, this was strictly selected from all 
       submitted talks. The acceptance rate of proposal is 38.5%. We also invited four world-renowned
       speakers from around the world. All the talks are published on youtube. You could find them in 
       the following link:
@@ -48,11 +48,11 @@
       </p>
       <p>Notes:
       <ul>
-      <li>(i) The engagement number of Facebook posts indicates 
-      ”number of clicks of the posts”. It does not include reactions and shares or views.</li>
-      <li>(ii) Portion and Rank mean the number calculated between the other sponsors.</li>
-      <li>(iii)This information is exclusively reserved for Golden and Platinum sponsors.</li>
-      <li>(iv)The web click number is the sum during 2018/11/29 - 2019/11/29.</li>
+      <li>(i) "Facebook Post Total Reached People" indicates "Post-clicks." It does not include reactions 
+      and shares or views.</li>
+      <li>(ii) "Portion of all clicks" and "Portion of Total Reached People" indicate the portion among all sponsors.</li>
+      <li>(iii)"Logo web click number" is calculated from the sum during 2018/11/29 - 2019/11/29. 
+      And "Facebook Post Total Reached People" is calculated from the sum from the date online till 2019/11/29.</li>
       </ul>
       </p>
       <p>
@@ -64,7 +64,7 @@
   - represent: barchart
   - description: >-
       The mainstream attendees are engineers. However we also have other people with different 
-      job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students. 
+      job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
       If the attendee did not specify or refused to tell, they are categorized as 
       "potential job seeker."
 - Nationality:
@@ -88,13 +88,13 @@
 - Interested_Field:
   - represent: barchart
   - description: >-
-        The top seven popular topics among attendees are “AI and machine learning”, 
-        “web technology”, “Engineering and Mathematics”, “Science”, “Technology”, 
-        and “DevOps.” This ranking is approximately reflecting the topics of the 
-        talks in the conference. “AI and machine learning” remains as the top one 
-        hot topic since {which year}. We also see a great portion of people showed 
-        interests in engineering, mathematics and science. The statistics is based 
-        on a multiple-choice question. 
+      The top seven popular topics among attendees are “AI and machine learning”, 
+      “web technology”, “Engineering and Mathematics”, “Science”, “Technology”, 
+      and “DevOps.” This ranking is approximately reflecting the topics of the 
+      talks in the conference. “AI and machine learning” remains as the top hot 
+      topic. We also see a great portion of people showed 
+      interests in engineering, mathematics and science. The statistics is based 
+      on a multiple-choice question. 
 
       The trend is explicit to show the mainstream field: AI and machine learning.
       Science is more than DevOps. This is a little bit unexpectedly.
@@ -129,5 +129,5 @@
 - Proposed_Topics:
     - represent: piechart
     - description: 
-        There were 108 talk proposal for this year's PyCon. We could see the same distribution of topics in the proposals as well as the selected talk lineups.
+        There were 109 talk proposal for this year's PyCon. We could see the same distribution of topics in the proposals as well as the selected talk lineups.
        The diversity is maintained during the proposal selection. The proposal acceptance rate is 38.5%.  
