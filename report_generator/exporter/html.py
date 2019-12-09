@@ -82,10 +82,6 @@ def generate(
     total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
     all_tags.update({"general_total_attendee_number": total_attendee_number_tag})
 
-    # general info - accepted rate
-    accepted_rate_tag = _generate_html_rows(talk_info)
-    all_tags.update({"table_proposal_info": accepted_rate_tag})
-
     # apply information specific to each sponsor
     for sponsor in sponsors:
         # sponsor description
