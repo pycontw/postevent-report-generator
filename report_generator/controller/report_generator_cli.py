@@ -29,9 +29,14 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option("--proposed-talks-csv", required=True, default="talks.csv", help="CSV file for proposed talks")
 @click.option("--booth-csv", required=True, default="booth.csv", help="CSV file for booth checking")
 @click.option(
-    "--interactive/--no-interactive", default=False, help="Quiet mode. Useful for automation. True for no prompt."
+    "--interactive/--no-interactive",
+    default=False,
+    show_default=True,
+    help="Quiet mode. Useful for automation. True for no prompt.",
 )
-@click.option("--cjk-support/--no-cjk-support", default=False, help="Enable CJK support in the plot or not.")
+@click.option(
+    "--cjk-support/--no-cjk-support", default=False, show_default=True, help="Enable CJK support in the plot or not."
+)
 @click.option("--conf", help="Configuration file of how to analyze")
 @click.option("--yaml", required=True, help="Report yaml file to describe how a report would be")
 @click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
