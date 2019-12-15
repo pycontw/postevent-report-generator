@@ -2,6 +2,8 @@
 
 [![Build Status](https://cloud.drone.io/api/badges/pycontw/pycontw-postevent-report-generator/status.svg)](https://cloud.drone.io/pycontw/pycontw-postevent-report-generator)
 
+PyCon TW post-event report generator.A cli command, rg-cli, to generate PyCon TW post-event reports. Previously known as attendee-analyzer.
+
 rg-cli is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.  
 Currently it only supports a csv file as raw data input.
 
