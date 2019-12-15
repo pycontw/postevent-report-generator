@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pycontw-report-generator",
-    packages=find_packages(),
+    packages=["report_generator"],
     zip_safe=False,
     include_package_data=True,
     version="1.0.0",
