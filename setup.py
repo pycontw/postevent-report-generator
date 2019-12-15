@@ -14,7 +14,7 @@ setup(
     zip_safe=False,
     include_package_data=True,
     version="1.0.1",
-    description="PyCon TW post-event report generator.A cli command to generate PyCon TW post-event reports",
+    description="PyCon TW post-event report generator.A cli command to generate PyCon TW post-event reports.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Taihsiang Ho (tai271828)",
