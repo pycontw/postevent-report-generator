@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from setuptools import setup
+from setuptools import setup, find_packages
 from os import path
 
 
@@ -10,10 +10,10 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="pycontw-report-generator",
-    packages=["report_generator"],
+    packages=find_packages(exclude=["tasks", "test", "scripts"]),
     zip_safe=False,
     include_package_data=True,
-    version="1.0.1",
+    version="1.0.2",
     description="PyCon TW post-event report generator.A cli command to generate PyCon TW post-event reports.",
     long_description=long_description,
     long_description_content_type="text/markdown",
