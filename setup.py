@@ -14,5 +14,9 @@ setup(
     download_url="https://github.com/pycontw/pycontw-postevent-report-generator.git",
     keywords=["attendee", "pycontw", "post-event", "report-generator"],
     entry_points={"console_scripts": ["rg-cli=report_generator.controller.report_generator_cli:main"]},
+    install_requires=[
+        "pandas", "seaborn", "numpy", "matplotlib", "click",
+        "Pillow", "Jinja2", "PyYAML"
+    ],
     classifiers=["Programming Language :: Python"],
 )
