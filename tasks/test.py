@@ -12,4 +12,4 @@ def run(ctx):
 @task
 def cov(ctx):
     """Run test covreage check"""
-    ctx.run(f"{PIPENV_PREFIX} pytest --cov-report term-missing --cov=report_generator test", pty=True)
+    ctx.run(f"{PIPENV_PREFIX} pytest --cov=report_generator", pty=True)
