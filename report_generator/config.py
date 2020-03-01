@@ -76,7 +76,9 @@ class Configuration(object):
                 logger.debug("It is %s ", config["ATTENDEE"]["nationality"])
         except KeyError:
             # fallback value
-            config["ATTENDEE"]["nationality"] = config_default["ATTENDEE"]["nationality"]
+            config["ATTENDEE"]["nationality"] = config_default["ATTENDEE"][
+                "nationality"
+            ]
             logger.debug("No given nationality. Use default.ini ")
 
         try:

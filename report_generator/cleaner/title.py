@@ -14,7 +14,11 @@ def cat_title(title):
     title = str(title)
     pattern_dic = collections.OrderedDict()
     pattern_dic["Potential Job Seeker"] = (
-        "(?i)待業|Home|job|自由業|" "助理[^教授]|" "Freelance|self-employed|無|" "0|沒有人" "|nobody|nan|自由業|none"
+        "(?i)待業|Home|job|自由業|"
+        "助理[^教授]|"
+        "Freelance|self-employed|無|"
+        "0|沒有人"
+        "|nobody|nan|自由業|none"
     )
     # 助理 could be a temporary job therefore potential job seeker,
     # but not 助理教授

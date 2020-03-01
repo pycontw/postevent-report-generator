@@ -24,10 +24,28 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 
 
 @click.command()
-@click.option("--csv", required=True, default="data.csv", multiple=True, help="Read csv format data")
-@click.option("--talks-csv", required=True, default="talks.csv", help="CSV file for talks")
-@click.option("--proposed-talks-csv", required=True, default="talks.csv", help="CSV file for proposed talks")
-@click.option("--booth-csv", required=True, default="booth.csv", help="CSV file for booth checking")
+@click.option(
+    "--csv",
+    required=True,
+    default="data.csv",
+    multiple=True,
+    help="Read csv format data",
+)
+@click.option(
+    "--talks-csv", required=True, default="talks.csv", help="CSV file for talks"
+)
+@click.option(
+    "--proposed-talks-csv",
+    required=True,
+    default="talks.csv",
+    help="CSV file for proposed talks",
+)
+@click.option(
+    "--booth-csv",
+    required=True,
+    default="booth.csv",
+    help="CSV file for booth checking",
+)
 @click.option(
     "--interactive/--no-interactive",
     default=False,
@@ -35,13 +53,31 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
     help="Quiet mode. Useful for automation. True for no prompt.",
 )
 @click.option(
-    "--cjk-support/--no-cjk-support", default=False, show_default=True, help="Enable CJK support in the plot or not."
+    "--cjk-support/--no-cjk-support",
+    default=False,
+    show_default=True,
+    help="Enable CJK support in the plot or not.",
 )
 @click.option("--conf", help="Configuration file of how to analyze")
-@click.option("--yaml", required=True, help="Report yaml file to describe how a report would be")
-@click.option("--package-yaml", required=True, help="Package yaml file to describe how a package is defined")
-@click.option("--sponsor-yaml", required=True, help="Sponsor yaml file to describe how a sponsor is defined")
-@click.option("--output-path", help="Where the reports exported", default="/tmp", show_default=True)
+@click.option(
+    "--yaml", required=True, help="Report yaml file to describe how a report would be"
+)
+@click.option(
+    "--package-yaml",
+    required=True,
+    help="Package yaml file to describe how a package is defined",
+)
+@click.option(
+    "--sponsor-yaml",
+    required=True,
+    help="Sponsor yaml file to describe how a sponsor is defined",
+)
+@click.option(
+    "--output-path",
+    help="Where the reports exported",
+    default="/tmp",
+    show_default=True,
+)
 def main(
     csv,
     talks_csv,
@@ -118,14 +154,29 @@ def main(
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
-    print(f"{accepted_talk_number} accepted proposals out of {all_talk_number}. Accepted rate: {talk_info}")
+    print(
+        f"{accepted_talk_number} accepted proposals out of {all_talk_number}. Accepted rate: {talk_info}"
+    )
     exporter_html.generate(
-        figs, report_yaml, df_all_g_data_obj, sponsors, talk_info, "sponsor.html", output_path=output_path
+        figs,
+        report_yaml,
+        df_all_g_data_obj,
+        sponsors,
+        talk_info,
+        "sponsor.html",
+        output_path=output_path,
     )
 
     # summary for internal review
     exporter_html.generate_summary(
-        figs, report_yaml, df_all_g_data_obj, sponsors, talk_info, "internal.html", "internal-post-event", output_path
+        figs,
+        report_yaml,
+        df_all_g_data_obj,
+        sponsors,
+        talk_info,
+        "internal.html",
+        "internal-post-event",
+        output_path,
     )
 
     print("Analysis process finished completely.")
