@@ -12,17 +12,13 @@ def flake8(ctx):
 @task
 def mypy(ctx):
     """Check style through mypy"""
-    mypy_arguments = ["--ignore-missing-imports"]
-    packages = ["report_generator", "test"]
-    ctx.run(f"{PIPENV_PREFIX} mypy {' '.join(mypy_arguments)} -p {' -p '.join(packages)}")
+    ctx.run(f"{PIPENV_PREFIX} mypy")
 
 
 @task
 def black(ctx):
     """Check style through black"""
-    black_args = ["-l 119"]
-
-    ctx.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} --check {COMMON_TARGETS_AS_STR}")
+    ctx.run(f"{PIPENV_PREFIX} black --check {COMMON_TARGETS_AS_STR}")
 
 
 @task(pre=[flake8, mypy, black], default=True)
@@ -40,6 +36,4 @@ def pylint(ctx):
 @task
 def reformat(ctx):
     """Reformat python files throguh black"""
-    black_args = ["-l 119"]
-
-    ctx.run(f"{PIPENV_PREFIX} black {' '.join(black_args)} {COMMON_TARGETS_AS_STR}")
+    ctx.run(f"{PIPENV_PREFIX} black {COMMON_TARGETS_AS_STR}")
