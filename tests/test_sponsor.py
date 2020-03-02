@@ -7,7 +7,7 @@ from report_generator.partner import sponsor
 class TestSponsor:
     @pytest.fixture(scope="class")
     def sponsors(self):
-        return sponsor.get_all_sponsors("test/data/packages.yaml", "test/data/sponsors.yaml")
+        return sponsor.get_all_sponsors("tests/data/packages.yaml", "tests/data/sponsors.yaml")
 
     @pytest.fixture(scope="class")
     def platinum_partner(self, sponsors):
