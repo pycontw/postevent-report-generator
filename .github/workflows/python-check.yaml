@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  publish:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
