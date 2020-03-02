@@ -1,2 +1,3 @@
 include report_generator/data/*
 include report_generator/exporter/data/*
+include tests/data/*

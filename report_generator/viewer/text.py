@@ -30,12 +30,16 @@ def select_column(df, interactive, csv_index):
         print(i, ":", col)
 
     if interactive:
-        registration_date = int(input("Please select the number for " '"報名日期/Paid date": '))
+        registration_date = int(
+            input("Please select the number for " '"報名日期/Paid date": ')
+        )
         nationality = int(input("Please select the number for " '"國籍/Nationality": '))
         gender = int(input("Please select the number for " '"性別/Gender": '))
         job_title = int(input("Please select the number for " '"職稱/Job Titles": '))
         seniority = int(input("Please select the seniority: "))
-        interested_field = int(input("Please select the number for" "Area of Interest / 興趣領域 :"))
+        interested_field = int(
+            input("Please select the number for" "Area of Interest / 興趣領域 :")
+        )
     else:
         registration_date = int(pickup_column("paid_date", csv_index))
         nationality = int(pickup_column("nationality", csv_index))
@@ -44,8 +48,25 @@ def select_column(df, interactive, csv_index):
         seniority = int(pickup_column("seniority", csv_index))
         interested_field = int(pickup_column("interested_field", csv_index))
 
-    df_selected = df.iloc[:, [gender, nationality, registration_date, job_title, seniority, interested_field]]
+    df_selected = df.iloc[
+        :,
+        [
+            gender,
+            nationality,
+            registration_date,
+            job_title,
+            seniority,
+            interested_field,
+        ],
+    ]
 
-    df_selected.columns = ["Gender", "Nationality", "Registration_date", "Title", "Seniority", "Interested_Field"]
+    df_selected.columns = [
+        "Gender",
+        "Nationality",
+        "Registration_date",
+        "Title",
+        "Seniority",
+        "Interested_Field",
+    ]
 
     return df_selected

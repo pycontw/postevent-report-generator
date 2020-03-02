@@ -93,13 +93,17 @@ def generate(
 
         # promotion data
         # promotion - web
-        table_promotion_web = _generate_html_rows(sponsor.web_click, sponsor.web_click_portion)
+        table_promotion_web = _generate_html_rows(
+            sponsor.web_click, sponsor.web_click_portion
+        )
         all_tags.update({"table_promotion_web": table_promotion_web})
 
         # promotion - facebook
         # table_promotion_facebook: tpf summary
         tpf_row = _generate_html_rows(
-            sponsor.facebook_total_reached_people, sponsor.facebook_total_reach_portion, with_tr=True
+            sponsor.facebook_total_reached_people,
+            sponsor.facebook_total_reach_portion,
+            with_tr=True,
         )
         all_tags.update({"table_promotion_facebook_summary": tpf_row})
 
@@ -116,11 +120,15 @@ def generate(
         # booth
         all_tags.update({"booth_flag": sponsor.if_one_true_booth})
         if sponsor.if_one_true_booth:
-            table_booth = _generate_html_rows(sponsor.booth_participant, sponsor.booth_participant_portion)
+            table_booth = _generate_html_rows(
+                sponsor.booth_participant, sponsor.booth_participant_portion
+            )
             all_tags.update({"table_booth": table_booth})
 
         # workshop
-        workshop_url_tag = f"Event Link - {_generate_html_link(sponsor.workshop_event_url)}"
+        workshop_url_tag = (
+            f"Event Link - {_generate_html_link(sponsor.workshop_event_url)}"
+        )
         all_tags.update({"workshop_flag": sponsor.if_one_true_workshop})
         all_tags.update({"workshop_event_url": workshop_url_tag})
         all_tags.update({"workshop_description": sponsor.workshop_description})
@@ -235,7 +243,12 @@ def generate_summary(
             reach = sponsor.facebook_url[url]["reach"]
             engagement = sponsor.facebook_url[url]["engagement"]
             tpf_row = _generate_html_rows(
-                sponsor.name, sponsor.package_name, reach, engagement, html_url, with_tr=True
+                sponsor.name,
+                sponsor.package_name,
+                reach,
+                engagement,
+                html_url,
+                with_tr=True,
             )
             tpf_rows += tpf_row
         tpf_rows_all = tpf_rows_all + tpf_rows
