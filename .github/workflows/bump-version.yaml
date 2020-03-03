@@ -29,11 +29,12 @@ jobs:
           python -m pip install pipenv invoke
           inv env.init-dev
 
+      # do not failed when there is not versioning needed (e.g., document change)
       - name: Create bump
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          pipenv run cz bump --yes
+          -pipenv run cz bump --yes
 
       - name: Push changes
         uses: Woile/github-push-action@master
