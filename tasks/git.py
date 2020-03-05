@@ -36,4 +36,4 @@ def commit(ctx):
 @task
 def bump(ctx):
     """bump version through commitizen"""
-    ctx.run(f"{PIPENV_PREFIX} cz bump", pty=True)
+    ctx.run(f"{PIPENV_PREFIX} cz bump --yes", warn=True)
