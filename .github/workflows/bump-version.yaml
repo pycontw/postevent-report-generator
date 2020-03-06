@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          -pipenv run cz bump --yes
+          inv git.bump
 
       - name: Push changes
         uses: Woile/github-push-action@master
