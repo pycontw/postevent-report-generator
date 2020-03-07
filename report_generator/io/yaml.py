@@ -1,6 +1,6 @@
 import logging
-import yaml
 
+import yaml
 
 logger = logging.getLogger("poolctl")
 

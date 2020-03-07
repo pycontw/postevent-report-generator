@@ -1,6 +1,6 @@
 from invoke import task
 
-from tasks.common import PIPENV_PREFIX, COMMON_TARGETS_AS_STR
+from tasks.common import COMMON_TARGETS_AS_STR, PIPENV_PREFIX
 
 
 @task
@@ -16,12 +16,12 @@ def mypy(ctx):
 
 
 @task
-def black(ctx):
+def black_check(ctx):
     """Check style through black"""
     ctx.run(f"{PIPENV_PREFIX} black --check {COMMON_TARGETS_AS_STR}")
 
 
-@task(pre=[flake8, mypy, black], default=True)
+@task(pre=[flake8, mypy, black_check], default=True)
 def run(ctx):
     """Check style throguh linter (Note that pylint is not included)"""
     pass
@@ -34,6 +34,16 @@ def pylint(ctx):
 
 
 @task
-def reformat(ctx):
-    """Reformat python files throguh black"""
+def black(ctx):
     ctx.run(f"{PIPENV_PREFIX} black {COMMON_TARGETS_AS_STR}")
+
+
+@task
+def isort(ctx):
+    ctx.run(f"{PIPENV_PREFIX} isort --atomic --apply")
+
+
+@task(pre=[black, isort])
+def reformat(ctx):
+    """Reformat python files throguh black and isort"""
+    pass

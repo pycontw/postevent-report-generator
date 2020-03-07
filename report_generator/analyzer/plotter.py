@@ -1,11 +1,12 @@
-import re
 import logging
-import seaborn as sns
-import matplotlib.pyplot as plt
-import matplotlib as mpl
-import numpy as np
-import report_generator.analyzer.generic as ag
+import re
 
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+import report_generator.analyzer.generic as ag
 
 format_str = "[ %(funcName)s() ] %(message)s"
 logging.basicConfig(level=logging.INFO, format=format_str)
