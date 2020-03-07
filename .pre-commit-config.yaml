@@ -1,0 +1,29 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+  - repo: local
+    hooks:
+      - id: style-check
+        name: style-check
+        stages: [push]
+        language: system
+        entry: inv style
+        types: [python]
+
+      - id: package-check
+        name: package-check
+        stages: [push]
+        language: system
+        entry: inv secure
+        types: [python]
+
+      - id: test
+        name: test
+        stages: [push]
+        language: system
+        entry: test
+        types: [python]

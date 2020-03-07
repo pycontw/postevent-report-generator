@@ -21,6 +21,7 @@ bandit = "==1.6.2"
 # git
 commitizen = "*"
 coverage = {extras = ["toml"],version = "*"}
+pre-commit = "*"
 
 [packages]
 pandas = "==0.25.1"
