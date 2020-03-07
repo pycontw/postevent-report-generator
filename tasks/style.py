@@ -43,7 +43,7 @@ def isort(ctx):
     ctx.run(f"{PIPENV_PREFIX} isort --atomic --apply")
 
 
-@task(pre=[black, isort], default=True)
+@task(pre=[black, isort])
 def reformat(ctx):
     """Reformat python files throguh black and isort"""
     pass
