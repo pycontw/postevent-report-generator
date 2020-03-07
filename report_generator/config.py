@@ -3,8 +3,8 @@ Global config singlet.
 """
 import logging
 from configparser import ConfigParser
-import pkg_resources
 
+import pkg_resources
 
 logger = logging.getLogger("report_generator")
 

@@ -1,4 +1,5 @@
 import re
+
 import pandas as pd
 
 from report_generator.cleaner.title import cat_title

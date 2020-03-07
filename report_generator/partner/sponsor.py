@@ -2,7 +2,6 @@ import logging
 
 import report_generator.io.yaml as report_generatoryaml
 
-
 logger = logging.getLogger("report_generator")
 
 

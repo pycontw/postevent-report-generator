@@ -1,10 +1,8 @@
 import base64
-from pathlib import Path
 from collections.abc import Iterable
+from pathlib import Path
 
-from jinja2 import Environment, PackageLoader
-from jinja2 import Markup
-
+from jinja2 import Environment, Markup, PackageLoader
 
 loader = PackageLoader("report_generator.exporter", "data")
 env = Environment(loader=loader)

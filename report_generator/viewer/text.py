@@ -1,6 +1,5 @@
 import report_generator.config as report_generatorconfig
 
-
 conf_singlet = report_generatorconfig.Configuration.get_instance()
 
 
