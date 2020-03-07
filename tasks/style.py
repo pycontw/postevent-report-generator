@@ -1,6 +1,6 @@
 from invoke import task
 
-from tasks.common import PIPENV_PREFIX, COMMON_TARGETS_AS_STR
+from tasks.common import COMMON_TARGETS_AS_STR, PIPENV_PREFIX
 
 
 @task

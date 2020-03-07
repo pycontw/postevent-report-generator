@@ -1,8 +1,7 @@
 from invoke import Collection
 
-from tasks import env, test, style, secure, git
+from tasks import env, git, secure, style, test
 from tasks.build import build_ns
-
 
 ns = Collection()
 ns.add_collection(env)

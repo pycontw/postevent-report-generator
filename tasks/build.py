@@ -1,4 +1,4 @@
-from invoke import task, Collection
+from invoke import Collection, task
 
 from tasks.common import PIPENV_PREFIX
 from tasks.env import clean as clean_env

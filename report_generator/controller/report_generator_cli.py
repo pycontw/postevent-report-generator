@@ -1,19 +1,18 @@
 import logging
-import pkg_resources
 
 import click
 import pandas as pd
+import pkg_resources
 
-import report_generator.config as report_generatorconfig
 import report_generator.analyzer.generic as ag
-import report_generator.viewer.text as vtext
 import report_generator.analyzer.plotter as plotter
+import report_generator.config as report_generatorconfig
+import report_generator.exporter.html as exporter_html
 import report_generator.io.csv as report_generatorcsv
 import report_generator.io.yaml as report_generatoryaml
 import report_generator.ticket.attendee as attendee
-import report_generator.exporter.html as exporter_html
+import report_generator.viewer.text as vtext
 from report_generator.partner import sponsor as apsponsor
-
 
 logger = logging.getLogger("report_generator")
 

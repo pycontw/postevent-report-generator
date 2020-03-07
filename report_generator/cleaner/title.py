@@ -1,5 +1,5 @@
-import re
 import collections
+import re
 
 
 # Add new column in dataframe with title categories
