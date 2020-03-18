@@ -17,13 +17,17 @@ def init(ctx):
 def setup_pre_commit_hook(ctx):
     """Setup pre-commit hook to automate check before git commit and git push"""
     ctx.run(
+        "git init &"
         "pipenv run pre-commit install -t pre-commit & "
         "pipenv run pre-commit install -t pre-push & "
         "pipenv run pre-commit install -t commit-msg"
     )
 
 
-@task(post=[setup_pre_commit_hook])
-def init_dev(ctx):
+@task(optional=["without-pre-commit"])
+def init_dev(ctx, without_pre_commit=False):
     """Install development dependencies and setup pre-commit hooks"""
     ctx.run("pipenv install --dev")
+
+    if not without_pre_commit:
+        setup_pre_commit_hook(ctx)
