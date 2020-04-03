@@ -23,6 +23,9 @@ bandit = "==1.6.2"
 commitizen = "*"
 coverage = {extras = ["toml"],version = "*"}
 pre-commit = "*"
+# document
+mkdocs = "*"
+mkdocs-material = "*"
 
 [packages]
 pandas = "==0.25.1"
@@ -32,7 +35,7 @@ matplotlib = "==3.1.1"
 click = "==7.0"
 Pillow = "==6.2.2"
 Jinja2 = "==2.10.3"
-PyYAML = "==5.1"
+PyYAML = "==5.3.1"
 
 [requires]
 python_version = "3.7"
