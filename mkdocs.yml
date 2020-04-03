@@ -1,1 +1,4 @@
-site_name: My Docs
+site_name: PyCon TW post-event report generator (rg-cli)
+nav:
+  - Home: index.md
+  - Contribute: contribution.md
