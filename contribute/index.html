@@ -1,0 +1,649 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Contribute - PyCon TW post-event report generator (rg-cli)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#how-to-contribute" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="PyCon TW post-event report generator (rg-cli)" aria-label="PyCon TW post-event report generator (rg-cli)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              PyCon TW post-event report generator (rg-cli)
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Contribute
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/pycontw/pycontw-postevent-report-generator/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="PyCon TW post-event report generator (rg-cli)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    PyCon TW post-event report generator (rg-cli)
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/pycontw/pycontw-postevent-report-generator/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Contribute
+      </label>
+    
+    <a href="./" title="Contribute" class="md-nav__link md-nav__link--active">
+      Contribute
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    How to contribute
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-fork-this-repository-to-your-github" class="md-nav__link">
+    Step 1. Fork this repository to your GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-clone-the-repository-from-your-github" class="md-nav__link">
+    Step 2. Clone the repository from your GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-this-repository-to-the-remote-in-your-local-repository" class="md-nav__link">
+    Step 3. Add this repository to the remote in your local repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-check-out-a-branch-for-your-new-feature" class="md-nav__link">
+    Step 4. Check out a branch for your new feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-install-prerequsite" class="md-nav__link">
+    Step 5. Install Prerequsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-setup-devlopment-environment" class="md-nav__link">
+    Step 6. Setup Devlopment Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-work-on-your-new-feature" class="md-nav__link">
+    Step 6. Work on your new feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-run-test-cases" class="md-nav__link">
+    Step 7. Run test cases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-run-test-coverage" class="md-nav__link">
+    Step 8. Run test coverage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-reformat-source-code" class="md-nav__link">
+    Step 9. Reformat source code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-run-style-check" class="md-nav__link">
+    Step 10. Run style check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-run-security-check" class="md-nav__link">
+    Step 11. Run security check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-check-the-installed-cli-is-runnable" class="md-nav__link">
+    Step 12. Check the installed cli is runnable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-create-a-pull-request-and-celebrate" class="md-nav__link">
+    Step 13. Create a Pull Request and celebrate 🎉
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-contribute" class="md-nav__link">
+    How to contribute
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-fork-this-repository-to-your-github" class="md-nav__link">
+    Step 1. Fork this repository to your GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-clone-the-repository-from-your-github" class="md-nav__link">
+    Step 2. Clone the repository from your GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-this-repository-to-the-remote-in-your-local-repository" class="md-nav__link">
+    Step 3. Add this repository to the remote in your local repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-check-out-a-branch-for-your-new-feature" class="md-nav__link">
+    Step 4. Check out a branch for your new feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-install-prerequsite" class="md-nav__link">
+    Step 5. Install Prerequsite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-setup-devlopment-environment" class="md-nav__link">
+    Step 6. Setup Devlopment Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-work-on-your-new-feature" class="md-nav__link">
+    Step 6. Work on your new feature
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-run-test-cases" class="md-nav__link">
+    Step 7. Run test cases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-run-test-coverage" class="md-nav__link">
+    Step 8. Run test coverage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-reformat-source-code" class="md-nav__link">
+    Step 9. Reformat source code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-run-style-check" class="md-nav__link">
+    Step 10. Run style check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-run-security-check" class="md-nav__link">
+    Step 11. Run security check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-check-the-installed-cli-is-runnable" class="md-nav__link">
+    Step 12. Check the installed cli is runnable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-create-a-pull-request-and-celebrate" class="md-nav__link">
+    Step 13. Create a Pull Request and celebrate 🎉
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/pycontw/pycontw-postevent-report-generator/edit/master/docs/contribute.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Contribute</h1>
+                
+                <h2 id="how-to-contribute">How to contribute</h2>
+<h3 id="step-1-fork-this-repository-to-your-github">Step 1. Fork this repository to your GitHub</h3>
+<h3 id="step-2-clone-the-repository-from-your-github">Step 2. Clone the repository from your GitHub</h3>
+<pre><code class="sh">git clone https://github.com/[YOUR GITHUB ACCOUNT]/pycontw-postevent-report-generator.git
+</code></pre>
+
+<h3 id="step-3-add-this-repository-to-the-remote-in-your-local-repository">Step 3. Add this repository to the remote in your local repository</h3>
+<pre><code class="sh">git remote add upstream &quot;https://github.com/pycontw/pycontw-postevent-report-generator&quot;
+</code></pre>
+
+<p>You can pull the latest code in master branch through <code>git pull upstream master</code> afterward.</p>
+<h3 id="step-4-check-out-a-branch-for-your-new-feature">Step 4. Check out a branch for your new feature</h3>
+<pre><code class="sh">git checkout -b [YOUR FEATURE]
+</code></pre>
+
+<h3 id="step-5-install-prerequsite">Step 5. Install Prerequsite</h3>
+<pre><code class="sh">python -m pip install pipx
+python -m pipx install pipenv invoke
+python -m pipx ensurepath
+</code></pre>
+
+<h3 id="step-6-setup-devlopment-environment">Step 6. Setup Devlopment Environment</h3>
+<pre><code class="sh">inv env.init-dev
+</code></pre>
+
+<h3 id="step-6-work-on-your-new-feature">Step 6. Work on your new feature</h3>
+<h3 id="step-7-run-test-cases">Step 7. Run test cases</h3>
+<p>Make sure all test cases pass.</p>
+<pre><code class="sh">inv test.cov
+</code></pre>
+
+<h3 id="step-8-run-test-coverage">Step 8. Run test coverage</h3>
+<p>Check the test coverage and see where you can add test cases.</p>
+<pre><code class="sh">inv test.cov
+</code></pre>
+
+<h3 id="step-9-reformat-source-code">Step 9. Reformat source code</h3>
+<p>Format your code through <code>black</code> and <code>isort</code>.</p>
+<pre><code class="sh">inv style.reformat
+</code></pre>
+
+<h3 id="step-10-run-style-check">Step 10. Run style check</h3>
+<p>Make sure your coding style passes all enforced linters.</p>
+<pre><code class="sh">inv style
+</code></pre>
+
+<p>[Optional] Check your coding style through <code>pylint</code>. Note that you do not have to fix all the issues warned by <code>pylint</code>.</p>
+<pre><code class="sh">inv style.pylint
+</code></pre>
+
+<h3 id="step-11-run-security-check">Step 11. Run security check</h3>
+<p>Ensure the packages installed are secure</p>
+<pre><code class="sh">inv secure
+</code></pre>
+
+<p><em>[Optional]</em> Check whether there is common security issue in the code. Note that you do not have to fix all the issues warned by <code>bandit</code></p>
+<pre><code class="sh">inv secure.bandit
+</code></pre>
+
+<h3 id="step-12-check-the-installed-cli-is-runnable">Step 12. Check the installed cli is runnable</h3>
+<pre><code class="sh">inv build.test-cli
+</code></pre>
+
+<h3 id="step-13-create-a-pull-request-and-celebrate">Step 13. Create a Pull Request and celebrate 🎉</h3>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
