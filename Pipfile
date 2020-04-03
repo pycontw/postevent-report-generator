@@ -25,6 +25,7 @@ coverage = {extras = ["toml"],version = "*"}
 pre-commit = "*"
 # document
 mkdocs = "*"
+mkdocs-material = "*"
 
 [packages]
 pandas = "==0.25.1"
