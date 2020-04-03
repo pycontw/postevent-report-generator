@@ -23,6 +23,8 @@ bandit = "==1.6.2"
 commitizen = "*"
 coverage = {extras = ["toml"],version = "*"}
 pre-commit = "*"
+# document
+mkdocs = "*"
 
 [packages]
 pandas = "==0.25.1"
