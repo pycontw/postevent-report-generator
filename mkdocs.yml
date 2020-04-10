@@ -1,6 +1,6 @@
 site_name: PyCon TW post-event report generator (rg-cli)
 nav:
-  - Home: index.md
+  - Home: README.md
   - Contribute: contribute.md
 theme:
   name: 'material'
