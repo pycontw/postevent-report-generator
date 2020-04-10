@@ -46,3 +46,11 @@ repos:
         pass_filenames: false
         entry: inv test
         types: [python]
+
+      - id: test-cli
+        name: test cli runable
+        stages: [push]
+        language: system
+        pass_filenames: false
+        entry: inv build.test-cli
+        types: [python]
