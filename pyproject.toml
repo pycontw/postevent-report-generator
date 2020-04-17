@@ -23,3 +23,6 @@
 name = "cz_conventional_commits"
 version = "1.0.2"
 tag_format = "$version"
+version_files = [
+    "setup.py"
+]
