@@ -18,6 +18,12 @@ def install(ctx):
 
 
 @task
+def dist(ctx):
+    """Build distribution"""
+    ctx.run(f"{PIPENV_PREFIX} python setup.py sdist bdist_wheel")
+
+
+@task
 def clean(ctx):
     """Remove all the tmp files in .gitignore"""
     ctx.run("git clean -Xdf")
@@ -32,5 +38,6 @@ def test_cli(ctx):
 build_ns = Collection("build")
 build_ns.add_task(develop)
 build_ns.add_task(install)
+build_ns.add_task(dist)
 build_ns.add_task(clean)
 build_ns.add_task(test_cli)
