@@ -256,36 +256,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fetch-the-source" class="md-nav__link">
-    Fetch The Source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-your-own-python-virtual-environment-and-install-package" class="md-nav__link">
-    Create Your Own Python Virtual Environment and Install package
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-attendees-analyzer" class="md-nav__link">
-    Install Attendees Analyzer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-the-installation" class="md-nav__link">
-    Test The Installation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-test-cases" class="md-nav__link">
-    Run Test Cases
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
@@ -368,36 +340,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fetch-the-source" class="md-nav__link">
-    Fetch The Source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-your-own-python-virtual-environment-and-install-package" class="md-nav__link">
-    Create Your Own Python Virtual Environment and Install package
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-attendees-analyzer" class="md-nav__link">
-    Install Attendees Analyzer
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#test-the-installation" class="md-nav__link">
-    Test The Installation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#run-test-cases" class="md-nav__link">
-    Run Test Cases
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
@@ -441,54 +385,47 @@
                 
                 
                 <h1 id="pycon-tw-post-event-report-generator-rg-cli">PyCon TW post-event report generator (rg-cli)</h1>
-<p><a href="https://cloud.drone.io/pycontw/pycontw-postevent-report-generator"><img alt="Build Status" src="https://cloud.drone.io/api/badges/pycontw/pycontw-postevent-report-generator/status.svg" /></a></p>
+<p><a href="https://github.com/commitizen-tools/pycontw-postevent-report-generator/actions"><img alt="Python Check" src="https://github.com/pycontw/pycontw-postevent-report-generator/workflows/python%20check/badge.svg" /></a> <a href="https://pypi.org/project/pycontw-report-generator/"><img alt="PyPI Package latest release" src="https://img.shields.io/pypi/v/pycontw-report-generator.svg?style=flat-square" /></a></p>
 <p>PyCon TW post-event report generator.A cli command, rg-cli, to generate PyCon TW post-event reports. Previously known as attendee-analyzer.</p>
 <p>rg-cli is a command line tool for you to generate a basic report of attendees, e.g. a pie chart of fields according to job titles.
 Currently it only supports a csv file as raw data input.</p>
 <h2 id="prerequsite">Prerequsite</h2>
 <ul>
 <li><a href="https://www.python.org/downloads/">Python 3.7</a></li>
-<li><a href="https://github.com/pypa/pipenv">pipenv</a><ul>
-<li>for dependency management</li>
-<li><code>pip install pipenv</code></li>
-</ul>
-</li>
-<li><a href="https://github.com/pyinvoke/invoke">invoke</a><ul>
-<li>for task management</li>
-<li><code>pip install invoke</code></li>
-</ul>
-</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<h3 id="fetch-the-source">Fetch The Source</h3>
-<p>Fetch the source</p>
-<pre><code class="sh">git clone https://github.com/pycontw/pycontw-postevent-report-generator.git
+<pre><code class="sh">python -m pip install pycontw-report-generator
+</code></pre>
+
+<h3 id="usage">Usage</h3>
+<pre><code class="sh">$ python -m rg-cli --help
+
+Usage: rg-cli [OPTIONS]
+
+Options:
+  --csv TEXT                      Read csv format data  [required]
+  --talks-csv TEXT                CSV file for talks  [required]
+  --proposed-talks-csv TEXT       CSV file for proposed talks  [required]
+  --booth-csv TEXT                CSV file for booth checking  [required]
+  --interactive / --no-interactive
+                                  Quiet mode. Useful for automation. True for
+                                  no prompt.  [default: False]
+  --cjk-support / --no-cjk-support
+                                  Enable CJK support in the plot or not.
+                                  [default: False]
+  --conf TEXT                     Configuration file of how to analyze
+  --yaml TEXT                     Report yaml file to describe how a report
+                                  would be  [required]
+  --package-yaml TEXT             Package yaml file to describe how a package
+                                  is defined  [required]
+  --sponsor-yaml TEXT             Sponsor yaml file to describe how a sponsor
+                                  is defined  [required]
+  --output-path TEXT              Where the reports exported  [default: /tmp]
+  --help                          Show this message and exit.
 </code></pre>
 
 <p>Create a working folder to place your attendee raw data outside of the source folder so you won't commit your raw data accidentally.</p>
-<pre><code class="sh">mkdir pycontw-postevent-report-generator-working
-</code></pre>
-
-<h3 id="create-your-own-python-virtual-environment-and-install-package">Create Your Own Python Virtual Environment and Install package</h3>
-<pre><code class="sh">inv env.init-dev
-</code></pre>
-
-<h3 id="install-attendees-analyzer">Install Attendees Analyzer</h3>
-<p>If you want to develop it, please run:</p>
-<pre><code class="sh">inv build.develop
-</code></pre>
-
-<p>If you just want to install it in your virtual environment lib, please run:</p>
-<pre><code class="sh">inv build.install
-</code></pre>
-
-<p>Now you should be ready to go.</p>
-<h3 id="test-the-installation">Test The Installation</h3>
-<pre><code class="sh">inv build.test-cli
-</code></pre>
-
-<h3 id="run-test-cases">Run Test Cases</h3>
-<pre><code class="sh">inv test
+<pre><code class="sh">mkdir ../pycontw-postevent-report-generator-working
 </code></pre>
 
 <h3 id="example">Example</h3>
