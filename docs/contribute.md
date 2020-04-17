@@ -13,6 +13,7 @@ git clone https://github.com/[YOUR GITHUB ACCOUNT]/pycontw-postevent-report-gene
 ```sh
 git remote add upstream "https://github.com/pycontw/pycontw-postevent-report-generator"
 ```
+
 You can pull the latest code in master branch through `git pull upstream master` afterward.
 
 ### Step 4. Check out a branch for your new feature
@@ -29,7 +30,11 @@ python -m pipx install pipenv invoke
 python -m pipx ensurepath
 ```
 
-### Step 6. Setup Devlopment Environment
+* [pipx](https://github.com/pipxproject/pipx): for python tool management
+* [pipenv](https://github.com/pypa/pipenv): for dependency management
+* [invoke](https://github.com/pyinvoke/invoke): for task management
+
+### Step 6. Create Your Own Python Virtual Environment and Install package
 
 ```sh
 inv env.init-dev
@@ -37,21 +42,29 @@ inv env.init-dev
 
 ### Step 6. Work on your new feature
 
-### Step 7. Run test cases
+### [Optional] Step 7. Install Attendees Analyzer for local test
+
+If you want to develop it, please run:
+
+```sh
+inv build.develop
+```
+
+### Step 8. Run test cases
 Make sure all test cases pass.
 
 ```sh
 inv test.cov
 ```
 
-### Step 8. Run test coverage
+### Step 9. Run test coverage
 Check the test coverage and see where you can add test cases.
 
 ```sh
 inv test.cov
 ```
 
-### Step 9. Reformat source code
+### Step 10. Reformat source code
 
 Format your code through `black` and `isort`.
 
@@ -59,7 +72,7 @@ Format your code through `black` and `isort`.
 inv style.reformat
 ```
 
-### Step 10. Run style check
+### [Optional] Step 11. Run style check
 Make sure your coding style passes all enforced linters.
 
 ```sh
@@ -72,7 +85,7 @@ inv style
 inv style.pylint
 ```
 
-### Step 11. Run security check
+### [Optional] Step 12. Run security check
 
 Ensure the packages installed are secure
 
@@ -86,10 +99,10 @@ inv secure
 inv secure.bandit
 ```
 
-### Step 12. Check the installed cli is runnable
+### Step 13. Check the installed cli is runnable
 
 ```sh
 inv build.test-cli
 ```
 
-### Step 13. Create a Pull Request and celebrate 🎉
+### Step 14. Create a Pull Request and celebrate 🎉
