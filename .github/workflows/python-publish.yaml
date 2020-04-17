@@ -1,4 +1,4 @@
-name: python publish
+name: Publish Python Package to PyPI
 
 on:
   push:
@@ -6,43 +6,31 @@ on:
       - '*'
 
 jobs:
-  deploy:
+  publish-pypi-package:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     steps:
-    - uses: actions/checkout@v2
-      with:
-        token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
-        fetch-depth: 0
+      - uses: actions/checkout@v2
+        with:
+          token: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v1
-      with:
-        python-version: '3.7'
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install pipenv invoke
-        pipenv install --dev
+      - name: Install dependencies
+        run: |
+          python -m pip install pipenv invoke
+          inv env.init-dev -w
 
-    - name: Build package
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
-      run: |
-        inv build.dist
+      - name: Build package
+        run: |
+          inv build.dist
 
-    - name: Build docs
-      run: |
-        inv doc.build
-
-    - name: Publish package
-      uses: pypa/gh-action-pypi-publish@master
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
-      with:
-        user: __token__
-        password: ${{ secrets.pypi_password }}
-
-    - name: Push doc to Github Page
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: ./site
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
