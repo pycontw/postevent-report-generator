@@ -29,9 +29,13 @@ def clean(ctx):
     ctx.run("git clean -Xdf")
 
 
-@task(pre=[clean_env, _init, install])
-def test_cli(ctx):
+@task
+def test_cli(ctx, clean=False):
     """Test whether the cli is runnable"""
+    if clean:
+        clean_env(ctx)
+        _init(ctx)
+    install(ctx)
     ctx.run(f"{PIPENV_PREFIX} rg-cli --help")
 
 

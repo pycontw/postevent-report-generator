@@ -34,4 +34,4 @@ jobs:
 
       - name: Test package runnable
         run: |
-          inv build.test-cli
+          inv build.test-cli --clean
