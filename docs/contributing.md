@@ -1,4 +1,4 @@
-## How to contribute
+## Contributing
 
 ### Step 1. Fork this repository to your GitHub
 

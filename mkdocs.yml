@@ -1,7 +1,7 @@
 site_name: PyCon TW post-event report generator (rg-cli)
 nav:
   - Home: README.md
-  - Contribute: contribute.md
+  - Contributing: contributing.md
 theme:
   name: 'material'
 repo_url: https://github.com/pycontw/pycontw-postevent-report-generator

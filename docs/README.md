@@ -61,5 +61,5 @@ rg-cli --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./report_generator/data/
 
 Follow the prompt instruction and you will get jpg images. So far it is well tested with the data of year 2017.
 
-## How to contribute
-Please see the [Contribute](contribute.md) for further details.
+## Contributing
+Please see the [Contributing](contributing.md) for further details.
