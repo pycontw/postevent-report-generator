@@ -1,6 +1,6 @@
 from invoke import Collection, task
 
-from tasks.common import PIPENV_PREFIX
+from tasks.common import VENV_PREFIX
 from tasks.env import clean as clean_env
 from tasks.env import init as _init
 
@@ -8,19 +8,19 @@ from tasks.env import init as _init
 @task
 def develop(ctx):
     """Install script in pipenv environement in development mode"""
-    ctx.run(f"{PIPENV_PREFIX} python setup.py develop")
+    ctx.run(f"{VENV_PREFIX} python setup.py develop")
 
 
 @task
 def install(ctx):
     """Install script in pipenv environement"""
-    ctx.run(f"{PIPENV_PREFIX} python setup.py install")
+    ctx.run(f"{VENV_PREFIX} python setup.py install")
 
 
 @task
 def dist(ctx):
     """Build distribution"""
-    ctx.run(f"{PIPENV_PREFIX} python setup.py sdist bdist_wheel")
+    ctx.run(f"{VENV_PREFIX} python setup.py sdist bdist_wheel")
 
 
 @task
@@ -36,7 +36,7 @@ def test_cli(ctx, clean=False):
         clean_env(ctx)
         _init(ctx)
     install(ctx)
-    ctx.run(f"{PIPENV_PREFIX} rg-cli --help")
+    ctx.run(f"{VENV_PREFIX} rg-cli --help")
 
 
 build_ns = Collection("build")

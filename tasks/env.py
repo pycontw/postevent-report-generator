@@ -1,5 +1,7 @@
 from invoke import task
 
+from tasks.common import VENV_PREFIX
+
 
 @task
 def clean(ctx):
@@ -16,11 +18,11 @@ def init(ctx):
 @task
 def setup_pre_commit_hook(ctx):
     """Setup pre-commit hook to automate check before git commit and git push"""
+    ctx.run("git init")
     ctx.run(
-        "git init &"
-        "pipenv run pre-commit install -t pre-commit & "
-        "pipenv run pre-commit install -t pre-push & "
-        "pipenv run pre-commit install -t commit-msg"
+        f"{VENV_PREFIX} pre-commit install -t pre-commit & "
+        f"{VENV_PREFIX} pre-commit install -t pre-push & "
+        f"{VENV_PREFIX} pre-commit install -t commit-msg"
     )
 
 
@@ -28,6 +30,5 @@ def setup_pre_commit_hook(ctx):
 def init_dev(ctx, without_pre_commit=False):
     """Install development dependencies and setup pre-commit hooks"""
     ctx.run("pipenv install --dev")
-
     if not without_pre_commit:
         setup_pre_commit_hook(ctx)

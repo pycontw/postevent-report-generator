@@ -1,39 +1,23 @@
 from invoke import task
 
-from tasks.common import PIPENV_PREFIX
-
-
-@task
-def authors(ctx):
-    """Print all the authors in this project"""
-
-    result = ctx.run('git log --pretty=format:"%an <%ae>"', encoding="utf-8", hide=True)
-
-    authors = set(result.stdout.splitlines())
-    authors = sorted(authors)
-
-    for author in authors:
-        print(author)
-
-
-@task
-def changelog(ctx, since):
-    """Print the changelog since given git ref"""
-    result = ctx.run(f"git log {since}..HEAD --format=%s", encoding="utf-8", hide=True)
-    changes = result.stdout.splitlines()
-
-    print(f"Changelog sine {since}:")
-    for change in changes:
-        print(f"- {change}")
+from tasks.common import VENV_PREFIX
 
 
 @task
 def commit(ctx):
     """Commit through commitizen"""
-    ctx.run(f"{PIPENV_PREFIX} cz commit", pty=True)
+    ctx.run(f"{VENV_PREFIX} cz commit", pty=True)
 
 
 @task
-def bump(ctx):
+def bump(ctx, with_changelog=False):
     """bump version through commitizen"""
-    ctx.run(f"{PIPENV_PREFIX} cz bump --yes", warn=True)
+    argument = ""
+    if with_changelog:
+        argument += " --changelog"
+
+    result = ctx.run(f"{VENV_PREFIX} cz bump --yes{argument}", warn=True)
+    if result.exited == 3:  # NO_COMMIT_FOUND
+        exit(0)
+    else:
+        exit(result.exited)
