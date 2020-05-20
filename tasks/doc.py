@@ -1,6 +1,6 @@
 from invoke import task
 
-from tasks.common import PIPENV_PREFIX
+from tasks.common import VENV_PREFIX
 
 
 @task(optional=["clean"])
@@ -10,16 +10,16 @@ def build(ctx, clean=True):
     if clean:
         argument += " --clean"
 
-    ctx.run(f"{PIPENV_PREFIX} mkdocs build {argument}")
+    ctx.run(f"{VENV_PREFIX} mkdocs build {argument}")
 
 
-@task
+@task(default=True)
 def serve(ctx):
     """Run local server"""
-    ctx.run(f"{PIPENV_PREFIX} mkdocs serve")
+    ctx.run(f"{VENV_PREFIX} mkdocs serve")
 
 
 @task
 def deploy(ctx):
     """Deploy to github page"""
-    ctx.run(f"{PIPENV_PREFIX} mkdocs gh-deploy")
+    ctx.run(f"{VENV_PREFIX} mkdocs gh-deploy")

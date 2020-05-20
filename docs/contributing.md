@@ -34,7 +34,7 @@ python -m pipx ensurepath
 * [pipenv](https://github.com/pypa/pipenv): for dependency management
 * [invoke](https://github.com/pyinvoke/invoke): for task management
 
-### Step 6. Create Your Own Python Virtual Environment and Install package
+### Step 6. Create Your Own Python Virtual Environment and Install Depdencies
 
 ```sh
 inv env.init-dev
@@ -54,7 +54,7 @@ inv build.develop
 Make sure all test cases pass.
 
 ```sh
-inv test.cov
+inv test
 ```
 
 ### Step 9. Run test coverage
@@ -72,7 +72,7 @@ Format your code through `black` and `isort`.
 inv style.reformat
 ```
 
-### [Optional] Step 11. Run style check
+### Step 11. Run style check
 Make sure your coding style passes all enforced linters.
 
 ```sh
