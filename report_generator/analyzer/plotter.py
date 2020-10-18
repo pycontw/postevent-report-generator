@@ -216,7 +216,7 @@ def get_order(df, col):
     col_counts = df[col].value_counts()
     order = col_counts.index
 
-    pattern = "年以內"
+    pattern = "年以內|within 1 year"
     order = get_reorder_by(df, col, pattern, order, reverse=True)
 
     pattern = "Other|other"
