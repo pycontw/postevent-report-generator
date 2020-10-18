@@ -8,7 +8,7 @@ logger = logging.getLogger("poolctl")
 def read_yaml(input_yaml):
     with open(input_yaml, "r") as stream:
         try:
-            yaml_load = yaml.load(stream)
+            yaml_load = yaml.safe_load(stream)
             return yaml_load
         except yaml.YAMLError as e:
             logger.critical(e)
