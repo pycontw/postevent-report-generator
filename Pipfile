@@ -14,7 +14,7 @@ hypothesis = "*"
 coverage = {extras = ["toml"],version = "*"}
 # style
 black = "==19.10b0"
-isort = "*"
+isort = "5.0.0"
 flake8 = "*"
 mypy = "*"
 pylint = "*"
