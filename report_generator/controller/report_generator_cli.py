@@ -12,6 +12,7 @@ import report_generator.io.csv as report_generatorcsv
 import report_generator.io.yaml as report_generatoryaml
 import report_generator.ticket.attendee as attendee
 import report_generator.viewer.text as vtext
+from report_generator.conference import Conference
 from report_generator.partner import sponsor as apsponsor
 
 logger = logging.getLogger("report_generator")
@@ -142,10 +143,8 @@ def main(
 
     sponsors = apsponsor.get_all_sponsors(package_yaml, sponsor_yaml)
 
-    accepted_talk_number = talks_df["category"].value_counts().sum()
-    all_talk_number = p_talks_df["category"].value_counts().sum()
-    talk_info_ratio = accepted_talk_number / all_talk_number
-    talk_info = "{:.1%}".format(talk_info_ratio)
+    conference = Conference(year, report_yaml, talks_df, p_talks_df)
+
     # generate the report
     # general info (everyone could see it):
     #   figs: plots from attendee dataframe and talks
@@ -153,16 +152,12 @@ def main(
     #   report_yaml: plot description of figs
     # sponsors:
     #   sponsor specific information based on yaml descriptor
-    print(
-        f"{accepted_talk_number} accepted proposals out of {all_talk_number}. Accepted rate: {talk_info}"
-    )
     exporter_html.generate(
+        conference,
         figs,
         report_yaml,
         df_all_g_data_obj,
         sponsors,
-        talk_info,
-        "sponsor.html",
         output_path=output_path,
     )
 
@@ -172,7 +167,7 @@ def main(
         report_yaml,
         df_all_g_data_obj,
         sponsors,
-        talk_info,
+        conference.acceptance_rate,
         "internal.html",
         "internal-post-event",
         output_path,

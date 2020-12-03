@@ -27,30 +27,25 @@
     <body>
         <div data-url="demo-intro" data-role="page" class="jqm-demos ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active">
             <div data-role="header" class="jqm-header">
-                <h1>Python Conference Taiwan Post-event Summary</h1>
+                <h1>Python Conference Taiwan {{ jinja2_tag_year }} Post-event Summary</h1>
             </div><!-- /header -->
             <div role="main" class="ui-content jqm-content">
                 <div class="ui-content jqm-content">
+                    <h2>Sponsor Information</h2>
                     {{ sponsor_description }}
-                </div>
-                <p></p><p></p>
-                <div class="ui-content jqm-content">
-                    <h2>Information and Description</h2>
-                        {{ General_Info_Description }}
                 </div>
                 <div class="ui-content jqm-content">
                     <table>
                         <tr>
                             <th>Sponsor Name</th>
                             <th>Package Name</th>
-                            <th>Total Attendee Number</th>
                         </tr>
                         <tr>
                             {{ table_sponsor_package }}
-                            {{ general_total_attendee_number }}
                         </tr>
                     </table>
                 </div>
+                <!--
                 <div class="ui-content jqm-content">
                     <table>
                         <tr>
@@ -62,7 +57,7 @@
                         </tr>
                     </table>
                 </div>
-               <div class="ui-content jqm-content">
+                <div class="ui-content jqm-content">
                     <table>
                         <tr>
                             <th>Facebook Post Total Reached People</th>
@@ -71,7 +66,7 @@
                         {{ table_promotion_facebook_summary }}
                     </table>
                 </div>
-               <div class="ui-content jqm-content">
+                <div class="ui-content jqm-content">
                     <table>
                         <tr>
                             <th>Facebook Post URL</th>
@@ -81,8 +76,8 @@
                         {{ table_promotion_facebook }}
                     </table>
                 </div>
-               {% if booth_flag %}
-               <div class="ui-content jqm-content">
+                {% if booth_flag %}
+                <div class="ui-content jqm-content">
                     <table>
                         <tr>
                             <th>Booth Check-in Number</th>
@@ -105,6 +100,28 @@
                         </div>
                 </div>
                 {% endif %}
+                -->
+                <div class="ui-content jqm-content">
+                    <h2>Conference Profile</h2>
+                    <table>
+                        <tr>
+                            <th>Total Attendee Number</th>
+                            <th>Financial Amount (USD)</th>
+                            <th>Total Talk Number</th>
+                            <th>Talk Acceptance Rate</th>
+                        </tr>
+                        <tr>
+                            <td>{{ jinja2_tag_total_attendee_number }}</td>
+                            <td>{{ jinja2_tag_FA_amount_USD }}</td>
+                            <td>{{ jinja2_tag_proposals }}</td>
+                            <td>{{ jinja2_tag_acceptance_rate }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ui-content jqm-content">
+                    <h2>Information and Description</h2>
+                        {{ General_Info_Description }}
+                </div>
                 <div class="ui-content jqm-content">
                     <h2>Job Categories</h2>
                         {{ Title_Categories }}
@@ -147,7 +164,7 @@
                 </div>
             </div><!-- /content -->
             <div data-role="footer" data-position="fixed" data-tap-toggle="false" class="jqm-footer">
-                <p>Created by PyCon TW 2019 Sponsorship Team</p>
+                <p>Created by PyCon TW {{ jinja2_tag_year }} Sponsorship Team</p>
             </div><!-- /footer -->
         </div><!-- /page -->
     </body>

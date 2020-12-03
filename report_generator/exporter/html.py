@@ -2,7 +2,7 @@ import base64
 from collections.abc import Iterable
 from pathlib import Path
 
-from jinja2 import Environment, Markup, PackageLoader
+from jinja2 import BaseLoader, Environment, Markup, PackageLoader
 
 loader = PackageLoader("report_generator.exporter", "data")
 env = Environment(loader=loader)
@@ -22,11 +22,11 @@ def _generate_html_link(url: str):
 
 
 def generate(
+    conference=None,
     data=None,
-    yaml=None,
+    report_yaml=None,
     attendee_obj=None,
     sponsors=None,
-    talk_info=None,
     html_template="sponsor.html",
     output_prefix="post-event",
     output_path="/tmp",
@@ -45,6 +45,37 @@ def generate(
     all_tags = {}
 
     # apply general information which everyone could see it
+    #
+    # please note we should "import"/tag update first to include template paragraphs
+    # and then update the fields in the templates
+    #
+    # general info - conference basic profile
+    #       year
+    #       attendee number
+    tags_general_basic_profile = {
+        "jinja2_tag_year": conference.year,
+        "jinja2_tag_FA_amount": conference.fa_amount,
+        "jinja2_tag_FA_amount_USD": conference.fa_amount_usd,
+        "jinja2_tag_proposals": conference.talk_number_accepted,
+        "jinja2_tag_acceptance_rate": conference.acceptance_rate,
+        "jinja2_tag_video_playlist": report_yaml["General_Info"]["video_url"],
+        "jinja2_tag_photo_url": report_yaml["General_Info"]["photo_url"],
+        "jinja2_tag_total_attendee_number": attendee_obj.total_attendee_number,
+    }
+
+    total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
+    tags_general_basic_profile.update(
+        {"general_total_attendee_number": total_attendee_number_tag}
+    )
+
+    # general info - more info
+    tag_yaml_gi = report_yaml["General_Info"]
+    tag_gi_description = tag_yaml_gi["description"]
+    p_tag = f"<p>{tag_gi_description}</p>"
+    tags_general_basic_profile.update({"General_Info_Description": p_tag})
+
+    all_tags.update(tags_general_basic_profile)
+
     # general info - description for plots
     #    Add plot description if it could be found in the yaml
     for tag in data:
@@ -57,28 +88,11 @@ def generate(
         img_tag = f'<img src="data:image/jpg;base64,{data_uri}">'
         all_tags.update({tag: img_tag})
 
-        for entry in yaml:
-            tag_yaml = entry.get(tag)
-            if tag_yaml:
-                p_tag = ""
-                for meta in tag_yaml:
-                    tag_description = meta.get("description")
-                    if tag_description:
-                        p_tag = f"<p>{tag_description}</p>"
+        tag_yaml = report_yaml[tag]
+        tag_description = tag_yaml["description"]
+        p_tag = f"<p>{tag_description}</p>"
 
-                all_tags.update({tag + "_Description": p_tag})
-
-    # general info - more info
-    tag_yaml_gi = yaml[0]["General_Info"]
-    p_tag = ""
-    for meta in tag_yaml_gi:
-        tag_gi_description = meta.get("description")
-        p_tag = f"<p>{tag_gi_description}</p>"
-    all_tags.update({"General_Info_Description": p_tag})
-
-    # general info - attendee number
-    total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
-    all_tags.update({"general_total_attendee_number": total_attendee_number_tag})
+        all_tags.update({tag + "_Description": p_tag})
 
     # apply information specific to each sponsor
     for sponsor in sponsors:
@@ -136,7 +150,10 @@ def generate(
         full_output_path = Path(output_path).absolute() / Path(filename)
         with open(full_output_path, "w") as fhandler:
             r = template.render(**all_tags)
-            fhandler.write(r)
+            # the trick to render the tags in report yaml
+            rtemplate = Environment(loader=BaseLoader).from_string(r)
+            final_rendered = rtemplate.render(**all_tags)
+            fhandler.write(final_rendered)
 
     print("Dumping post event reports for each sponsor to {}".format(output_path))
 
@@ -177,24 +194,11 @@ def generate_summary(
         img_tag = f'<img src="data:image/jpg;base64,{data_uri}">'
         all_tags.update({tag: img_tag})
 
-        for entry in yaml:
-            tag_yaml = entry.get(tag)
-            if tag_yaml:
-                p_tag = ""
-                for meta in tag_yaml:
-                    tag_description = meta.get("description")
-                    if tag_description:
-                        p_tag = f"<p>{tag_description}</p>"
+        tag_yaml = yaml[tag]
+        tag_description = tag_yaml["description"]
+        p_tag = f"<p>{tag_description}</p>"
 
-                all_tags.update({tag + "_Description": p_tag})
-
-    # # general info - more info
-    # tag_yaml_gi = yaml[0]["General_Info"]
-    # p_tag = ""
-    # for meta in tag_yaml_gi:
-    #     tag_gi_description = meta.get("description")
-    #     p_tag = f"<p>{tag_gi_description}</p>"
-    # all_tags.update({"General_Info_Description": p_tag})
+        all_tags.update({tag + "_Description": p_tag})
 
     # general info - attendee number
     total_attendee_number_tag = _generate_html_rows(attendee_obj.total_attendee_number)
