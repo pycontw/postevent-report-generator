@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -10,8 +8,9 @@
       
       
       
+      
       <link rel="shortcut icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
@@ -19,13 +18,17 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.18ac144a.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.19753c6b.min.css">
       
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.196e0c26.min.css">
+        
       
     
     
     
       
+        
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
@@ -40,7 +43,13 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -57,7 +66,9 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="." title="PyCon TW post-event report generator (rg-cli)" class="md-header-nav__button md-logo" aria-label="PyCon TW post-event report generator (rg-cli)">
       
@@ -91,7 +102,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -132,8 +143,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -144,7 +153,9 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="." title="PyCon TW post-event report generator (rg-cli)" class="md-nav__button md-logo" aria-label="PyCon TW post-event report generator (rg-cli)">
       
@@ -186,12 +197,10 @@
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Home
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+    <a href="." class="md-nav__link md-nav__link--active">
       Home
     </a>
     
@@ -203,9 +212,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -264,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="contributing/" title="Contributing" class="md-nav__link">
+    <a href="contributing/" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -288,9 +295,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -353,9 +358,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="pycon-tw-post-event-report-generator-rg-cli">PyCon TW post-event report generator (rg-cli)</h1>
 <p><a href="https://github.com/commitizen-tools/pycontw-postevent-report-generator/actions"><img alt="Python Check" src="https://github.com/pycontw/pycontw-postevent-report-generator/workflows/python%20check/badge.svg" /></a> <a href="https://pypi.org/project/pycontw-report-generator/"><img alt="PyPI Package latest release" src="https://img.shields.io/pypi/v/pycontw-report-generator.svg?style=flat-square" /></a></p>
 <p>PyCon TW post-event report generator.A cli command, rg-cli, to generate PyCon TW post-event reports. Previously known as attendee-analyzer.</p>
@@ -366,11 +368,10 @@ Currently it only supports a csv file as raw data input.</p>
 <li><a href="https://www.python.org/downloads/">Python 3.7</a></li>
 </ul>
 <h2 id="installation">Installation</h2>
-<pre><code class="sh">python -m pip install pycontw-report-generator
+<pre><code class="language-sh">python -m pip install pycontw-report-generator
 </code></pre>
-
 <h3 id="usage">Usage</h3>
-<pre><code class="sh">$ python -m rg-cli --help
+<pre><code class="language-sh">$ python -m rg-cli --help
 
 Usage: rg-cli [OPTIONS]
 
@@ -395,16 +396,13 @@ Options:
   --output-path TEXT              Where the reports exported  [default: /tmp]
   --help                          Show this message and exit.
 </code></pre>
-
 <p>Create a working folder to place your attendee raw data outside of the source folder so you won't commit your raw data accidentally.</p>
-<pre><code class="sh">mkdir ../pycontw-postevent-report-generator-working
+<pre><code class="language-sh">mkdir ../pycontw-postevent-report-generator-working
 </code></pre>
-
 <h3 id="example">Example</h3>
 <p>After launching your virtual environment, issue the following command:</p>
-<pre><code class="sh">rg-cli --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./report_generator/data/generic.yaml --package-yaml ./examples/packages.yaml --sponsor-yaml ./examples/sponsors.yaml
+<pre><code class="language-sh">rg-cli --csv ./a.csv --csv ./b.csv --csv ./c.csv --yaml ./report_generator/data/generic.yaml --package-yaml ./examples/packages.yaml --sponsor-yaml ./examples/sponsors.yaml
 </code></pre>
-
 <p>Follow the prompt instruction and you will get jpg images. So far it is well tested with the data of year 2017.</p>
 <h2 id="contributing">Contributing</h2>
 <p>Please see the <a href="contributing/">Contributing</a> for further details.</p>
@@ -427,7 +425,7 @@ Options:
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
         
-          <a href="contributing/" title="Contributing" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="contributing/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -460,15 +458,15 @@ Options:
       
     </div>
     
-      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: ".",
           features: [],
           search: Object.assign({
-            worker: "assets/javascripts/worker/search.27c6a5e6.min.js"
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
