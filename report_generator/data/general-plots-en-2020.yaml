@@ -1,0 +1,115 @@
+# TODO: general info should be always the first entry
+General_Info:
+  represent: text
+  year: 2020 #TODO: duplicate with config.ini
+  FA_amount: 219370
+  rate_twd_usd: 0.035
+  video_url: https://www.youtube.com/playlist?list=PLqtzN042QpfeN9YsLKI7RW78v1maUUYNw
+  photo_url: https://www.flickr.com/photos/pycon_tw/albums
+  description: >-
+      <p>
+      PyCon TW {{ jinja2_tag_year }} had an exciting and fulfilling time because of your help. This year,
+      we provided more than {{ jinja2_tag_FA_amount }} TWD (about {{ jinja2_tag_FA_amount_USD }} USD) financial aid
+      to engage a wider communities by offering them free or discount ticket, transportation support, or accommodation.
+      For example, people who have significantly contributed to the Python communities,
+      or people and students who are not able to attend due to economic considerations.
+      This greatly enhanced our community diversity. This became possible only because of you,
+      our sponsors.
+      </p>
+
+      <p>
+      This year, we have in total {{ jinja2_tag_total_attendee_number }} python enthusiast who joined us virtually or
+      in person in Tainan, Taiwan. Most of them who had been in Taiwan were joining in person. Because of COVID-19
+      impact this year, most foreign participants were joining via our virtual meet up infrastructure. For example,
+      one of our Keynote speaker, Mariatta, likes it very much and
+      <a href=https://twitter.com/mariatta/status/1302081926547660800>
+      talked about it on her twitter.</a>
+
+      This year, {{ jinja2_tag_proposals }} brilliant talks were shared with the participants.
+      The acceptance rate of proposal is {{ jinja2_tag_acceptance_rate }}.
+
+      All the talks are published on youtube. You could find them in the following link:
+      </p>
+      <p><a href={{ jinja2_tag_video_playlist }}>Talk Video（Please click me）</a></p>
+      <p>
+      For more visual impression, please check out our image collections:
+      </p>
+      <p><a href={{ jinja2_tag_photo_url }}>Photos（Please click me）</a></p>
+
+
+      <p>
+      If you need a pdf version of this report, please choose "print" and "save as PDF" of your browser.
+      </p>
+
+Title:
+  represent: barchart
+  description: >-
+      The mainstream attendees are engineers. However we also have other people with different
+      job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
+      If the attendee said "currently no job" or "a short-term contract type of job", they are categorized as
+      "potential job seeker."
+
+# TODO: the data structure is not necessary to be list
+Title_Categories:
+  represent: barchart
+  description: >-
+      The mainstream attendees are engineers. However we also have other people with different
+      job titles, including management, C-level (CTO, CEO etc. We mark it as "Head") and students.
+      If the attendee said "currently no job" or "a short-term contract type of job", they are categorized as
+      "potential job seeker."
+
+Nationality:
+  represent: barchart
+  description: >-
+      In PyCon TW {{ jinja2_tag_year }}, most of the attendees are Taiwanese.
+      The other attendees, including speakers from the other countries could participate remotely/virtually under
+      COVID-19 impact.
+
+      There is "No Record" because this is an optional field when registering.
+
+Seniority:
+  represent: barchart
+  description: >-
+      Most of the attendees are intermediate level python users/developers.
+      ( 1 to 5 years experience in python scripting.) It is a great opportunity
+      for companies to recruit potential enthusiastic developer who are willing
+      to participate in the event and enhance their knowledge and abilities.
+
+Interested_Field:
+  represent: barchart
+  description: >-
+      Interested fields reported by the attendees. It is multiple-choice.
+
+Gender:
+  represent: barchart
+  description: >-
+      "No record" is also an option when registering.
+
+Registration_date:
+  represent: barchart
+  description: >-
+      Lorem ipsum dolor sit amet,
+      consectetuer adipiscing elit. Nam cursus. Morbi ut mi.
+      Nullam enim leo, egestas id, condimentum at,
+      laoreet mattis, massa. Sed eleifend nonummy diam.
+      Praesent mauris ante, elementum et, bibendum at,
+      posuere sit amet, nibh. Duis tincidunt lectus quis dui
+      from the customized yaml for registration date.
+
+post_event_questionnaire:
+    satisfaction_overall:
+      score: 4.17
+      image: /tmp/01.jpg
+      description: xxx
+
+Topics:
+    represent: piechart
+    description:
+        As a Python conference, we aim to contribute not only to attendee’s interested
+        fields, but also to core python language itself. We also try to keep the topic as diverse as possible.
+
+Proposed_Topics:
+    represent: piechart
+    description:
+        The diversity is maintained during the proposal selection.
+        The proposal acceptance rate is {{ jinja2_tag_acceptance_rate }}.

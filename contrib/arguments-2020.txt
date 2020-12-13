@@ -1,0 +1,9 @@
+--talks-csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/misc/talks-list.csv
+--proposed-talks-csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/misc/talks-list-proposed.csv
+--booth-csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/misc/booth.csv
+--csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/tickets/with-identities/individual-attendees.csv
+--csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/tickets/with-identities/reserved-attendees.csv
+--csv ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/tickets/with-identities/corporate-attendees.csv
+--yaml ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/yamls/general-plots-en.yaml
+--package-yaml ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/yamls/packages.yaml
+--sponsor-yaml ${HOME}/work-my-projects/pycontw-projects/post-events/2020/data/yamls/sponsors.yaml
