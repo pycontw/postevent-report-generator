@@ -13,7 +13,7 @@ setup(
     packages=find_packages(exclude=["tasks", "test", "scripts"]),
     zip_safe=False,
     include_package_data=True,
-    version="1.4.0",
+    version="1.5.0",
     description="PyCon TW post-event report generator.A cli command to generate PyCon TW post-event reports.",
     long_description=long_description,
     long_description_content_type="text/markdown",
