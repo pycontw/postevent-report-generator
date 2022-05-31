@@ -23,10 +23,6 @@ jobs:
         run: |
           inv style
 
-      - name: Check package vulnerability
-        run: |
-          inv secure
-
       - name: Run tests
         run: |
           inv test
