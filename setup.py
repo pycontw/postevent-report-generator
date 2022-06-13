@@ -14,14 +14,14 @@ setup(
     zip_safe=False,
     include_package_data=True,
     version="1.5.0",
-    description="PyCon TW post-event report generator.A cli command to generate PyCon TW post-event reports.",
+    description="PyCon TW post-event report generator. A cli command to generate PyCon TW post-event reports.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="Taihsiang Ho (tai271828)",
-    author_email="tai271828@gmail.com",
+    author_email="tai271828@python.tw",
     license="BSD 3-Clause",
-    url="https://github.com/pycontw/pycontw-postevent-report-generator",
-    download_url="https://github.com/pycontw/pycontw-postevent-report-generator.git",
+    url="https://github.com/pycontw/postevent-report-generator",
+    download_url="https://github.com/pycontw/postevent-report-generator.git",
     keywords=["attendee", "pycontw", "post-event", "report-generator"],
     entry_points={
         "console_scripts": [
