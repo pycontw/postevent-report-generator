@@ -36,6 +36,7 @@ setup(
         "click==7.0",
         "Pillow",
         "Jinja2==2.10.3",
+        "MarkupSafe<=2.0.1",
         "PyYAML",
     ],
     classifiers=["Programming Language :: Python"],
