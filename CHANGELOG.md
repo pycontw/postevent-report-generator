@@ -1,3 +1,10 @@
+## 1.5.2 (2022-06-13)
+
+### Fix
+
+- **dep**: MarkupSafe version compatibility fixup
+- **dep**: MarkupSafe version compatibility fixup
+
 ## 1.5.1 (2022-06-13)
 
 ### Fix
