@@ -1,6 +1,6 @@
 # PyCon TW post-event report generator (rg-cli)
 
-[![Python Check](https://github.com/pycontw/pycontw-postevent-report-generator/workflows/python%20check/badge.svg)](https://github.com/commitizen-tools/pycontw-postevent-report-generator/actions) [![PyPI Package latest release](https://img.shields.io/pypi/v/pycontw-report-generator.svg?style=flat-square)](https://pypi.org/project/pycontw-report-generator/)
+[![Python Check](https://github.com/pycontw/pycontw-postevent-report-generator/workflows/python%20check/badge.svg)](https://github.com/pycontw/postevent-report-generator/actions/workflows/python-check.yaml) [![PyPI Package latest release](https://img.shields.io/pypi/v/pycontw-report-generator.svg?style=flat-square)](https://pypi.org/project/pycontw-report-generator/)
 
 PyCon TW post-event report generator.A cli command, rg-cli, to generate PyCon TW post-event reports. Previously known as attendee-analyzer.
 
