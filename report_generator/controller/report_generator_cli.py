@@ -27,7 +27,6 @@ template = pkg_resources.resource_stream(resource_package, resource_path)
 @click.option(
     "--csv",
     required=True,
-    default="data.csv",
     multiple=True,
     help="Read csv format data",
 )
