@@ -1,5 +1,7 @@
 import logging
+import os
 import re
+import tempfile
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -161,7 +163,7 @@ def plot_booth(df, col):
 
 def save_fig(identifier):
     fig_name = identifier + ".jpg"
-    fig_path = "/tmp/" + fig_name
+    fig_path = os.path.join(tempfile.gettempdir(), fig_name)
     plt.savefig(fig_path)
 
     return {identifier: fig_path}
