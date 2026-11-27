@@ -1,3 +1,10 @@
+## 1.5.3 (2026-11-27)
+
+### Fix
+
+- save figures to OS temp dir instead of hardcoded /tmp (#59)
+- remove string default from multiple --csv option (#50)
+
 ## 1.5.2 (2022-06-13)
 
 ### Fix
